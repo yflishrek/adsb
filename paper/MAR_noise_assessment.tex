@@ -93,39 +93,245 @@ The remainder of this paper is organised as follows. Section~\ref{sec:literature
 \label{sec:literature}
 % ======================================================================
 
-\subsection{Evolution of airport noise modelling}
+The approach taken here organises the literature by \emph{problem} rather than by
+citation. Four questions recur in aviation environmental research --- how
+reliably noise can be predicted, how multi-airport systems should be governed,
+who is actually exposed, and how that exposure is distributed --- and in each
+case the international and the Chinese research communities have followed
+distinct trajectories. The review therefore traces each question in turn,
+identifying where a shared methodological consensus has emerged, where national
+research traditions diverge, and where neither has yet reached the
+multi-airport scale that defines the present problem.
 
-Airport noise modelling has evolved substantially over the past two decades. The ECAC Doc 29 methodology~\citep{ecac2016ceac} provides the international standard framework, prescribing three approaches ranging from simple segmentation (Approach A) to complex segmentation (Approach C) for noise contour computation around civil airports.
+% ----------------------------------------------------------------------
+\subsection{From standardised contours to tracking-data-based reconstruction}
+\label{sec:lr-noise}
 
-Recent methodological advances have been driven primarily by the availability of high-resolution flight tracking data. \citet{pretto2024aircraft} demonstrated that ADS-B data at 1-second resolution, combined with take-off weight (TOW) estimation from climb rate profiles, can reconstruct aircraft operations with sufficient accuracy for noise prediction. Their validation at Zurich Airport showed cumulative noise underestimation of only 1.7 dB(A) --- a substantial improvement over earlier estimates of 3--5 dB underestimation. This approach eliminates reliance on proprietary airline operational data, making high-quality noise modelling accessible to researchers without industry partnerships.
+The dominant question in airport noise research is whether a modelled contour
+can be trusted. For two decades the answer has been constrained less by
+acoustics than by the availability of operational inputs: an aircraft's
+take-off weight, thrust setting and flight path determine its noise emission,
+and until recently all three were proprietary airline data. The regulatory
+response was to codify the problem rather than solve it. The ICAO
+recommended method~\citep{icao2018recommended} and ECAC Doc~29
+\citep{ecac2016ceac} established a common computational procedure in which
+noise is attributed to flight-path segments and aggregated into
+Lden/Lnight-like indicators, with source and propagation terms drawn from a
+bounded set of certified models. Comparable methods have been reviewed
+systematically~\citep{zaporozhets2016aircraft}, and the framework has since
+become the de facto international reference against which national practice is
+aligned.
 
-\citet{zhu2025dynamic} extended the application of ECAC Doc 29 to Chinese airports, modelling noise contours for Shenzhen Bao'an Airport with a mean absolute error of 2.07 dB against field measurements. Their study also introduced a novel dimension --- dynamic population exposure --- by overlaying noise contours with Baidu Huiyan real-time population data, revealing that static census data systematically underestimates noise exposure, particularly during nighttime hours.
+That framework's value is reproducibility rather than accuracy. Because
+different tools implement the standardised method with different datasets and
+simplifications, agreement between models is not guaranteed --- and where
+contours are used for statutory land-use decisions, such disagreement is
+consequential. Cross-tool benchmarking at single-flight resolution has
+quantified the spread between widely used implementations
+\citep{meister2021comparison}, and validation exercises against measurement at
+two of Europe's busiest airports have shown that model--measurement agreement
+depends strongly on how completely the operational population is represented,
+not merely on the acoustic formulation~\citep{giladi2024validating,
+simons2022comparative}. Parallel refinements have addressed the physics that
+such models simplify, including sound incidence at shallow angles, which
+dominates the near-field~\citep{wunderli2022aircraft}.
 
-\subsection{Multi-airport region coordination}
+The most consequential recent shift has been the substitution of the airline
+for the aircraft-tracking network as the data source. Pretto et al.~\cite{pretto2024aircraft}
+showed that high-resolution ADS-B trajectories, combined with take-off weights
+inferred from climb-rate profiles, are sufficient to reconstruct actual
+departure and arrival procedures; applied to a full year of Zurich traffic, the
+approach left a residual underestimation of 1.7~dB(A) in cumulative
+exposure-based noise. Zhu et al.~\cite{zhu2025dynamic} pursued a parallel but
+different route --- retaining the standardised contouring framework while
+substituting observed flight paths for modelled ones --- and reported mean
+absolute errors of 1.75~dB (arrivals), 2.27~dB (departures) and 2.07~dB overall
+at Shenzhen Bao'an, within the 3~dB tolerance of Chinese regulatory practice.
 
-The MAR coordination literature has grown rapidly alongside the physical expansion of multi-airport systems. Early research focused on airport choice modelling and demand distribution within MARs~\citep{deneufville1995management, oconnor2015airports}. More recently, the environmental dimension has gained attention. \citet{suau2025does} examined the climate impact of slot reduction at Amsterdam Schiphol, demonstrating that short-haul flight bans and up-gauging may produce counterintuitive emissions outcomes --- a finding with direct implications for MAR-level slot coordination.
+Two features of this transition matter for what follows. First, it changes what
+counts as a known quantity: once trajectories are observed, uncertainty
+migrates from the flight path to the \emph{aircraft type and weight}, since
+individual types contribute unequally to the measured noise field even at
+identical flight paths~\citep{simons2026contribution}. Second, it lowers the
+barrier to independent research, which is what makes systematic comparison
+across airports --- and hence multi-airport study --- technically conceivable
+for the first time.
 
-\citet{xu2025flight} represents the most direct precursor to the present study, developing a digital twin-based departure scheduling optimisation for the BTH MAR. Their framework demonstrated that coordinated scheduling across PEK, PKX, and TSN can reduce take-off phase CO$_2$ emissions by 10\%, principally through reduced taxi congestion and more efficient runway utilisation. Critically, their work established the transferability of the MAR coordination paradigm to environmental management.
+The Chinese contribution to this stream is distinctive in emphasis rather than
+in method. Alongside the Shenzhen application, domestic work has pursued
+physically coupled data-driven predictors~\citep{feng2024physics}, studies of
+far-field sound propagation under non-uniform atmospheric
+conditions~\citep{hong2023nonuniform}, four-dimensional trajectory simulation
+to evaluate the acoustic consequences of specific departure
+procedures~\citep{zhuang2025four}, and forward projection of noise impact under
+combined traffic-growth and fleet-renewal scenarios~\citep{einicke2025predicting}. A parallel strand has improved the
+empirical reference itself, through IoT-based perception
+systems~\citep{liu2025iot}, reviews of monitoring practice~\citep{zhao2022review},
+and analysis of background-noise contamination in monitoring
+data~\citep{qu2024background}, with domestic reviews of control practice and
+monitoring systems indicating that the methodological gap between international
+and Chinese practice has been closing~\citep{yang2023status, wang2024noise}.
 
-\subsection{Dynamic population exposure assessment}
+The literature has therefore converged on a mature \emph{single-airport}
+apparatus: a standardised method, cross-validated implementations, and
+trajectory data adequate to drive them. Its principal residual uncertainty
+lies in source characterisation, and it has not been transported to the
+multi-airport case.
 
-Traditional environmental exposure assessment relies on residential population data from censuses, implicitly assuming that individuals remain at their registered addresses throughout the day. This assumption has been increasingly challenged by empirical evidence. \citet{zhu2025dynamic} showed that dynamic noise exposure ratios at Shenzhen Airport deviate from static estimates by up to 30\% at certain times, with the greatest discrepancies occurring during early morning hours (2:00--4:00 AM).
+% ----------------------------------------------------------------------
+\subsection{Multi-airport regions: from strategic design to environmental externalities}
+\label{sec:lr-mar}
 
-The broader literature on dynamic exposure assessment has expanded rapidly with the availability of big data sources including mobile phone signalling data, social media check-ins, and location-based service data. In the Chinese context, both Baidu Huiyan (migration big data) and Tencent Location Big Data (heat.qq.com) have been employed for population dynamics research, though their application to aviation noise exposure remains limited to single-airport studies~\citep{yang2023status}.
+A multiple-airport region (MAR) is not a collection of airports that happens
+to be geographically close; it is a single system in which capacity,
+connectivity and environmental burden are jointly determined. The concept was
+formulated in the strategic-management literature as an object requiring its own
+developmental logic~\citep{deneufville1995management}, and subsequent work has
+located airports within regional air transport markets where demand
+redistribution among them is an endogenous outcome~\citep{oconnor2016airports}.
+This literature established the MAR as a meaningful unit of analysis while
+addressing, substantively, capacity and competition.
 
-\subsection{Environmental justice and transportation noise}
+The environmental dimension entered later and through the emissions channel.
+The empirical motivation was heterogeneity: airport environmental performance
+varies systematically across Chinese airports in ways that traffic volume alone
+does not explain~\citep{hu2020spatial}, and at high spatial resolution even a
+single airport exhibits pronounced interior hotspots~\citep{han2025high}.
+Convergent evidence that economic and ecological effects of airport policy do not
+align automatically~\citep{wu2021evaluating} reinforces the implication: local
+environmental structure, not throughput, is the operative variable, and therefore
+the MAR rather than the airport is the correct assessment unit.
 
-Environmental justice concerns in transportation noise have been extensively documented in road and railway contexts, where lower-income and minority communities are disproportionately exposed to higher noise levels. However, evidence for airport noise has been more limited and mixed. 
+That premise has now been converted into optimisation capability. Xu et
+al.~\cite{xu2025flight} constructed a digital-twin departure-scheduling model for
+the Beijing--Tianjin--Hebei (BTH) region and showed that coordinated scheduling
+across PEK, PKX and TSN reduces average delay by 89~s and take-off congestion by
+46~s at Beijing Capital, yielding a 10\% reduction in take-off-phase
+CO$_2$ emissions through reduced taxi congestion and better runway utilisation.
+Critically, the study transfers the MAR coordination paradigm from capacity to
+environment --- but with emissions, not noise, as the objective function.
 
-\citet{fujiwara2017experience} took a novel approach by using experience sampling methodology (ESM) via the Mappiness smartphone application to capture momentary subjective wellbeing (SWB) in and around airports. Their analysis of over one million ESM responses in England found that being within a 66 dB noise contour was significantly negatively associated with both happiness and relaxation, with effect sizes larger than those associated with commuting or travel. Notably, being within the airport terminal itself increased happiness for non-working individuals (approximately equivalent to the effect of drinking tea or coffee) but decreased relaxation (more than the effect of housework).
+The policy literature supplies an important corrective. Suau-Sanchez et
+al.~\cite{suau2025does} evaluated the Dutch decision to reduce Amsterdam
+Schiphol's annual slots from 500,000 to 440,000 and found that short-run
+emissions reductions were modest and did not scale with the size of the cut
+unless long-haul service was substantially curtailed, while aircraft
+up-gauging could \emph{increase} emissions where airline behaviour is
+unconstrained. Interventions in a multi-airport system produce non-intuitive
+outcomes because operators adapt. Any MAR-level noise instrument must therefore
+be evaluated against behavioural response rather than assumed to be additive.
 
-These findings underscore that noise exposure is not merely a physical phenomenon but a welfare-relevant one, with distributional implications that merit explicit attention in MAR noise governance.
+The structure of this stream is clear: MAR coordination is established for
+capacity and for emissions, and the spatial heterogeneity that justifies
+MAR-scale assessment is well documented. Noise has not entered the objective
+function.
 
-\subsection{Research gap and positioning}
+% ----------------------------------------------------------------------
+\subsection{From static residence to dynamic population at risk}
+\label{sec:lr-dynamic}
 
-The literature reveals a clear gap at the intersection of four research streams: (1) MAR coordination, established for emissions but not noise; (2) high-resolution noise modelling, established for single airports but not MARs; (3) dynamic population exposure assessment, established for single airports but not MARs; and (4) noise equity, lacking a MAR-level framework.
+Environmental exposure assessment rests on an assumption that is easy to
+overlook: that people are where they are registered. For noise this is
+increasingly untenable, because the hours that matter most for sleep and
+restoration are precisely those at which residential population and actual
+population diverge most.
 
-This study bridges these streams by proposing and empirically implementing a five-stage collaborative noise exposure assessment framework for MARs, with the BTH region as the case study.
+Chinese research has taken the lead in demonstrating that the divergence is
+material. By overlaying Shenzhen Bao'an noise contours with Baidu Huiyan
+population-location data, Zhu et al.~\cite{zhu2025dynamic} found that the
+dynamically exposed share departs from the static share throughout the day, with
+the largest divergence around 02:00 --- where the dynamic proportion exceeds the
+static one by roughly 30\% in relative terms, an absolute difference of 1.88
+percentage points. The distinction between these two figures is analytically
+important and is easily misreported: the relative deviation is large while the
+absolute shift is small, and the two support different claims about how much
+dynamic assessment changes practice.
+
+The wider literature --- mobile-phone signalling, check-in and location-based
+service data --- has matured correspondingly, and Chinese cities now possess
+several operational platforms for characterising population
+dynamics~\citep{yang2023status}. What has not yet followed is methodological
+consolidation: dynamic exposure assessment in aviation remains overwhelmingly
+confined to the single airport, where one contour is overlaid on one population
+surface. This is a structural limit rather than an incidental one. In a MAR the
+population is mobile \emph{across} airport catchments, and cumulative contours
+from several airports overlap in ways that no single-contour analysis can
+represent. Extending dynamic exposure to the MAR case requires simultaneously
+handling contour superposition and a shared, mobile population --- neither of
+which has been addressed in combination.
+
+% ----------------------------------------------------------------------
+\subsection{Distributional questions in aviation noise}
+\label{sec:lr-equity}
+
+Whether noise burdens fall disproportionately on particular communities has been
+examined far more extensively for road and rail transport than for aviation,
+partly because airport noise contours are spatially concentrated and do not map
+cleanly onto administrative or census units. Where the question has been posed
+for aviation, distributional patterns do emerge: Audrin et
+al.~\cite{audrin2022aircraft} mapped aircraft noise against environmental equity
+across Montréal, and the design-led, end-user-focused critique of airport noise
+management advanced by Heyes et al.~\cite{heyes2021case} argues that prevailing
+management processes are organised around the operator's internal logic rather
+than around those who experience the noise --- an argument that reframes equity as
+a procedural property of governance, not merely a distributional outcome.
+
+A related stream treats noise as a welfare quantity rather than a physical dose.
+Using experience sampling methodology via the Mappiness smartphone application,
+Fujiwara et al.~\cite{fujiwara2017experience} analysed over one million
+momentary subjective wellbeing reports collected in and around English airports,
+finding that being within a 66~dB contour was significantly negatively associated
+with both happiness and relaxation --- effect sizes exceeding those of commuting
+or travel --- and that being inside the terminal itself was associated with higher
+happiness but lower relaxation among non-working individuals. Institutional
+response has been codified in the ICAO Balanced Approach~\citep{icao2016balanced},
+which organises management into source reduction, land-use planning, operational
+procedures and operating restrictions, and in comparative reviews of how those
+instruments combine across jurisdictions~\citep{wang2024noise}.
+
+Both strands remain single-airport by construction, and this creates a
+governance problem rather than merely a methodological one. In a MAR, a single
+community may lie beneath the arrival path of one airport and within the
+departure noise footprint of another; neither operator, acting alone, has
+jurisdiction over --- or necessarily visibility of --- the cumulative burden
+borne by that community. An equity framework, or a governance instrument,
+formulated for one airport is therefore inadequate by construction, because the
+responsibility it would allocate is not the responsibility that actually exists.
+
+% ----------------------------------------------------------------------
+\subsection{Synthesis: a scale-shaped research gap}
+\label{sec:lr-gap}
+
+Read across the four streams, the literature displays a consistent structural
+pattern: each has reached methodological maturity at the scale of the
+\emph{individual airport}, and none has been scaled to the multi-airport region.
+The gap is thus not the absence of any single method --- standardised contouring,
+trajectory-based reconstruction, dynamic exposure and equity analysis all exist
+--- but the absence of their integration at the MAR scale.
+
+Three consequences follow. First, the spatial scaling of noise modelling is
+unexplored: because regional noise fields are superpositions of overlapping
+single-airport fields, methods validated at one airport cannot be assumed
+transferable without explicit testing. Second, the error introduced by two
+common simplifications is unquantified at regional scale --- modelling
+interactions between airports as independent, and treating population as
+static --- although both are known to matter at the single-airport
+scale~\citep{zhu2025dynamic, pretto2024aircraft, suau2025does}. Third, the
+allocation of noise responsibility across operators has no analytical basis,
+because governance instruments and equity frameworks both presuppose a single
+accountable airport.
+
+This study addresses the gap with a five-stage framework applied to the BTH
+region --- comprising Beijing Capital (PEK), Beijing Daxing (PKX) and Tianjin
+Binhai (TSN). It proceeds from single-airport contour modelling, through
+cumulative MAR superposition, to dynamic population exposure, community
+typology, and scenario-based collaborative management. Its contribution is
+threefold: to establish that noise, like emissions, constitutes a MAR-level
+rather than an airport-level phenomenon; to quantify the error introduced when
+inter-airport contour overlap and dynamic population distribution are neglected;
+and to provide a governance-relevant basis for allocating noise responsibility
+across airports that currently account for it separately.
+
 
 % ======================================================================
 \section{Methodology}
