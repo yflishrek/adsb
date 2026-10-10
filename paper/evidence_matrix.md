@@ -139,3 +139,65 @@ Wu et al. (2021). *Evaluating the economic and ecological impact for small and m
 
 **Fujiwara 数字来源**：66 dB 关联性、百万级 ESM 样本、终端内非工作人群 happiness 上升 / relaxation 下降——这些数字**仍未经原文核验**（本地无该 PDF 全文），提交前必须比对 *Transportation Research Part D* 56:43-54 原文。
 
+
+---
+
+## 五、第二轮核验（2026-10-10 晚）——综述事实审计
+
+用户要求"国内研究进展不应是文献堆叠"，本轮对 §2 逐句审计，把**每条断言回溯到原文**。发现并修正如下。
+
+### 5.1 两处硬性事实错误（P0）
+
+| 位置 | 原表述 | 原文实情 | 处理 |
+|---|---|---|---|
+| §2.1 Pretto | "applied to a **full year** of Zurich traffic" | 论文明确说明不可能处理全年（"would demand significant computational capabilities"），实际**只取 23 个代表日**，覆盖四季、日均交通覆盖率 **96.7%** | 已改为 23 代表日 + 96.7% |
+| §2.1 Pretto | "take-off weights inferred from **climb-rate profiles**" | 原文："take-off weight is **estimated from the tracking data**"，方法是 mixed analysis–synthesis approach（增加飞行程序的自由度），**从未提到用爬升率反推** | 已改为 "estimated from the trajectories themselves" |
+
+> 注：「爬升率反推 TOW」这一说法来自论文初稿，本轮核实为**无出处**，非本轮新引入。
+
+### 5.2 补全的关键事实（增强而非削弱论证）
+
+- **Zhu 2025 的数据仅两天**：用 RTL-SDR 硬件 + RTL1090 本地接收 ADS-B，第一天 1,082 架次、第二天 51 架次；人口数据为百度慧眼（1 km 网格，样例 Fig.3 为 2023-12-19 13:00）。已在 §2.1 补入"two-day campaign"。
+- **Pretto 的"不可全年计算"**：这恰好支撑本文的研究缺口论证——即便是当前最先进方法也只能靠代表日抽样。
+
+### 5.3 未匹配文件已解决
+
+`output_txt/1-s2.0-S136192091530256X-main.txt` = **Fujiwara et al. (2017)**（ScienceDirect PII `S136192091530256X` 与 DOI `10.1016/j.trd.2017.07.015` 对应）。**本地有全文，可核验**：
+
+| 断言 | 原文 | 判定 |
+|---|---|---|
+| 66 dB 与 happiness / relaxation 显著负相关 | "significant negative association between aircraft noise at the 66 dB level and both happiness and relaxation" | ✅ 成立 |
+| 效应大于通勤 | "negative association ... and relaxation was greater than the negative eﬀects of travelling or commuting (β = −4.087)" | ✅ 成立，但**仅指 relaxation**；happiness 的比较对象是排队（β=−3.802）与照护成人（β=−4.527） |
+| 终端内非工作情形：幸福感升、放松感降 | 非工作目的在机场：relaxation 效应 "more than twice the negative coeﬃcient for doing housework and chores"；happiness 相当于喝茶/咖啡（β=1.353）与看电视 | ✅ 成立，已按原文重写 |
+| 百万级 ESM 样本 | "more than one million observations from tens of thousands of individuals in the UK"（Mappiness，2010-08 起） | ✅ 成立；人群为**全英**，研究范围为英格兰机场（已按原文措辞） |
+
+### 5.4 去除的无出处推断（P1）
+
+以下推断在初稿中以陈述句出现，但**仅有题录信息（[T]），本地无全文**，无法支撑如此具体的因果表述，已改为可支撑的写法：
+
+| 条目 | 原表述（无支撑） | 改后 |
+|---|---|---|
+| `giladi2024validating` + `simons2022comparative` | "model–measurement agreement **depends strongly on how completely the operational population is represented, not merely on the acoustic formulation**" | "dedicated validation exercises have compared modelled against measured noise for the traffic of major European hubs" |
+| `wunderli2022aircraft` | "sound incidence at shallow angles, **which dominates the near-field**" | "sound incidence at grazing angles" |
+| `simons2026contribution` | "individual types contribute unequally to the measured noise field **even at identical flight paths**" | "measured noise levels across a monitoring network are attributable to aircraft types in unequal measure" |
+| `hu2020spatial` | "airport environmental performance varies systematically **in ways that traffic volume alone does not explain**" | "aircraft CO₂ emissions have been shown to differ spatially across individual Chinese airports" |
+| `wu2021evaluating` | "economic and ecological effects of airport policy **do not align automatically**" | "economic and ecological outcomes need not move together" |
+| `heyes2021case` | "prevailing management processes **are organised around the operator's internal logic**" | 按原文改为：主张将噪声管理重构为 design-led、human-centric 流程。原文依据："Human-Centric and End-user focused, to produce outcomes that seek to benefit residents in an empathetic way"（ANIMA 项目） |
+| `yang2023status` + `wang2024noise` | "indicating that **the methodological gap between international and Chinese practice has been closing**" | "complement this technical work by documenting the institutional context in which it is applied" |
+
+### 5.5 两处引用错配（P0）
+
+1. **`yang2023status` 被错用**：该文是《机场噪声控制的现状与挑战》，与"中国已有多个动态人口数据平台"无关。原 §2.3 用它支撑该论断属**错误引用**，已删除该引用并改写句子。
+2. **`einicke2025predicting` 被错归为中国研究**：作者 Einicke, Karina & Kennedy, John（*Applied Acoustics*），**非中国团队**。原列于"中国贡献"段落，已移出并并入国际前沿趋势句。
+
+### 5.6 复核结果
+
+- 引用完整性：bib 30 条 vs 正文 30 条，**无缺失、无闲置**
+- 花括号平衡：通过
+- §2 正文 21 段，**无一段以 `\cite` 开头**
+- §2 篇幅：1,987 → 2,012 词
+
+### 5.7 仍未解决的问题（不在本轮范围）
+
+- **论文摘要与方法的数据声称与实际采集不符**：摘要与 §3.2 称 "1-second resolution"、"one-year period (Jan–Dec 2025)"、"OpenSky Network"；而实际采集为**双源（adsb.lol + OpenSky）、30 秒间隔、14 天**（2026-10-11 起）。用户指示本轮只改综述，此项**未改**，但属 P0，投稿前必须处理。
+- 6 条中文期刊文献仍为 `[VERIFY]`（CNKI 未注册 Crossref），需人工核对卷期页。
