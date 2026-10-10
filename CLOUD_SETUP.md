@@ -115,6 +115,21 @@ Gitee 私有仓库 `shrekfiona/adsb` 已作为镜像保留（配置在 `.workflo
 python scripts/merge_sources.py
 ```
 
+## 每日体检
+
+```bash
+python scripts/daily_check.py --date 20261010          # 指定日期（本地数据）
+python scripts/daily_check.py --date 20261010 --remote # 本地没有时从 GitHub 下载
+python scripts/daily_check.py --all --csv              # 全部日期并输出汇总表
+python scripts/merge_sources.py --date 20261010        # 刷新累积机型字典
+```
+
+体检脚本报告：快照轮次与完整率、最长数据缺口、唯一航空器数、机型覆盖率（累积字典 / 当日重合两个口径），并给出「采样 OK / 偏低 / 严重缺失」和「机型覆盖充足 / 可接受 / 不足」的判定。
+
+判定标准：采样完整率 ≥95% 为 OK（30 秒间隔下每天应有 2880 轮）；机型覆盖率 ≥70% 充足，50–70% 可接受，<50% 需延长采集或调整数据来源表述。
+
+> 注意：`--remote` 走本机代理，可能偶发失败，脚本内置三次重试；仍失败时改用 `git pull`。
+
 ## 已知局限
 
 1. **机型覆盖率**：靠 adsb.lol 快照按 ICAO24 累积，随天数上升但不会到 100%。无机型的航迹不能用于噪声建模，论文需写明剔除规则。
