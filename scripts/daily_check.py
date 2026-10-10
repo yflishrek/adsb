@@ -13,6 +13,7 @@ Expected sampling: one snapshot every --interval seconds (default 30), which
 means 2880 cycles/day. This script compares nominal vs actual.
 """
 import argparse
+import glob
 import os
 import sys
 from datetime import datetime, timedelta
@@ -59,15 +60,48 @@ def download_remote(rel_path, local_path, tries=3):
     return False
 
 
+def list_remote_dir(rel_dir, tries=3):
+    """List filenames in a repo directory via the GitHub API."""
+    import requests
+    for _ in range(tries):
+        try:
+            r = requests.get(API_BASE + rel_dir + "?ref=master", timeout=45)
+            if r.status_code == 200 and isinstance(r.json(), list):
+                return [i["name"] for i in r.json() if i.get("type") == "file"]
+        except Exception:
+            pass
+    return []
+
+
 def load(kind, date, remote):
-    """Load one day of data for a source. Returns DataFrame or None."""
+    """Load one day of data for a source. Returns DataFrame or None.
+
+    Cloud runs write one file per commit window (e.g.
+    adsblol_20261010_0213_1234.csv), so match by date prefix and concat.
+    """
     d = {"adsblol": ADSB_DIR, "opensky": OSKY_DIR}[kind]
-    path = os.path.join(d, f"{kind}_{date}.csv")
-    if not os.path.exists(path) and remote:
-        download_remote(f"data/flights/{kind}/{kind}_{date}.csv", path)
-    if not os.path.exists(path):
+    pattern = f"{kind}_{date}*.csv" if date else f"{kind}_*.csv"
+    paths = sorted(glob.glob(os.path.join(d, pattern)))
+
+    if not paths and remote:
+        prefix = f"{kind}_{date}" if date else kind
+        for name in list_remote_dir(f"data/flights/{kind}"):
+            if name.startswith(prefix) and name.endswith(".csv"):
+                download_remote(f"data/flights/{kind}/{name}",
+                                os.path.join(d, name))
+        paths = sorted(glob.glob(os.path.join(d, pattern)))
+
+    if not paths:
         return None
-    df = pd.read_csv(path, low_memory=False)
+    frames = []
+    for p in paths:
+        try:
+            frames.append(pd.read_csv(p, low_memory=False))
+        except Exception as e:
+            print(f"  skip unreadable {os.path.basename(p)}: {type(e).__name__}")
+    if not frames:
+        return None
+    df = pd.concat(frames, ignore_index=True)
     df["ts"] = pd.to_datetime(df["fetch_ts"], errors="coerce", utc=True)
     return df.dropna(subset=["ts"])
 

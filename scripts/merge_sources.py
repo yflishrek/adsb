@@ -64,9 +64,11 @@ def norm_callsign(v):
 
 def load_adsb_lookup(date: str):
     """Build type registries from adsb.lol, indexed by ICAO24 and by callsign."""
-    paths = ([os.path.join(ADSB_DIR, f"adsblol_{date}.csv")]
-             if date else sorted(glob.glob(os.path.join(ADSB_DIR, "adsblol_*.csv"))))
-    paths = [p for p in paths if os.path.exists(p)]
+    # Cloud runs write one file per commit window, e.g.
+    # adsblol_20261010_0213_1234.csv, so match by DATE PREFIX, not exact name.
+    pattern = f"adsblol_{date}*.csv" if date else "adsblol_*.csv"
+    paths = [p for p in sorted(glob.glob(os.path.join(ADSB_DIR, pattern)))
+             if os.path.exists(p)]
     if not paths:
         return {}, {}, 0
 
@@ -106,9 +108,9 @@ def load_adsb_lookup(date: str):
 
 
 def load_opensky(date: str):
-    paths = ([os.path.join(OSKY_DIR, f"opensky_{date}.csv")]
-             if date else sorted(glob.glob(os.path.join(OSKY_DIR, "opensky_*.csv"))))
-    paths = [p for p in paths if os.path.exists(p)]
+    pattern = f"opensky_{date}*.csv" if date else "opensky_*.csv"
+    paths = [p for p in sorted(glob.glob(os.path.join(OSKY_DIR, pattern)))
+             if os.path.exists(p)]
     if not paths:
         return None
     frames = [pd.read_csv(p, low_memory=False) for p in paths]

@@ -67,6 +67,18 @@ def day_tag() -> str:
     return datetime.now(timezone.utc).strftime("%Y%m%d")
 
 
+def file_tag() -> str:
+    """Filename stem for this batch.
+
+    Defaults to the UTC date, so every invocation appends to one daily CSV.
+    Set DATA_BATCH to write each commit window to its OWN file instead. That
+    matters in CI: if two runs ever write the same file, `git pull --rebase`
+    hits a conflict at the appended tail and the run can never push again.
+    Distinct filenames make concurrent writers conflict-free by construction.
+    """
+    return os.environ.get("DATA_BATCH") or day_tag()
+
+
 def append_rows(path: str, fields, rows):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     exists = os.path.exists(path)
@@ -103,7 +115,7 @@ def collect_adsblol():
             row[f] = v.strip() if isinstance(v, str) else v
         rows.append(row)
 
-    path = os.path.join(DATA_DIR, "adsblol", f"adsblol_{day_tag()}.csv")
+    path = os.path.join(DATA_DIR, "adsblol", f"adsblol_{file_tag()}.csv")
     append_rows(path, ADSB_FIELDS, rows)
     print(f"  adsb.lol: {len(rows)} aircraft -> {os.path.relpath(path, ROOT)}")
     return len(rows)
@@ -161,7 +173,7 @@ def collect_opensky():
             "geo_altitude": s[13], "squawk": s[14],
         })
 
-    path = os.path.join(DATA_DIR, "opensky", f"opensky_{day_tag()}.csv")
+    path = os.path.join(DATA_DIR, "opensky", f"opensky_{file_tag()}.csv")
     append_rows(path, OPENSKY_FIELDS, rows)
     print(f"  OpenSky: {len(rows)} aircraft -> {os.path.relpath(path, ROOT)}")
     return len(rows)

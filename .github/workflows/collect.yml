@@ -1,7 +1,13 @@
 # GitHub Actions —— BTH ADS-B 采集（公有仓库 = 免费无限分钟）
 #
-# 为什么用"长任务"：单个 job 内部以 30 秒间隔循环 5 小时，期间每 10 分钟提交一次。
+# 为什么用"长任务"：单个 job 内部以 30 秒间隔循环 5 小时 50 分，期间每 10 分钟提交一次。
 # 对比"每 10 分钟触发一次"：构建次数 2016 → 约 56 次，航迹分辨率反而更高（30 秒）。
+#
+# 为什么是 350 分钟而不是 300：cron 每 6 小时一次，任务若只跑 300 分钟，
+# 每个周期就固定空出 1 小时 —— 一天缺 4 小时，且缺口落在**固定时刻**
+# （北京时 15:17、21:17、03:17、09:17）。其中 21:17-22:17 正卡在夜间时段起点，
+# 会直接污染 Lnight 统计。改为 350 分钟后每周期仅缺 10 分钟（一天 40 分钟，2.8%），
+# 且仍留 10 分钟余量给 setup，不会撞 6 小时硬上限。
 #
 # 额度与限制依据（GitHub 官方文档 actions/reference/limits）：
 #   - 公有仓库 + 标准 GitHub-hosted runner = 免费无限分钟
@@ -54,9 +60,14 @@ jobs:
       - name: Install deps
         run: pip install --quiet requests
 
-      - name: Run long collector (5h @ 30s)
+      - name: Run long collector (5h50m @ 30s)
         env:
           OPENSKY_CLIENT_ID: ${{ secrets.OPENSKY_CLIENT_ID }}
           OPENSKY_CLIENT_SECRET: ${{ secrets.OPENSKY_CLIENT_SECRET }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python scripts/collect_longrun.py --interval 30 --max-minutes 300 --commit-every 10
+          # GITHUB_REF_NAME / GITHUB_RUN_ID are provided by Actions automatically.
+          # The collector needs them: REF_NAME because a CI checkout is DETACHED
+          # (rev-parse returns literal "HEAD", which silently breaks push), and
+          # RUN_ID to name each commit window's files uniquely so concurrent
+          # runs can never collide on the same CSV.
+        run: python scripts/collect_longrun.py --interval 30 --max-minutes 350 --commit-every 10

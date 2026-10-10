@@ -39,6 +39,32 @@ def git(*args, check=False):
                           capture_output=True, text=True, check=check)
 
 
+def new_batch():
+    """Unique stem for the next commit window's files."""
+    now = datetime.now(timezone.utc)
+    rid = (os.environ.get("GITHUB_RUN_ID") or "local")[-4:]
+    return f"{now.strftime('%Y%m%d')}_{now.strftime('%H%M')}_{rid}"
+
+
+def target_branch():
+    """Branch to push to.
+
+    CI checkouts are DETACHED, so `git rev-parse --abbrev-ref HEAD` returns
+    the literal string "HEAD". Using that as a refspec ("HEAD:HEAD") makes
+    pull and push fail silently - which is exactly how the first GitHub run
+    stalled after ~30 minutes: one external push diverged the remote, every
+    later push was rejected, and ~2 hours of data died with the runner.
+
+    Prefer the branch name CI hands us; fall back to master.
+    """
+    for key in ("GITHUB_REF_NAME", "PUSH_BRANCH"):
+        v = (os.environ.get(key) or "").strip()
+        if v and v != "HEAD":
+            return v
+    b = git("rev-parse", "--abbrev-ref", "HEAD").stdout.strip()
+    return b if b and b != "HEAD" else "master"
+
+
 def commit_and_push(tag):
     """Stage data/, commit, and push. Never fatal - data stays on disk."""
     push_url = os.environ.get("PUSH_URL")
@@ -48,6 +74,7 @@ def commit_and_push(tag):
         gh_repo = os.environ.get("GITHUB_REPOSITORY")
         if gh_token and gh_repo:
             push_url = f"https://x-access-token:{gh_token}@github.com/{gh_repo}.git"
+    branch = target_branch()
     git("config", "user.name", "ci-collector")
     git("config", "user.email", "ci@local")
     git("add", "data")
@@ -58,24 +85,30 @@ def commit_and_push(tag):
         return
 
     cm = git("commit", "-m", f"chore(data): ADS-B snapshot {tag}")
-    print(f"  [{tag}] commit rc={cm.returncode}")
+    print(f"  [{tag}] commit rc={cm.returncode} branch={branch}")
 
     if not push_url:
         print("  PUSH_URL not set - skipping push (data is local only)")
         return
 
-    # rebase first in case a concurrent job pushed
-    rb = git("pull", "--rebase", push_url, "HEAD:" + current_branch())
-    if rb.returncode != 0:
-        print(f"  pull/rebase failed: {rb.stderr.strip()[:200]}")
-    ps = git("push", push_url, "HEAD:" + current_branch())
-    print(f"  [{tag}] push rc={ps.returncode}"
-          + ("" if ps.returncode == 0 else f" :: {ps.stderr.strip()[:200]}"))
-
-
-def current_branch():
-    r = git("rev-parse", "--abbrev-ref", "HEAD")
-    return (r.stdout.strip() or "master")
+    # Sync with the remote before pushing: another run (or a local push) may
+    # have moved the branch. Data files are per-batch, so rebase never
+    # conflicts - each run only ever ADDS new files.
+    for attempt in range(1, 4):
+        rb = git("pull", "--rebase", push_url, branch)
+        if rb.returncode != 0:
+            git("rebase", "--abort")
+            print(f"  [{tag}] rebase rc={rb.returncode} :: "
+                  f"{rb.stderr.strip()[:120]}")
+        ps = git("push", push_url, f"HEAD:{branch}")
+        if ps.returncode == 0:
+            print(f"  [{tag}] push rc=0")
+            return
+        print(f"  [{tag}] push rc={ps.returncode} ({attempt}/3) :: "
+              f"{ps.stderr.strip()[:120]}")
+        time.sleep(5)
+    print(f"  [{tag}] !! push failed 3x - data stays committed locally, "
+          f"will retry on the next window")
 
 
 def main():
@@ -92,10 +125,14 @@ def main():
     commit_period = args.commit_every * 60
     last_commit = time.time()
 
+    # Each commit window writes its own file, so concurrent runs never collide.
+    os.environ["DATA_BATCH"] = new_batch()
+
     print("=" * 62)
     print(f"long-run collector @ {datetime.now(timezone.utc).isoformat()}")
     print(f"interval={args.interval}s  max={args.max_minutes}min  "
           f"commit every {args.commit_every}min")
+    print(f"batch={os.environ['DATA_BATCH']}  branch={target_branch()}")
     print("=" * 62)
 
     cycles, ok_cycles, total_rows = 0, 0, 0
@@ -118,6 +155,7 @@ def main():
         if time.time() - last_commit >= commit_period:
             commit_and_push(datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"))
             last_commit = time.time()
+            os.environ["DATA_BATCH"] = new_batch()   # fresh file next window
 
         remaining = deadline - time.time()
         if remaining <= 0:
