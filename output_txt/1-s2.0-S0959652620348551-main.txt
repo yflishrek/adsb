@@ -1,0 +1,843 @@
+                                                             Journal of Cleaner Production 281 (2021) 124811
+
+
+
+                                                            Contents lists available at ScienceDirect
+
+
+                                                      Journal of Cleaner Production
+                                                journal homepage: www.elsevier.com/locate/jclepro
+
+
+
+
+Evaluating the economic and ecological impact for small and medium
+airport subsidies in China
+Dexiang Wu *, Hongbin Qi
+School of Economics and Management, Beihang University, Beijing, 100191, China
+
+
+
+
+a r t i c l e i n f o                                 a b s t r a c t
+
+Article history:                                      The small and medium-sized airports play an important role for advancing the construction of a powerful
+Received 4 March 2020                                 civil aviation country in China in the new era. Subsidies for small and medium airports is a way to
+Received in revised form                              encourage airports to increase their air transport volume and relieve the ﬁnancial burden of local gov-
+15 October 2020
+                                                      ernments, it is also helpful to improve the local economy and ecological environment. This paper
+Accepted 22 October 2020
+                                                      evaluated the performance of 79 subsidized small and medium airports between 2014 and 2016 by using
+Available online 9 November 2020
+                                                      the Cross Efﬁciency Model (CEM). The analysis showed that the subsidy efﬁciency is strongly related to
+                                       ^as de
+Handling editor: Cecilia Maria Villas Bo              airport development strategies, subsidy distribution and airport emission pollution. First, most of the
+Almeida                                               airports can use subsidy better if they receive a fair and average subsidy level. Second, the airport efﬁ-
+                                                      ciency in middle and west regions are more rely on subsidies than their eastern peers. Finally and most
+Keywords:                                             interestingly, the ecological indicator, PM10 reduction, affects the performance of the eastern airports
+Cross efﬁcient                                        much more than those in western region. For example, after adding this variable into the evaluation
+Small and medium airports                             model, 5 airports changed their state from efﬁciency to inefﬁciency all located in eastern region, while
+Subsidy
+                                                      the efﬁcient state of airports in western keep unchanged.
+Ecological impact
+                                                                                                                        © 2020 Elsevier Ltd. All rights reserved.
+DEA
+
+
+
+
+1. Introduction                                                                        passenger throughput is low and the proﬁtability is poor, these small
+                                                                                       and medium airports are very important to facilitate people’s travel
+    With the development of China and its economy, people’s living                     and build a comprehensive national transportation network. The
+standards continue to improve, and the demand for aviation ser-                        Civil Aviation Administration of China (CAAC) has formulated doc-
+vices is becoming increasingly signiﬁcant. Aviation travel has                         uments to subsidize small and medium airports with annual
+gradually become one of the most important modes of trans-                             throughput below 2 million and meeting the subsidy standards.
+portation. Like ordinary infrastructure, the airport has the charac-                      On the one hand, the construction of small and medium airports
+teristics of positive externalities, a long construction period, and                   can beneﬁt local economy and social welfare. Take an example of
+huge initial investment. Therefore, the construction of the airport is                 the construction of small and medium-sized airports that greatly
+mainly completed by government funding. Later operations and                           promoted regional economic development. Lijiang, Yunnan is a
+maintenance also require government subsidies (Fig. 5).                                famous tourist destination. But due to the long round-trip time and
+    Since the establishment of the ﬁrst commercial airport, Nanyuan                    inconvenient trafﬁc, passengers travel to Lijiang less and stay short.
+airport in Beijing, in 1909, more and more small and medium air-                       After the airport was completed, the number of passengers
+ports have been built and play a signiﬁcant role in the Chinese airline                increased exponentially. According to 2012 data, 1.9 million out of
+network. As of the end of 2017, there were 171 airports with an                        every 5 million passengers in Lijiang come by air. The average
+annual passenger throughput of less than 2 million, accounting for                     length of stay of European and American tourists is 5e6 days, and
+about three-quarters of the number of national transportation air-                     the average daily consumption of each person is 1500 RMB (z225
+ports, but the throughput only accounted for 7% of the total                           US dollars) (China.org.cn, 2012). The airport, though small and
+throughput of national transportation airports. Although the annual                    medium, greatly promote the economic development of Lijiang and
+                                                                                       become a more popular tourist city.
+                                                                                          On the other hand, however, the upsurge in the construction of
+                                                                                       small and medium airports can sometimes cause huge economic
+ * Corresponding author.                                                               burdens on local governments. A staff member from a poor county
+   E-mail address: dextre.wu@utoronto.ca (D. Wu).
+
+https://doi.org/10.1016/j.jclepro.2020.124811
+0959-6526/© 2020 Elsevier Ltd. All rights reserved.
+D. Wu and H. Qi                                                                                               Journal of Cleaner Production 281 (2021) 124811
+
+
+in China revealed that behind the maintenance of local small and              issued in 2008 and revised in 2010, 2012 and 2020. Research on
+medium airports is a high government subsidy.” One round-trip                 airport subsidies in China mainly focused on the analysis of subsidy
+ﬂight from China Southern Airlines, the local government pro-                 policies themselves or based on subsidy data. Huang et al. (2017)
+vided it a subsidy of 150,000 RMB (z22,500 US dollars), and Air               analyzed the operating status of small and medium-sized airports
+China’s round-trip subsidy from the local government was as high              and drove new suggestions for subsidy policies by analyzing airport
+as 400,000 RMB (z60,000 US dollars) (www.cnr.com and Nearly                   statements (Huang CunanDu, 2019). Liu et al. (2019) analyzed
+80”sm, 2014).                                                                 subsidy data in-depth and put forward the conclusion to modify
+    Moreover, the construction and operation of airports may cause            subsidy policies (LIU YiYUAN, 2017).
+ecological impact and serious health problems. Jones et al. (2015)                The evaluation of airport performance and operational efﬁ-
+stated that with the rapid development of the civil aviation and              ciency has been discussed widely. Lin et al. (2006) applied the DEA
+international travel on a global scale, people are gradually con-             method to evaluate the operational performance of more than 20
+cerned about the human health and ecological environmental im-                major airports around the world (Lin and Hong, 2006). Pacheco
+pacts caused by airborne particulate emissions from airports (Jones           et al. (2006) appraised the impact of privatization of Brazilian air-
+et al., 2015). Then they appraised the magnetic environment                   ports on airport efﬁciency (Pacheco et al., 2006). Curi et al. (2010)
+measurement method to determine the speciﬁc source of atmo-                   evaluated the performance of Italian airports under an improved
+spheric particulate matter emissions. Actually, airports are one of           DEA framework (Curi et al., 2010).Martín and Roman (2001) stud-
+the important sources of air pollution and noise pollution, and               ied Spain’s priority privatization and veriﬁed the impact on airport
+long-term exposure of surrounding residents to these pollution can            efﬁciency [?].
+cause chronic health risks and even death. Considering the                        The discussion of subsidy mainly focused on subsidy optimiza-
+importance of airport trafﬁc and convenient transportation, airlines          tion and performance evaluation, Xia et al. (2018) applied DEA
+are suggested to use clear fuel. Zhao et al. (2019) studied the impact        method to study the optimal subsidy rate of local governments to
+of different site selection strategies for new Dalian Airport on the          reduce emissions (Xia et al., 2018). Bai et al. (2018) used the classical
+ecological environment of birds, and the results showed that                  Slacks-based Measure and Tobit model to study the positive or
+different sites have signiﬁcantly different ecological impacts on             negative effect of environmental subsidies on green efﬁciency be-
+birds (Zhao et al., 2019).                                                    tween 2010 and 2015 (Bai et al., 2018). Yu et al. (2018) used cross-
+    Because airport has the characteristics of positive externalities         efﬁciency and structural efﬁciency models to evaluate current ferry
+such as ecological impact, and airport subsidy itself is related to           subsidy allocation policy versus proposed method, and provided
+multi-candidates and tremendous funds. Allocation fairness is                 valuable opinions on the subsidy allocation policy of ferry ﬁrm (Yu
+crucial for the efﬁciency of the subsidy and social resources usage.          et al., 2018).
+Obtaining subsidies can stimulate the employment and economic                     In terms of airport subsidies research, Forsyth (2006) used
+growth, but it may also affect the ecosystem and cost more money              computational general equilibrium (CGE) model to study the
+to reset the local ecology. Thus, it is important to evaluate the             regional and national effects of airport subsidies on economic ac-
+performance of funded airports on a long-time horizon. Current                tivities (Forsyth and Campus, 2006). Miller et al. (2016) analyzed
+literatures lack an approach for airport subsidy efﬁciency from a             the welfare effect of US airport subsidies from 2002 to 2012 and
+systematic perspective. Data envelope analysis (DEA) offers an                indicated that subsidies to small airports can have a welfare effect
+alternative to integrate multi-factors and compare peers under an             (Miller et al., 2016). Go€ ssling et al. (2017) discussed the impact of
+optimization framework.                                                       civil aviation subsidies on market outcomes, which include the civil
+    The main contributions in this paper are three fold. First,               aviation system, economic conditions, and negative climate
+existing literature have evaluated the airport performance by using           changes (Go  €ssling et al., 2017).
+different variables, however, few of them seen airport subsidy as a               Ecological impact has been discussed widely in many industries.
+major topic in term of the efﬁciency. This paper measures the dy-             Bai et al. (2018) studied the green efﬁciency from thermal power
+namic performance of airport subsidy through a cross-efﬁciency                ﬁrms in China. And they found that air pollution mainly come from
+framework. Second, this paper offered a quantitative alternative              PM10, SO2 and NO2 (Bai et al., 2018). Jones et al. (2015) used
+to assess the China’s small and medium airport subsidy compared               magnetic measurement to ensure the characterisation of atmo-
+with that most of the existing literature studied it from a qualitative       spheric particulate pollution from airport, and found out that the
+perspective. Third, pollution emission from airports may be                   particulate emissions caused by airports mainly come from engine
+harmful to nearby residents and to the ecological system. This pa-            emissions, brake residue and tire wear residue (Jones et al., 2015).
+per uniquely appraised the ecological impact of airport subsidies.            Carugno et al. (2017) found the PM10 is strongly correlated with
+    This paper aims to investigate the key variable dimensions that           death attributable (AD) in last decade in Lombardy and the impact
+impact the performance of small and medium airport subsidies in               was heterogeneous among areas. The observed PM10 reduction
+China. To our best knowledge, the current literature rarely evaluate          resulted in a decline in AD between 2003 and 2014 (Carugno et al.,
+the efﬁciency for those airports, this paper is the ﬁrst work focuses         2017). Castro et al. (2017) estimated the health impacts attributable
+on the ecological impact in terms of airport emission pollution.              to reduction in PM 10 and NO2 exposure in Agglomeration of
+    This work applies a cross efﬁciency-based model to evaluate the           Lausanne-Morges, Switzerland, between 2005 and 2015. Their
+performance of small and medium airports in China. The rest of the            research indicated that PM10 exposure reduction of 3.3 mg/m3
+paper is arranged as follows. The subsequent section indicates the            between 2005 and 2015 can prevent 26 premature death, and led to
+literature review of this work. Section 3 introduces the design of            reduction of approximately CHF 36 million annually. Conduction
+indicators and data sources, Section 4 introduces the methods used            and concern of ecological impact can not only improve ecological
+in this article, and Section 5 Models and solves the performance              environment and save money, but also can save lives.
+problem of small and medium-sized airports and analyzes the re-                   The existing literature rarely links airport performance evalua-
+sults. Finally, we conclude the work in Section 6.                            tion with airport subsidies and the ecological impact of airport
+                                                                              subsidies was also not evaluated in previous researches.
+2. Literature review                                                              Using a mathematical analysis, the DEA methods estimate and
+                                                                              rank the efﬁciencies of different Decision-Making Units (DMUs)
+   China’s small and medium airport subsidy policy was ﬁrst                   and have successful application in transportation, environment and
+                                                                          2
+D. Wu and H. Qi                                                                                             Journal of Cleaner Production 281 (2021) 124811
+
+
+energy. Chu et al. (1992) analyzed the performance of two transit            (Parker, 1999). Oum et al. (2006) analyzed how government
+agencies on the basis of DEA model (Chu et al., 1992). Wu and Liang          participation affect airport performance (Oum et al., 2006). All the
+(2009) examined the ecosystem efﬁciency by combining Genetic                 above papers took these three air transport indicators into outputs.
+Algorithm Neural Networks (GAAN) and DEA model in Wuhan (Wu                      Subsidies as inputs directly affect air transport volume. And the
+and Liang, 2009). Criswell and Thompson (1996) used DEA meth-                impact of subsidies on local economic growth is realized through
+odology to compare the efﬁciency of alternative economic systems             air transportation indirectly. Prior studies have proved that air
+(Criswell and Thompson, 1996).                                               transportation has causality relationship with economic growth.
+    When dealing with DEA model, negative values may be gener-               Chi and Baek (2013) approved that air passenger is one contributor
+ated. Adler and Berechman (2001) pointed out that afﬁne trans-               to economic growth in American both in the long run and short run
+formations of data do not affect the result of the CCR model (Adler          (Chi and Baek, 2013). Baker et al. (2015) evaluated Australia’s 88
+and Berechman, 2001). However, the result of normalize data with             regional airports and had similar conclusion (Baker et al., 2015).
+negative entries must have zeros.Generally, inputs and outputs of            Button et al. (2010) even found that a doubling passenger increases
+DEA model need to be strictly positive. Scholars have been dis-              per capita income of Virginia by 4% (Button et al., 2010). Studies
+cussing how to deal with zeros and missing values in DEA.                    showed that air transportation has direct, indirect or induced
+Thompson et al. (1993) studied the important role of zero in DEA             impact on employment (Ishutkina and Hansman, 2008) (Ishutkina
+applications and discussed three issues (Thompson et al., 1993). An          and Hansman, 2008). Button and Taylor (2000) stated that the
+example in that paper stated that structural zeros represent a de-           community where American airport locates can gain employment
+cision making process. That is, the manager consciously chooses              generation from air services (Button and Taylor, 2000). Donzelli
+not to invest in a certain factor or produce a product, and trying to        (2010) investigated the entry of low-cost airline can generate new
+replace the zeros with arbitrary positive numbers may bring bad              jobs in South Italy (Donzelli, 2010). With the emerging rise of Air
+results to managers who want to use DEA results in practice. Adler           service, related Tertiary industry has a vigorous development
+and Berechman (2001) proposed, if necessary, to make all data                (Brueckner, 2003) (Brueckner, 2003).
+strictly positive by adding 1 to all output values (Adler and                    In previous literature review, we found the construction and
+Berechman, 2001). Zhu et al. (2018) applied two-step procedure               operation of airports may cause ecological impact and health
+to issue the lack of data homogeneity between DMUs. Kuosmanen                problems. Holt (2015) argued there is a weak correlation between
+(2002) analyzed that though it is common to delete blank data in             airport noise and insufﬁcient sleep (Holt et al., 2008). Therefore,
+matrix, it’s a huge loss of information if deleting the entire column        only Particulate Matter 10 (PM10) reduction is considered to be
+where blank data locates (Kuosmanenet al., 2100). He then pointed            equivalent to the ecological impact of airport subsidies. To sum up,
+that studies after Charles, Cooper and Rhodes (1978) relaxed the             the output indicators are set to passenger throughput, freight
+minimum data constrains, and allowed zeros in input and output               throughput, aircraft takeoffs and landings, local registered popu-
+entries without any technical barriers.                                      lation, local GDP, value-added of tertiary industry, new urban
+    In terms of studying airport subsidy, current literature focus           employment and Particulate Matter 10 reduction. The input and
+either on policy making using statistical approach or the welfare            output indicators used in this work are shown in Table 1.
+effect on local people. It is rarely to see the research about the
+ecological effect on airport subsidies, and our paper tries to ﬁll the       3.2. Data
+gap and build the connection between the airport performance and
+both economic and ecological factors.                                           The number of subsidized airports reached 133 between 2014
+                                                                             and 2016. Due to the availability of data, this paper studies the small
+3. Indicator and data                                                        and medium airports in the prefecture-level cities, remove those in
+                                                                             county-level cities, deletes airports with incomplete data and the
+3.1. Indicator                                                               ﬁnal research object is 79. See Appendix A.7 for a list of small and
+                                                                             medium airports.
+   The Inputs and Outputs are very important when using the DEA                 The subsidy data comes from the civil aviation small and me-
+model. We study the performance of small and medium airport                  dium airports subsidy fund published by the Civil Aviation
+subsidies through exploring how various airports use subsidies,              Administration of China every year between 2014 and 2016. Pas-
+including ﬁxed subsidies and variable subsidies, to improve air              senger throughput, freight throughput and aircraft takeoffs and
+transport volume, develop local economy and affect the ecological            landings are from “Statistical Data on Civil Aviation of China”.
+environment. Therefore, this article sets the input indicators as            Economic growth data are from Wind economic database. And the
+ﬁxed subsidy and variable subsidy.                                           ecological indicator, Particulate Matter 10, is collected from “CHINA
+   Passenger throughput, freight throughput and aircraft takeoffs            CITY STATISTICAL YEARBOOK” from 2013 to 2016.
+and landings are the most common output indicators when eval-                   Since the output indicators used in this paper include annual
+uating airport performance. Gillen and Lall (1997) appraised the             variation values, like ðPM10 reductionÞ2015 ¼ ðPM10Þ2014 
+operational performance in 21 US airports both in airside and ter-            ðPM10Þ2015 , negative values may be generated. According to liter-
+minal (Gillen and Lall, 1997). Parker (1999) studied the change of           atures in Section 2, by normalizing the entry vectors, minimum
+airport performance in the privatization of Britsh Airport Authority         data boundary of the entry vector is relaxed.
+
+
+
+
+                                                                         3
+D. Wu and H. Qi                                                                                                                 Journal of Cleaner Production 281 (2021) 124811
+
+Table 1
+Input and Output indicators.
+
+ Input            ﬁxed subsidy* and variable subsidy**
+ indicators
+
+ Output           passenger throughput, freight throughput, aircraft takeoffs and landings; local registered population, local GDP, value-added of tertiary industry, new
+   indicators     urban employment, PM10 reduction
+
+*The ﬁxed subsidy is a region based amount that setted ahead. **unit variable ratio  passenger throughput.
+
+
+                                                                                        range of subsidy ﬂuctuations has increased in turn. Fig. 2 represents
+                                                                                        GDP in 2014. It indicates the economic development level of East is
+                                                                                        better than Middle and West. The data of 2015 and 2016 share same
+                                                                                        characteristics in the ﬁgures. Discussion in-depth of the impact of
+                                                                                        airport subsidies to air transportation, local economy and ecological
+                                                                                        environment is in Section 5 (Fig. 3).
+
+
+
+                                                                                        4. Methodology
+
+                                                                                        4.1. Data envelope analysis
+
+                                                                                            The Data Envelopment Analysis Method (DEA) is a method ﬁrst
+                                                                                        proposed by the famous American operations researcher A.
+                                                                                        Charnes and W.W. Copper in 1978 and used to evaluate the relative
+                                                                                        efﬁciency. Without the need to set weights and dimensionless
+                                                                                        processing of the index, the relative efﬁciency value can be ob-
+                       Fig. 1. Subsidy2014 boxplot by region.                           tained by linear programming. Therefore, it is widely used in multi-
+                                                                                        input and multi-output social problems. Its application areas
+                                                                                        include transportation, education, energy and so on. The Charnes-
+                                                                                        Cooper-Rhodes (CCR) model is one of the most representative
+                                                                                        DEA models. It assumes constant returns to scale to study input-
+                                                                                        output efﬁciency (Charnes et al., 1978). The CCR model can be
+                                                                                        divided into input-oriented and output-oriented. The output-
+                                                                                        oriented is to maximize the output without changing the amount
+                                                                                        of input elements, which is suitable for the research content of this
+                                                                                        paper. Therefore, the output-oriented CCR model is chosen.
+                                                                                            Suppose there are n Decision Making Units (DMUs) to be eval-
+                                                                                        uated, which are represented by j ¼ 1;/;n, respectively. Each DMU
+                                                                                        has m different inputs and obtains s different outputs. The input
+                                                                                        and output vectors of DMUj are Xj ¼ ðx1j ; x2j ; /; xmj ÞT > 0 and Yj ¼
+                                                                                        ðy1j ; y2j ; /; ysj ÞT > 0ðj ¼ 1; /; nÞ. For DMUj, its DEA efﬁciency value
+                                                                                        can be deﬁned by:
+                                                                                             Ps
+                                                                                                 k¼1 uk ykj        U T Yj
+                                                                                        Ej ¼ Pm                ¼          ; j ¼ 1; /; n
+                                                                                                  i¼1 vi xij       V T Xj
+                        Fig. 2. GDP2014 boxplot by region.
+                                                                                        where V ¼ ðv1 ; v2 ; /; vm ÞT and U ¼ ðu1 ; u2 ; /; us ÞT are the weights
+   The Civil Aviation Administration of China divides subsidized                        of the input and output vectors respectively.
+small and medium airports into East, Middle and West. The pro-                              For p ¼ 1;/;n, the CCR model can be expressed by the following
+portions of each regions in 79 subsidized airports are coincide with                    formula:
+those of total 133 airports. Therefore, the 79 subsidized airports
+selected in this paper can represent all the subsidized airports to                              U T Yp
+                                                                                        max
+some extent. Fig. 1 indicates subsidy in 2014. It reﬂects that the                               V T Xp
+average level of subsidy is similar between the three region, and the
+
+
+
+
+                                                                                    4
+D. Wu and H. Qi                                                                                                           Journal of Cleaner Production 281 (2021) 124811
+
+
+                                                                                      of the matrix are composed of the efﬁciency value of the CCR
+            U T Yj                                                                    model, The non-diagonal elements Eij are evaluated using the
+s:t:                1; j ¼ 1; /; n
+            V T Xj                                                                    optimal weight of DMUi to evaluate the cross efﬁciency value of
+                                                                                      DMUj .(see. Table 2)
+U  0; V  0                                                                             The row and column averages of cross efﬁciency matrix are very
+                                                                                                                              Pq
+                                                                                      important. The row average value Ai ¼ j¼1;jsi Eij =ðq 1Þ repre-
+    Since the CCR output angle assumes that for all DMUs the
+amount of input factors is constant, the formula is equivalent to the                 sents the average cross efﬁciency evaluation of other DMUs by
+                                                                                                                                P
+following easy-to-solve linear programming form:                                      DMUi , and the column average value ej ¼ qi¼1;isj Eij =ðq 1Þ rep-
+                                                                                      resents the average cross efﬁciency evaluation of DMUj by other
+max          U T Yp                                                                   DMUs, where q is the number of CCR effective units. Ai and ej can be
+                                                                                      used to calculate the Maverick Index Mj and Diversity Index Di , both
+s:t:    V T Xp ¼ 1                                                                    of which can offer a wealth of information.
+                                                                                                                                            E e
+                                                                                         Maverick Index can be obtained by Mj ¼ j ej j. High Mj indicates
+        T             T
+  V Xj þ U Yj  0; j ¼ 1; /; n                                                       a Maverick DMU. Though it is CCR effective, it performs poorly
+                                                                                      when cross evaluated by the other DMUs. CCR effective units with
+U  0; V  0                                                                          lower Mj values usually perform better. Diversity index can be
+                                                                                      obtained by Di ¼ Ei AA i
+                                                                                                                . Generally, a CCR effective unit with higher Di
+   The CCR efﬁciency value Ej of the DMUs can be obtained through                                           i
+
+
+the above formula. When Ej ¼ 1, it is an effective decision unit.                     is preferred. A high Di value means a unique advantage resource,
+When Ej < 1, it is an ineffective unit. This DMU can become effective                 which is superior to other decision units.
+by adjusting the input or output.                                                         Combing the background of this work, evaluating the ecological
+                                                                                      impact of small and medium airport subsidies, Ai and ej are given
+                                                                                      special meanings. Ai indicates the average performance when the
+4.2. Cross efﬁciency model                                                            subsidy of other airports are used by airport i to impact the air
+                                                                                      transportation, local economy and ecological environment. While ej
+   The above DEA method has a shortcoming, that is, the decision                      means the average performance when the airport j’s subsidy is used
+unit tends to endow more weight with favorable input and output                       by other airports to impact the city.
+indicators and less weight to unfavorable input and output in-                            Speciﬁcally, low Ai together with high Di indicate the airport
+dicators. This is more signiﬁcant in the case when there are fewer                    managers have unique advantage in airport management, espe-
+input and output indicators, there will be more effective decision-                   cially in subsidy management and distribution. However, the sub-
+making units, making the DEA efﬁciency value less distinguish-                        sidy management of airport i may not very suitable for other
+able, and failing to effectively evaluate the object. Those over-                     airports, as a result, the row average value Ai is low. On the contrary,
+evaluated units are called marverick DMU.                                             high Ai indicates the management style of airport i is ordinary,
+   In order to make up for this shortcoming, Sexton et al. proposed                   lacking innovation and uniqueness, but very suitable for most of the
+Cross Efﬁciency model, which can identify marverick DMUs and                          airports. As a result, the row average Ai is high. High ej means that
+provide more information for deep analysis of objects (TR Sexton                      the amount of airport j’s subsidy is not only reasonable for itself but
+and Silkman, 1986).                                                                   also suitable for other CCR effective airports, while low ej indicates
+    Vi ¼ ðvi1 ; vi2 ; /; vim ÞT and Ui ¼ ðui1 ; ui2 ; /; uis ÞT are the weights       the amount of airport j’s subsidy is only designed for it. Generally,
+of the input and output vectors of DMU i respectively. The input and                  unit with low Ai and high ej is preferred.
+
+output vectors of DMUj are Xj ¼ ðx1j ; x2j ; /; xmj ÞT > 0 and Yj ¼
+                                                                                      5. Result and discussion
+ ðy1j ; y2j ; /; ysj ÞT > 0ðj ¼ 1; /; nÞ. For DMUj.The cross-efﬁciency
+evaluation model can be expressed by the following simple                             5.1. Result
+formula:
+                                                                                         After determining the input and output indicators, we used
+        UiT Yj                                                                        optimization toolbox in Matlab (2019b) to solve CCR and CEM
+Eij ¼            ; j ¼ 1; /; n
+        ViT Xj                                                                        model, as well as subsidy efﬁciency of subsidized airports in this
+                                                                                      research.
+  The key to the CEM model is to construct a cross efﬁciency                             The output angle CCR efﬁciency values are obtained as shown in
+matrix, as shown in (Doyle and Green, 1994). The diagonal elements                    Table 3. As mentioned earlier, the CCR model has the disadvantage
+                                                                                      of over-evaluation of decision making objectives. Therefore, it is
+Table 2                                                                               doubtful that many of the 79 subsidized small and medium airports
+Cross efﬁciency matrix.                                                               reach CCR effective status in each year. The cross-efﬁciency model
+                                                                                      proposed by Sexton and others is used to test whether some of
+                              Rated DMU
+                                                                                      these CCR effective airports are maverick DMUs.
+                              1       2     3     4       5       6                      Similarly, we use Matlab 2019b to calculate the cross subsidy
+  Rating DMU              1   E11     E12   E13   E14     E15     E16     A1          efﬁciency Eij of CCR efﬁcient airports in each year, where 1  i; j  q
+                          2   E21     E22   E23   E24     E25     E26     A2
+                          3   E31     E32   E33   E34     E35     E36     A3
+                                                                                      Table 3
+                          4   E41     E42   E43   E44     E45     E46     A4
+                                                                                      Average CCR efﬁciency value and number of CCR effective units.
+                          5   E51     E52   E53   E54     E55     E56     A5
+                          6   E61     E62   E63   E64     E65     E66     A6           Year                             2014            2015             2016
+                              e1      e2    e3    e4      e5      e6
+                                                                                       Average efﬁciency value          0.876399877     0.818222995      0.934305654
+*citation from Doyle and Green (1994).                                                 Number of CCR effective units    17              22               27
+
+
+                                                                                  5
+D. Wu and H. Qi                                                                                           Journal of Cleaner Production 281 (2021) 124811
+
+
+                                                                         (q is the number of CCR effective numbers). After obtaining cross-
+                                                                         efﬁciency matrix, it is available to calculate the row average Ai
+                                                                         and column average ej , then Maverick Index Mj and Diversity Index
+                                                                         Di . As mentioned earlier, lower Mj value and higher Di usually
+                                                                         perform better, and each CCR effective airport corresponds with a
+                                                                         (Ai ;ej ). As a result, airport subsidies in the northwest direction (low
+                                                                         Ai , high ej ) of the coordinate system are genuinely DEA effective,
+                                                                         and the airports in the southeast (high Ai , low ej ) are generally
+                                                                         maverick units. Figs. 3e5 are graphs of CEM effective airports
+                                                                         grouping in 2014, 2015 and 2016. To help readers understand the
+                                                                         grouping situation, the grouping tables are presented in Appendix
+                                                                         B.10 (Fig. 4).
+                                                                              As can be seen from Figs. 3e5, in 2014 there were 4 airports that
+                                                                         were generally DEA effective, 5 were maverick units, and the rest
+                                                                         had advantages in subsidy allocation or subsidy management. In
+                                                                         2015, there were 4 airports that were genuinelly DEA effective, 8
+                                                                         were Maverick units, and the rest could achieve DEA effective by
+                                                                         improving subsidy distribution and subsidy management. 9 air-
+                                                                         ports in 2016 were genuinely DEA effective, 10 were maverick units,
+                  Fig. 3. CEM effective airports grouping in 2014.       and the remaining airports can be managed to reach DEA effective.
+                                                                              From 2014 to 2016, Changzhou Airport and Nantong Airport has
+                                                                         always been genuinely DEA effective. Handan Airport, Yichun
+                                                                         Airport and Dongying Airport are frequently seen in the “high Ai ,
+                                                                         low ej ”, which indicates they are maverick units. The rest airports
+                                                                         that are frequently seen in “high Ai , high ej ” and “low Ai, low ej ” are
+                                                                         Xuzhou Airport, Mianyang Airport and Ankang Airport. These air-
+                                                                         ports have the advantage of subsidy distribution or subsidy man-
+                                                                         agement, and they can achieve DEA effective by improving the
+                                                                         management ability.
+
+                                                                         5.2. Discussion
+
+                                                                         5.2.1. We discuss the groups as follows
+
+                                                                           (1) Changzhou Airport has been in the “low Ai, high ej ” for 3
+                                                                               years in a row and Nantong Airport has been in that group for
+                                                                               2 years in a row. Low Ai implies that these two airports have
+                                                                               special capacity of managing airport subsidies to positively
+                                                                               impact air transportation, local economy and ecological
+                                                                               environment. Changzhou Airport and Nantong Airport
+                                                                               became international airports in 2014 and 2015, respectively,
+                                                                               promoting air transport volume and local economy through
+                  Fig. 4. CEM effective airports grouping in 2015.
+                                                                               international and regional routes. In addition, Nantong
+                                                                               Airport Group strived to make Nantong the site of Shanghai’s
+                                                                               third airport, and received tens of millions of passengers
+                                                                               from Shanghai every year. Excellent airport management has
+                                                                               improved the economy and air transportation. In addition,
+                                                                               Nantong Airport pays attention to ecological impact. After
+                                                                               receiving complaints from residents about aircraft training
+                                                                               noise, it quickly compressed ﬂight plans and optimized
+                                                                               routes to achieve a balance between the airport, residents
+                                                                               and the ecological environment. High ej indicates that the
+                                                                               amount of subsidies allocated to Changzhou and Nantong
+                                                                               Airport are actually preferred by all subsidized airports. It can
+                                                                               be explained by two reasons. On the one hand, the ﬁxed
+                                                                               subsidies of them are the highest in East region. On the other
+                                                                               hand, due to their air transport volume, the variable subsides
+                                                                               are high either. All the subsidized airports prefer higher
+                                                                               subsidies to develop their transportation, economy and
+                                                                               ecological environment.
+                                                                           (2) Handan Airport, Yichun Airport and Dongying Airport are
+                                                                               typical airports in “high Ai , low ej ”, which implies these air-
+                                                                               ports perform badly both in airport management and sub-
+                                                                               sidy usage. On the one hand, due to the shortage of passenger
+                  Fig. 5. CEM effective airports grouping in 2016.             and freight throughput, the ﬁxed subsidy and variable
+                                                                     6
+D. Wu and H. Qi                                                                                                      Journal of Cleaner Production 281 (2021) 124811
+
+
+        subsidy of these airports are low. On the other hand, the               Table 5
+        revenue of these airport are low, though they keep operating,           Efﬁcient airport number with PM10 reduction.
+
+        which put huge economic burdens on local governments.                    Year                                      2014             2015            2016
+        Instead of canceling routes, these airports need to encourage            Efﬁcient airport with PM10                17               22              27
+        local residents to travel through airport and build more air             Efﬁcient airport without PM10             22               18              22
+        connections with other cities.
+
+    (3) Mianyang Airport, Weifang Airport, Xuzhou Airport and                   and Middle regions face more ecological problems than East region.
+Ankang Airport are frequently seen in “high Ai , high ej ” and “low Ai,            To sum up, as we can see from Table 6, DEA effective airports
+low ej ”. These airports perform well either in airport management              mainly concentrate in the East region. Generally, the efﬁciency of
+or in subsidy allocation, but still have room for improvement.                  airport subsidies in Middle and West regions are low or Maverick
+    Mianyang Airport is a typical “low Ai, low ej ” airport, which              Units. Therefore, we can conclude the main characteristics of
+implies an excellent management ability but a special subsidy                   airport subsidies efﬁciency as follows:
+allocation. The passenger throughput increased for three consec-
+utive years, and in 2016 the passenger throughput reached 217                     (1) The efﬁciency of airport subsidies has obvious regional
+millions. As a result, it had the most variable subsidy, which                        characteristics, and the East region is generally higher than
+contributed to an extremely high subsidy allocation. Considering                      the other two regions. This is because cities with better
+most small and medium airports may not capable to fully use high                      economic foundations are often able to build air connections
+subsidy, the ej of Mianyang Airport is low. Mianyang Airport were                     with other cities more quickly, obtain more passengers and
+actively conducting route marketing promotion conferences. In this                    freight throughput, and at the same time receive higher
+way, multiple routes were open to promote the economy at both                         subsidies. Because of this situation, the ﬁxed subsidies and
+ends of the route.                                                                    variable subsidies in CAAC’s subsidy policy were beneﬁcial to
+    Weifang Airport is a typical “high Ai , high ej ” airport, which                  the West region. However, the West region is at a disad-
+indicates an ordinary management ability and a great subsidy                          vantage in the aviation network
+allocation. A high ej value indicates that the subsidy allocated to it is         (2) Airports with high subsidy efﬁciency generally have
+very suitable for other airports. It is exciting to ﬁnd that the subsidy              distinctive airport management methods, and these airports
+of Weifang almost equal average level, and that’s why a high ej is                    usually choose suitable airport development strategy on the
+calculated. Besides, like other small and medium airports, Weifang                    basis of economy foundation, geographical location and in-
+Airport strived to become an international port in 2015. The style of                 dustrial characteristics. Then they effectively use small and
+airport management is so popular in all subsidized airports that it                   medium airport subsidies to develop air transport volume,
+did not reﬂect a special management advantage to get “low Ai ” or                     local economy and ecological system. These airports have the
+“high Di ”.There are typical airports in each region in Table 4. Air-                 characteristic of low Ai and high Dj , and are mainly concen-
+ports in East region are in Group LH or HH for most of the time,                      trated in the East region.
+while airports in West or Middle region are usually in Group HL, HH               (3) In the discussion above, we found that when the subsidy
+and LL. In our subsidy efﬁciency evaluation system, airports in HL,                   amount is at the average level, the corresponding ej is the
+HH and LL are not efﬁcient DMU. It indicates that in East region, the                 highest, that is, any airport is suitable for using this subsidy
+subsidies are usually performed well to make an Economic impact,                      to improve air transportation, local economy and ecological
+while in Middle and West are not. Just like what we have discussed                    environment.
+above, airports in East region with better economic foundation can
+reach higher passenger throughput, where they get more subsidies                    When evaluating the large-scale system under uncertain envi-
+to impact air transport, local economy and ecological environment.              ronment, the maverick DMU always exist due to the dynamic
+    In addition, We use variable, PM10 reduction, to represent the              change of the input and output values. The CEM model is a useful
+environmental impact of the airport performance. We found that                  alternative to eliminate the inefﬁceint DMU and make the result
+this variable can increase the number of efﬁcient airport if the DEA            more stable. Potential applications in reality include large-scale
+system includes it, for example, the efﬁcient DMU became 22 under               portfolio selection, genetic based clone ranking and so on. For
+the model with PM10 reduction dimension, which increased 5                      example, the parameters of Mean-Variance Optimization model
+airports compared with the result without the variable. As we can               may changed dramatically due to market environment deterio-
+see in Table 5, including PM10 as output entry increases efﬁcient               rated, and associated optimal portfolio is unstable. In order over-
+DMU from 18 to 22 in 2015, and efﬁcient DMU from 22 to 27 in                    come this issue, we can apply CEM model to delete the inefﬁcient
+2016. We are very excited to ﬁnd that the DMUs change from                      asset before optimize the selection system, and therefore form a
+inefﬁcient to efﬁcient are all in East region, which means subsidized           two-layer asset selection system.
+airports in East region tend to perform well in ecological protection.
+It can be explained by two reasons. First, airports and cities in East
+                                                                                6. Conclusion and extension
+region have better Economic foundation and Ecological con-
+sciousness, so they are willing to put more efforts on ecological
+                                                                                   This paper evaluate the efﬁciency of small and medium airports
+environment, as we can see in discussion of Nantong Airport above.
+                                                                                and discuss the impact on three aspects. Discussion is based on a
+Second, from the perspective of geographical features, the West
+                                                                                sample of 79 subsidized small and medium airports from 2014 to
+
+Table 4
+Typical airports in each region.
+
+                                              2014                                      2015                                         2016
+
+  Handan Airport (West region)                (0.6721,0.4840) (Group HL)                (0.0925,0.7272) (Group HL)                   (0.9059,0.7099) (Group LH)
+  Mianyang Airport (Middle region)            (0.3614,0.5005) (Group LL)                (0.5314,0.4849) (Group HL)                   (0.5199,0.6590) (Group LL)
+  Nantong Airport (East region)               (0.1684,0.8535) (Group LH)                (0.0925,0.7272) (Group LH)                   (0.9059,0.7099) (Group HH)
+
+
+                                                                            7
+D. Wu and H. Qi                                                                                            Journal of Cleaner Production 281 (2021) 124811
+
+Table 6
+Average CCR efﬁciency scores in each year by regions.
+
+ Year                2014                                       2015                                         2016
+
+ Region              East             Middle            West    East           Middle          West          East             Middle              West
+
+ Average             0.912            0.883             0.844   0.872          0.853           0.747         0.987            0.938               0.892
+
+
+
+
+2016. In the ﬁrst step, CCR efﬁciency values and cross-efﬁciency                This research can do the followings for future extension: (1)this
+matrix are calculated based on CCR model and cross-efﬁciency                 paper only concentrate on the prefecture-level cities and remove the
+model. In the second part, the impact of small and medium airport            country-level cities. And the latter worth investigating. Actually,
+subsidies to air transport volume, local economy and ecological              airports in those areas are the ones that need the subsidies the most
+environment are investigated. The conclusions are as follows:                and are important members of Chinese airline network. (2) this
+                                                                             paper only focuses the subsidized small and medium airports in
+   (1) Under the present subsidy policy, the total subsidy amount,           China, the subsidy performance and ecological impact of airport
+       consists of variable part and ﬁxed part, mainly depend on             subsidies in other countries are also wroth investigating. (3) in
+       airport volume. However, the West region is at a disadvan-            further extension, more ecological indicators related to airport
+       tage in both aviation network and local economy. As a result,         should be taken into account of the airport subsidy efﬁciency model.
+       the subsidy policy can not help small and medium airport in
+       West region much and reach high airport subsidy efﬁciency.            CRediT authorship contribution statement
+       It is recommended to promote subsidy efﬁciency through
+       more ﬂexible subsidy policy and let all the subsidized airport,          Dexiang Wu: Supervision, Conceptualization, Resources,
+       especially Middle and West regions, make full use of airport          Methodology, Visualization, Investigation, Writing - original draft,
+       subsidies.                                                            Formal analysis, Validation, Writing - review & editing. Hongbin
+   (2) When the subsidy amount is at the average level, the cor-             Qi: Methodology, Data curation, Software, Formal analysis, Visual-
+       responding ej is the high. Since the total subsidy consists of        ization, Investigation, Writing - original draft.
+       ﬁxed subsidies and variable subsidies, it is recommended to
+       set a subsidy amount suitable for most airports in the ﬁxed
+                                                                             Declaration of competing interest
+       part, and speciﬁc subsidies for airports can be realized
+       through variable part. This is a nice supplement to airports in
+                                                                                The authors declare that they have no known competing
+       the Middle or West region that are not beneﬁted by the
+                                                                             ﬁnancial interests or personal relationships that could have
+       prevalent subsidy policy.
+                                                                             appeared to inﬂuence the work reported in this paper.
+   (3) Since Airports with high subsidy efﬁciency generally have
+       distinctive airport management methods and development
+       strategy to improve air transport volume, local economy and           Acknowledgement
+       ecological environment. It is suggested that among the
+       subsidized small and medium airports, benchmark airports                 This paper was supported in part by the Fundamental Research
+       and benchmark provinces should be selected through the                Funds for the Central Universities and in part by the National
+       subsidy performance evaluation model, and by point-to-                Natural Science Foundation of China under Grant 72021001. This
+       point assistance, all airports can ﬁnd the most suitable sub-         work was supported in part by the Ministry of Science and Tech-
+       sidy use strategy to reach high airport subsidy efﬁciency.            nology of China under Grant 2020AAA0108400 and Grant
+   (4) Finally, as economic development and travel demand in-                2020AAA0108402, in part by the National Natural Science Foun-
+       crease, there will be more and more small and medium air-             dation of China under Grant 71825007, in part by the Chinese
+       ports. It is recommended that the ecological impact of                Academy of Sciences Frontier Scientiﬁc Research Key Project under
+       airports be included in the subsidy distribution policy to            Grant QYZDB-SSW-SYS021, and supported by the International
+       achieve harmonious coexistence between the airport and the            Partnership Program of Chinese Academy of Sciences, Grant No.
+       ecological environment. In addition, we found the con-                211211KYSB20180042 and the Strategic Priority Research Program
+       struction of public ecological indicators system is not very          of CAS under Grant XDA2302020.
+       successful, therefore, the National Bureau of Statistics should
+       continue monitoring this type of data and work with soci-             Appendix A. List of small and medium airports
+       ologists, scientists and scholars.
+
+
+
+
+                                                                         8
+D. Wu and H. Qi                                                                                                        Journal of Cleaner Production 281 (2021) 124811
+
+Table A.7
+Subsidized airports in West region
+
+  Small and medium airports across different region I (30)
+
+  Chifeng Airport                                                           Tongliao Airport                                                       Wuhai Airport
+  Bayannaoer Airport                                                        Liuzhou Airport                                                        Beihai Airport
+  Wuzhou Airport                                                            Mianyang Airport                                                       Baise Airport
+  Yibin Airport                                                             Luzhou Airport                                                         Nanchong Airport
+  Dazhou Airport                                                            Guangyuan Airport                                                      Panzhihua Airport
+  Zunyi Airport                                                             Tongren Airport                                                        Anshun Airport
+  Bijie Airport                                                             Yulin Airport                                                          Yan’an Airport
+  Ankang Airport                                                            Jiayuguan Airport                                                      Jinchang Airport
+  Zhangye Airport                                                           Qingyang Airport                                                       Tianshui Airport
+  Zhongwei Airport                                                          Guyuan Airport                                                         Karamay Airport
+
+
+
+
+Table A.8
+Subsidized airports in Middle region
+
+  Small and medium airports across different region II (27)
+
+  Yongzhou Airport                                                          Luzhou Airport                                                        Daqing Airport
+  Mudanjiang Airport                                                        Anqing Airport                                                        Fuyang Airport
+  Jiamusi Airport                                                           Ganzhou Airport                                                       Qiqihar Airport
+  Jingdezhen Airport                                                        Jixi Airport                                                          Yichun Airport
+  Heihe Airport                                                             Yichun Airport                                                        Handan Airport
+  Qinhuangdao Airport                                                       Tangshan Airport                                                      Zhangjiakou Airport
+  Luoyang Airport                                                           Nanyang Airport                                                       Yuncheng Airport
+  Changzhi Airport                                                          Xiangfan Airport                                                      Datong Airport
+  Zhangjiajie Airport                                                       Changde Airport                                                       Huaihua Airport
+
+
+
+Table A.9
+Subsidized airports in East region
+
+  Small and medium airports across different region III (22)
+
+  Dandong Airport                                                      Jinzhou Airport                                                             Chaoyang Airport
+  Anshan Airport                                                       Baishan Airport                                                             Changzhou Airport
+  Xuzhou Airport                                                       Lianyungang Airport                                                         Nantong Airport
+  Yangzhou Airport                                                     Huai’an Airport                                                             Yancheng Airport
+  Zhoushan Airport                                                     Taizhou Airport                                                             Quzhou Airport
+  Weihai Airport                                                       Linyi Airport                                                               Jining Airport
+  Dongying Airport                                                     Weifang Airport                                                             Zhanjiang Airport
+  Meixian Airport
+
+
+
+
+Appendix B. CEM effective airports grouping
+
+
+Table B.10
+Group LH in 2014.
+
+  DMU                                           Aj                              ej                                Dj                                    Mj
+
+  Chaoyang Airport                              0.235777986                     0.5670787                         3.241278067                           0.763423666
+  Changzhou Airport                             0.252542385                     0.576149294                       2.959731352                           0.735661244
+  Nantong Airport                               0.168369849                     0.853454612                       4.939305678                           0.171708472
+  Bijie Airport                                 0.373261955                     0.652016923                       1.679083649                           0.533702523
+  Average                                       0.257488044                     0.662174882                       3.204849686                           0.551123976
+
+
+
+
+                                                                                         Table B.12
+                                                                                         Group HL in 2014.
+Table B.11
+Group LL in 2014.                                                                         DMU                Aj              ej              Dj               Mj
+
+  DMU                       Aj             ej                 Dj       Mj                 Jinzhou Airport    0.7144          0.3680          0.3997           1.7175
+                                                                                          Handan Airport     0.6721          0.4840          0.4878           1.0662
+  Tangshan Airport          0.4849         0.2878             1.0623   2.4748             Fuyang Airport     0.7925          0.4665          0.2618           1.1435
+  Mianyang Airport          0.3614         0.5005             1.7671   0.9979             Dongying Airport   0.7639          0.4484          0.3090           1.2300
+  Ankang Airport            0.2292         0.4443             3.3638   1.2506             Nanyang Airport    0.6921          0.3555          0.4449           1.8128
+  Average                   0.3585         0.4109             2.0644   1.5744             Average            0.7270          0.4245          0.3807           1.3940
+
+
+                                                                                     9
+D. Wu and H. Qi                                                                                           Journal of Cleaner Production 281 (2021) 124811
+
+Table B.13                                                                Table B.18
+Group HH in 2014.                                                         Group LH in 2016.
+
+ DMU                  Aj            ej            Dj        Mj             DMU                   Aj             ej             Dj               Mj
+
+ Xuzhou Airport       0.5564        0.7034        0.7971    0.4217         Handan Airport        0.4820         0.7627         1.0745          0.3111
+ Yichun Airport       0.8181        0.5580        0.2224    0.7921         Tangshan Airport      0.3790         0.7285         1.6384          0.3727
+ Linyi Airport        0.5997        0.5512        0.6676    0.8141         Changzhou Airport     0.5159         0.8040         0.9385          0.2438
+ Weifang Airport      0.8075        0.7026        0.2384    0.4233         Xuzhou Airport        0.0761         0.8370         12.1387         0.1947
+ Luoyang Airport      0.5440        0.5471        0.8381    0.8277         Fuyang Airport        0.6086         0.7128         0.6432          0.4029
+ Average              0.6651        0.6125        0.5527    0.6558         Weifang Airport       0.4437         0.7602         1.2539          0.3154
+                                                                           Luoyang Airport       0.5726         0.7063         0.7465          0.4158
+                                                                           Zhanjiang Airport     0.6393         0.8018         0.5642          0.2471
+                                                                           Wuzhou Airport        0.0874         0.7500         10.4435         0.3334
+Table B.14                                                                 Average               0.4227         0.7626         3.2713          0.3152
+Group LH in 2015.
+
+ DMU                   Aj           ej            Dj        Mj
+                                                                          Table B.19
+ Daqing Airport        0.4202       0.5111        1.3800    0.9566
+                                                                          Group LL in 2016.
+ Changzhou Airport     0.3227       0.5133        2.0991    0.9483
+ Nantong Airport       0.0925       0.7272        9.8066    0.3752         DMU                   Aj              ej             Dj              Mj
+ Xiangfan Airport      0.0443       0.5724        21.5806   0.7470
+ Average               0.2199       0.5810        8.7165    0.7568         Zhangjiajie Airport   0.6654          0.6887         0.5028         0.4520
+                                                                           Mianyang Airport      0.5199          0.6590         0.9234         0.5174
+                                                                           Average               0.5927          0.6739         0.7131         0.4847
+
+Table B.15
+Group LL in 2015.
+                                                                          Table B.20
+ DMU                   Aj           ej            Dj        Mj            Group HL in 2016.
+
+ Chaoyang Airport      0.1610       0.4053        5.2107    1.4670         DMU                   Aj             ej              Dj              Mj
+ Jixi Airport          0.4861       0.3797        1.0573    1.6336
+ Tangshan Airport      0.4210       0.3992        1.3751    1.5048         Anshan Airport        0.8929         0.5234          0.1200         0.9105
+ Linyi Airport         0.5080       0.4766        0.9685    1.0982         Jixi Airport          0.9165         0.6168          0.0911         0.6211
+ Ankang Airport        0.4616       0.4283        1.1662    1.3351         Yichun Airport        0.8323         0.5095          0.2015         0.9628
+ Average               0.4076       0.4178        1.9556    1.4077         Linyi Airport         0.9316         0.6705          0.0734         0.4915
+                                                                           Jining Airport        0.8976         0.6547          0.1141         0.5274
+                                                                           Nanyang Airport       0.8655         0.6279          0.1555         0.5927
+                                                                           Meixian Airport       0.9395         0.6651          0.0644         0.5034
+Table B.16                                                                 Dazhou Airport        0.8668         0.6507          0.1537         0.5368
+Group HL in 2015.                                                          Panzhihua Airport     0.7603         0.5992          0.3152         0.6689
+                                                                           Ankang Airport        0.7584         0.6766          0.3186         0.4780
+ DMU                       Aj            ej        Dj       Mj             Average               0.8661         0.6194          0.1608         0.6293
+
+ Mudanjiang Airport        0.6832        0.4217    0.4638   1.3713
+ Yichun Airport            0.6123        0.3863    0.6331   1.5888
+ Handan Airport            0.5348        0.3664    0.8700   1.7289        Table B.21
+ Tongliao Airport          0.6394        0.5050    0.5640   0.9803        Group HH in 2016.
+ Fuyang Airport            0.5424        0.5074    0.8437   0.9710
+ Weihai Airport            0.7709        0.4794    0.2972   1.0861         DMU                   Aj             ej              Dj              Mj
+ Dongying Airport          0.6629        0.4265    0.5085   1.3447
+                                                                           Chaoyang Airport      0.8071         0.7014          0.2391         0.4256
+ Mianyang Airport          0.5314        0.4849    0.8819   1.0625
+                                                                           Nantong Airport       0.9059         0.7099          0.1038         0.4086
+ Average                   0.6221        0.4472    0.6328   1.2667
+                                                                           Yangzhou Airport      0.8732         0.7297          0.1453         0.3704
+                                                                           Yancheng Airport      0.8274         0.7118          0.2087         0.4049
+                                                                           Weihai Airport        0.8207         0.7646          0.2184         0.3079
+                                                                           Yongzhou Airport      0.8352         0.6976          0.1973         0.4334
+Table B.17
+                                                                           Average               0.8449         0.7192          0.1854         0.3918
+Group HH in 2015.
+
+ DMU                   Aj           ej            Dj        Mj
+
+ Xuzhou Airport        0.5996       0.6872        0.6679    0.4552
+ Weifang Airport       0.7453       0.5933        0.3418    0.6855
+ Luoyang Airport       0.5098       0.6306        0.9615    0.5858
+ Nanyang Airrport      0.6688       0.7157        0.4953    0.3972
+ Zhanjiang Airport     0.7585       0.5592        0.3184    0.7883
+ Average               0.6564       0.6372        0.5570    0.5824
+
+
+
+
+                                                                     10
+D. Wu and H. Qi                                                                                                                            Journal of Cleaner Production 281 (2021) 124811
+
+
+References                                                                                         Huang Cunan, G.Y., Du, Wei, 2019. A brief analysis of operational status and subsidy
+                                                                                                        policy of small and medium airports. Civil Airports 86e89.
+                                                                                                   Ishutkina, M., Hansman, R.J., 2008. Analysis of Interaction between Air Trans-
+Adler, N., Berechman, J., 2001. Measuring airport quality from the airlines’ view-
+                                                                                                        portation and Economic Activity. In: The 26th Congress of ICAS and 8th AIAA
+     point: an application of data envelopment analysis. Transport Pol. 8 (3),
+                                                                                                        ATIO, vol. 8888.
+     171e181.
+                                                                                                   Jones, S., Richardson, N., Bennett, M., Hoon, S.R., 2015. The application of magnetic
+Bai, Y., Hua, C., Jiao, J., Yang, M., Li, F., 2018. Green efﬁciency and environmental
+                                                                                                        measurements for the characterization of atmospheric particulate pollution
+     subsidy: evidence from thermal power ﬁrms in China. J. Clean. Prod. 188 (49 e
+                                                                                                        within the airport environment. Sci. Total Environ. 502, 385e390.
+     61). ISSN 0959-6526, doi:e10.1016/j.jclepro.2018.03.312}. http://www.
+                                                                                                   T. Kuosmanen, et al., Modeling Blank Data Entries in Data Envelopment Analysis,
+     sciencedirect.com/science/article/pii/S0959652618309995.
+                                                                                                        Econ-WPA Working Paper at WUSTL 210001.
+Baker, D., Merkert, R., Kamruzzaman, M., 2015. Regional aviation and economic
+                                                                                                   Lin, L., Hong, C., 2006. Operational performance evaluation of international major
+     growth: cointegration and causality analysis in Australia. J. Transport Geogr. 43,
+                                                                                                        airports: an application of data envelopment analysis. J. Air Transport. Manag.
+     140e150.
+                                                                                                        12 (6), 342e351.
+Brueckner, J.K., 2003. Airline trafﬁc and urban economic development. Urban Stud.
+                                                                                                   Liu Yi, Z.T., Yuan, Ting, 2017. Research on the support policy of China small airports
+     40 (8), 1455e1469.
+                                                                                                        based on data analysis. Small Medium-sized Airport Develop. 39, 23e27þ34.
+Button, K., Taylor, S., 2000. International air transportation and economic devel-
+                                                                                                   Miller, B.I., Dewey, J.F., Denslow, D., Miller, E.B., 2016. A welfare analysis of subsidies
+     opment. J. Air Transport. Manag. 6 (4), 209e222.
+                                                                                                        for airports. J. Air Transport. Manag. 50, 83e90. ISSN 0969-6997, doi:e10.1016/
+Button, K., Doh, S., Yuan, J., 2010. The role of small airports in economic develop-
+                                                                                                        j.jairtraman.2015.10.006}.      http://www.sciencedirect.com/science/article/pii/
+     ment. J. Airpt. Manag. 4 (2), 125e136.
+                                                                                                        S0969699715001222.
+Carugno, M., Consonni, D., Bertazzi, P.A., Biggeri, A., Baccini, M., 2017. Temporal
+                                                                                                   Oum, T.H., Adler, N., Yu, C., 2006. Privatization, corporatization, ownership forms
+     trends of PM10 and its impact on mortality in Lombardy. Italy, Environ. Pollut.
+                                                                                                        and their effects on the performance of the world’s major airports. J. Air
+     227, 280e286. ISSN 0269-7491, doi:e10.1016/j.envpol.2017.04.077}. http://www.
+                                                                                                        Transport. Manag. 12 (3), 109e121.
+     sciencedirect.com/science/article/pii/S0269749116321315.
+                                                                                                   Pacheco, R.R., Fernandes, E., de Sequeira Santos, M.P., 2006. Management style and
+Charnes, A., Cooper, W.W., Rhodes, E., 1978. Measuring the efﬁciency of decision
+                                                                                                        airport performance in Brazil. J. Air Transport. Manag. 12 (6), 324e330.
+     making units. Eur. J. Oper. Res. 2 (6), 429e444.
+                                                                                                   Parker, D., 1999. The performance of BAA before and after privatisation: a DEA
+Chi, J., Baek, J., 2013. Dynamic relationship between air transport demand and
+                                                                                                        study. J. Transport Econ. Pol. 133e145.
+     economic growth in the United States: a new look. Transport Pol. 29, 257e260.
+                                                                                                   Thompson, R.G., Dharmapala, P., Thrall, R.M., 1993. Importance for DEA of zeros in
+Chinaorgcn, 2012. China’s branch airport construction frency: 5 years of investment
+                                                                                                        data, multipliers, and solutions. J. Prod. Anal. 4 (4), 379e390.
+     of 420 billion. URL. ﬁnance.china.com.cn/industry/wl/20121210/1179997.shtml.
+                                                                                                   Tr Sexton, A.H., Silkman, R.H., 1986. Measuring Efﬁciency: an Assessment of Data
+Chu, X., Fielding, G.J., Lamar, B.W., 1992. Measuring transit performance using data
+                                                                                                        Envelopment Analysis. Jossey-Bass.
+     envelopment analysis. Transport. Res. Pol. Pract. 26 (3), 223e230.
+                                                                                                   Wu, D., Liang, L., 2009. Ecological Footprint forecasting and estimating using neural
+Criswell, D.R., Thompson, R.G., 1996. Data envelopment analysis of space and
+                                                                                                        networks and DEA. Int. J. Global Environ. Issues 9 (3), 249e258.
+     terrestrially-based large scale commercial power systems for Earth: a prototype
+                                                                                                   Nearly 80”small airports” lose money and are maintained by huge ﬁnancial sub-
+     analysis of their relative economic advantages. Sol. Energy 56 (1), 119e131.
+                                                                                                        sidies. URL china. www.cnr.com. cnr.cn/ygxw/201410/t20141029_516684530.
+Curi, C., Gitto, S., Mancuso, P., 2010. The Italian airport industry in transition: a
+                                                                                                        shtml.
+     performance analysis. J. Air Transport. Manag. 16 (4), 218e221.
+                                                                                                   Xia, Q., Jin, M., Wu, H., Yang, C., 2018. A DEA-based decision framework to deter-
+Donzelli, M., 2010. The effect of low-cost air transportation on the local economy:
+                                                                                                        mine the subsidy rate of emission reduction for local government. J. Clean. Prod.
+     evidence from Southern Italy. J. Air Transport. Manag. 16 (3), 121e126.
+                                                                                                        202 (852), 846. ISSN 0959-6526, doi:e 10.1016/j.jclepro.2018.08.171}. http://
+Doyle, J., Green, R., 1994. Efﬁciency and cross-efﬁciency in DEA: derivations,
+                                                                                                        www.sciencedirect.com/science/article/pii/S0959652618325149.
+     meanings and uses. J. Oper. Res. Soc. 45 (5), 567e578.
+                                                                                                   Yu, M.-M., Chen, L.-H., Hsiao, B., 2018. A performance-based subsidy allocation of
+Forsyth, P., Campus, C., 2006. Estimating the Costs and Beneﬁts of Regional Airport
+                                                                                                        ferry transportation: a data envelopment approach. Transport Pol. 68, 13e19.
+     Subsidies: A Computable General Equilibrium Approach. German Aviation
+                                                                                                        ISSN 0967-070X, doi:e10.1016/j.tranpol.2018.04.004}. http://www.sciencedirect.
+     Research Society Workshop, Amsterdam.
+                                                                                                        com/science/article/pii/S0967070X17304043.
+Gillen, D., Lall, A., 1997. Developing measures of airport productivity and perfor-
+                                                                                                   Zhao, B., Wang, N., Fu, Q., Yan, H.-K., Wu, N., 2019. Searching a site for a civil airport
+     mance: an application of data envelopment analysis. Transport. Res. E Logist.
+                                                                                                        based on bird ecological conservation: an expert-based selection (Dalian,
+     Transport. Rev. 33 (4), 261e273.
+  €ssling, S., Fichert, F., Forsyth, P., 2017. Subsidies in aviation. Sustainability 9 (8),             China). Global Ecol. Conserv. 20, e00729 https://doi.org/10.1016/
+Go
+                                                                                                        j.gecco.2019.e00729}. ISSN 2351-9894. http://www.sciencedirect.com/science/
+     1295.
+                                                                                                        article/pii/S2351989419303312.
+J. B. Holt, X. Zhang, N. Sizov, J. B. Croft, Peer reviewed: airport noise and self-
+     reported sleep insufﬁciency, United States, 2008 and 2009, Prev. Chronic Dis. 12.
+
+
+
+
+                                                                                              11
+

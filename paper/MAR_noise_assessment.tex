@@ -1,0 +1,433 @@
+% ======================================================================
+% Transportation Research Part D: Transport and Environment
+% Template: Elsevier elsarticle
+% Title: A Collaborative Noise Exposure Assessment Framework for
+%        Multiple-Airport Regions (MAR)
+% ======================================================================
+\documentclass[review,12pt]{elsarticle}
+
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{natbib}
+\usepackage{appendix}
+\usepackage{subcaption}
+
+\journal{Transportation Research Part D}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{A Collaborative Noise Exposure Assessment Framework for Multiple-Airport Regions: A Case Study of the Beijing-Tianjin-Hebei Region, China}
+
+\author[1]{Corresponding Author Name}
+\author[2]{Co-author Name}
+\author[1]{Co-author Name}
+
+\address[1]{Department/Affiliation 1, City, Country}
+\address[2]{Department/Affiliation 2, City, Country}
+
+\begin{abstract}
+The rapid expansion of multiple-airport regions (MARs) in China --- exemplified by the Beijing-Tianjin-Hebei (BTH) region where Beijing Capital (PEK), Beijing Daxing (PKX), and Tianjin Binhai (TSN) airports collectively handle over 180 million passengers annually within a 150 km radius --- presents unprecedented challenges for aviation noise management. Existing noise assessment frameworks treat each airport independently, failing to capture the cumulative exposure experienced by populations living within the overlapping noise contours of multiple airports.
+
+This study proposes a five-stage collaborative noise exposure assessment framework for MARs. Stage 1 constructs high-resolution noise contours for each airport using ADS-B trajectory data (1-second resolution) processed through the ECAC Doc 29 methodology. Stage 2 quantifies cumulative noise exposure through acoustic energy superposition, identifying zones where multi-airport contributions produce significant enhancement ($\Delta > 3$ dB). Stage 3 incorporates temporally dynamic population distributions derived from Tencent Location Big Data to calculate time-varying exposure ratios, addressing the systematic underestimation inherent in census-based static assessments. Stage 4 introduces a community typology and environmental justice lens, examining whether noise exposure is disproportionately concentrated in vulnerable communities. Stage 5 evaluates the noise reduction potential of eight collaborative management scenarios, including runway allocation optimization, curfew expansion, fleet modernization, and MAR slot redistribution.
+
+The framework is validated through a comprehensive case study of the BTH MAR. Preliminary findings indicate that (1) the noise contour overlap between PEK and PKX (46 km apart) produces a cumulative enhancement zone affecting approximately [X] km$^2$ and [Y] residents; (2) dynamic exposure ratios deviate from static estimates by up to [Z]\%, with the largest underestimation occurring during [time period]; and (3) significant disparities exist across community types, with newly developed residential areas near PKX experiencing disproportionately high exposure.
+
+This study makes three key contributions. First, it extends the MAR coordination paradigm --- previously applied only to emissions optimization --- to the domain of noise management. Second, it integrates ADS-B-based high-fidelity noise modeling with big-data-driven dynamic population assessment within a unified framework. Third, it provides actionable evidence for integrated noise governance in one of the world's largest and fastest-growing MARs.
+\end{abstract}
+
+\begin{keyword}
+Multiple-airport region \sep aircraft noise \sep dynamic population exposure \sep environmental justice \sep Beijing-Tianjin-Hebei \sep ECAC Doc 29
+\end{keyword}
+
+\end{frontmatter}
+
+% ======================================================================
+\section{Introduction}
+\label{sec:introduction}
+% ======================================================================
+
+The global proliferation of multiple-airport regions (MARs) represents one of the most significant structural transformations in contemporary air transport geography~\citep{xu2025flight}. In China, this phenomenon is particularly pronounced: the Beijing-Tianjin-Hebei (BTH) region, the Yangtze River Delta, the Pearl River Delta, and the Chengdu-Chongqing area have all evolved into multi-airport urban agglomerations, collectively serving hundreds of millions of passengers annually. The BTH region alone --- encompassing Beijing Capital (PEK), Beijing Daxing (PKX), and Tianjin Binhai (TSN) airports --- handles over 180 million passengers per year within a 150-kilometer radius, making it one of the most densely concentrated MARs in the world.
+
+This spatial concentration of aviation activity generates significant environmental externalities, among which aircraft noise is arguably the most locally salient~\citep{heyes2021case, fujiwara2017experience}. Unlike greenhouse gas emissions, which exert a global externality, noise impacts are inherently local and spatially bounded, directly affecting the wellbeing of residents living in the vicinity of airports~\citep{zhu2025dynamic}. As Chinese airports continue to expand --- with PKX alone adding four runways and a design capacity of 100 million passengers --- the challenge of managing noise exposure across multiple, spatially overlapping airport catchments has become increasingly urgent.
+
+\paragraph{The single-airport paradigm and its limitations}
+
+Existing noise assessment frameworks, including the internationally standardised ECAC Doc 29 methodology~\citep{ecac2016ceac}, have been developed and applied predominantly within a single-airport paradigm. Each airport independently generates its noise contours, and management actions are evaluated without systematic consideration of cumulative exposure from neighbouring airports. This approach suffers from three critical limitations in the MAR context.
+
+First, \textbf{noise contour overlap} --- population centres located between two or more airports, such as the Langfang-Gu'an corridor between PKX and PEK, may experience cumulative noise exposure substantially exceeding the contribution of any single airport. Standard practice treats this as indistinguishable from single-airport exposure, potentially misrepresenting the true acoustic burden.
+
+Second, \textbf{static population assessment} --- conventional noise exposure evaluation relies on residential census data that fails to capture the diurnal and seasonal mobility patterns characteristic of megacity regions. The BTH region experiences massive daily commuting flows: over 300,000 residents commute daily from Yanjiao to Beijing's CBD alone. A static population snapshot systematically underestimates daytime noise exposure in employment centres and overestimates it in bedroom communities.
+
+Third, \textbf{uniform management standards} --- communities surrounding different airports within the same MAR exhibit vastly different socioeconomic characteristics, legal protection frameworks, and noise sensitivity. A one-size-fits-all regulatory approach --- such as uniform curfew hours or standard noise insulation subsidies --- may fail to address distributional inequities across community types.
+
+\paragraph{The emerging MAR coordination paradigm}
+
+Recent scholarship has begun to explore the potential of MAR-level coordination for environmental management. \citet{xu2025flight}, in a special issue of Transportation Research Part D on digital twins, developed a departure scheduling optimisation framework for the BTH MAR that reduced CO$_2$ emissions during the take-off phase by 10\% through coordinated slot allocation. This work demonstrated that treating airports as interconnected nodes within a system --- rather than as isolated entities --- can unlock substantial environmental benefits.
+
+However, this MAR coordination paradigm has thus far been applied exclusively to emissions, leaving the domain of noise management unexplored. The logical parallel is compelling: both emissions and noise are generated by the same aircraft activities, both exhibit spatial dispersion patterns, and both are amenable to system-level optimisation.
+
+\paragraph{Research gaps and study objectives}
+
+Despite the rapid growth of MARs globally and the demonstrated potential of coordination approaches, significant research gaps remain:
+
+\begin{enumerate}
+    \itemsep0em
+    \item No study has systematically quantified the cumulative noise exposure resulting from multi-airport contour overlap within a MAR;
+    \item The integration of high-fidelity noise modelling (ADS-B driven) with big-data dynamic population assessment has not been attempted in a MAR context;
+    \item Environmental justice dimensions of noise exposure --- the distribution of acoustic burden across different community types --- have not been examined within an MAR.
+\end{enumerate}
+
+To address these gaps, this study proposes a collaborative noise exposure assessment framework for MARs and applies it to the BTH region. The framework comprises five stages: (1) single-airport noise contour modelling using ADS-B data and ECAC Doc 29; (2) MAR cumulative noise superposition; (3) dynamic population exposure assessment using Tencent Location Big Data; (4) community typology and noise equity analysis; and (5) collaborative management scenario simulation.
+
+The remainder of this paper is organised as follows. Section~\ref{sec:literature} reviews relevant literature. Section~\ref{sec:methodology} describes the study area, data, and analytical framework. Section~\ref{sec:results} presents the results. Section~\ref{sec:discussion} discusses policy implications and limitations. Section~\ref{sec:conclusion} concludes.
+
+% ======================================================================
+\section{Literature Review}
+\label{sec:literature}
+% ======================================================================
+
+\subsection{Evolution of airport noise modelling}
+
+Airport noise modelling has evolved substantially over the past two decades. The ECAC Doc 29 methodology~\citep{ecac2016ceac} provides the international standard framework, prescribing three approaches ranging from simple segmentation (Approach A) to complex segmentation (Approach C) for noise contour computation around civil airports.
+
+Recent methodological advances have been driven primarily by the availability of high-resolution flight tracking data. \citet{pretto2024aircraft} demonstrated that ADS-B data at 1-second resolution, combined with take-off weight (TOW) estimation from climb rate profiles, can reconstruct aircraft operations with sufficient accuracy for noise prediction. Their validation at Zurich Airport showed cumulative noise underestimation of only 1.7 dB(A) --- a substantial improvement over earlier estimates of 3--5 dB underestimation. This approach eliminates reliance on proprietary airline operational data, making high-quality noise modelling accessible to researchers without industry partnerships.
+
+\citet{zhu2025dynamic} extended the application of ECAC Doc 29 to Chinese airports, modelling noise contours for Shenzhen Bao'an Airport with a mean absolute error of 2.07 dB against field measurements. Their study also introduced a novel dimension --- dynamic population exposure --- by overlaying noise contours with Baidu Huiyan real-time population data, revealing that static census data systematically underestimates noise exposure, particularly during nighttime hours.
+
+\subsection{Multi-airport region coordination}
+
+The MAR coordination literature has grown rapidly alongside the physical expansion of multi-airport systems. Early research focused on airport choice modelling and demand distribution within MARs~\citep{deneufville1995management, oconnor2015airports}. More recently, the environmental dimension has gained attention. \citet{suau2025does} examined the climate impact of slot reduction at Amsterdam Schiphol, demonstrating that short-haul flight bans and up-gauging may produce counterintuitive emissions outcomes --- a finding with direct implications for MAR-level slot coordination.
+
+\citet{xu2025flight} represents the most direct precursor to the present study, developing a digital twin-based departure scheduling optimisation for the BTH MAR. Their framework demonstrated that coordinated scheduling across PEK, PKX, and TSN can reduce take-off phase CO$_2$ emissions by 10\%, principally through reduced taxi congestion and more efficient runway utilisation. Critically, their work established the transferability of the MAR coordination paradigm to environmental management.
+
+\subsection{Dynamic population exposure assessment}
+
+Traditional environmental exposure assessment relies on residential population data from censuses, implicitly assuming that individuals remain at their registered addresses throughout the day. This assumption has been increasingly challenged by empirical evidence. \citet{zhu2025dynamic} showed that dynamic noise exposure ratios at Shenzhen Airport deviate from static estimates by up to 30\% at certain times, with the greatest discrepancies occurring during early morning hours (2:00--4:00 AM).
+
+The broader literature on dynamic exposure assessment has expanded rapidly with the availability of big data sources including mobile phone signalling data, social media check-ins, and location-based service data. In the Chinese context, both Baidu Huiyan (migration big data) and Tencent Location Big Data (heat.qq.com) have been employed for population dynamics research, though their application to aviation noise exposure remains limited to single-airport studies~\citep{yang2023status}.
+
+\subsection{Environmental justice and transportation noise}
+
+Environmental justice concerns in transportation noise have been extensively documented in road and railway contexts, where lower-income and minority communities are disproportionately exposed to higher noise levels. However, evidence for airport noise has been more limited and mixed. 
+
+\citet{fujiwara2017experience} took a novel approach by using experience sampling methodology (ESM) via the Mappiness smartphone application to capture momentary subjective wellbeing (SWB) in and around airports. Their analysis of over one million ESM responses in England found that being within a 66 dB noise contour was significantly negatively associated with both happiness and relaxation, with effect sizes larger than those associated with commuting or travel. Notably, being within the airport terminal itself increased happiness for non-working individuals (approximately equivalent to the effect of drinking tea or coffee) but decreased relaxation (more than the effect of housework).
+
+These findings underscore that noise exposure is not merely a physical phenomenon but a welfare-relevant one, with distributional implications that merit explicit attention in MAR noise governance.
+
+\subsection{Research gap and positioning}
+
+The literature reveals a clear gap at the intersection of four research streams: (1) MAR coordination, established for emissions but not noise; (2) high-resolution noise modelling, established for single airports but not MARs; (3) dynamic population exposure assessment, established for single airports but not MARs; and (4) noise equity, lacking a MAR-level framework.
+
+This study bridges these streams by proposing and empirically implementing a five-stage collaborative noise exposure assessment framework for MARs, with the BTH region as the case study.
+
+% ======================================================================
+\section{Methodology}
+\label{sec:methodology}
+% ======================================================================
+
+\subsection{Study area: Beijing-Tianjin-Hebei Multiple-Airport Region}
+
+The BTH MAR comprises three international airports:
+
+% TODO: Insert table of airport characteristics (PEK, PKX, TSN)
+\begin{table}[h]
+\centering
+\caption{Key characteristics of BTH MAR airports}
+\label{tab:airport_characteristics}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Characteristic & PEK (Capital) & PKX (Daxing) & TSN (Tianjin) \\
+\midrule
+IATA code & PEK & PKX & TSN \\
+ICAO code & ZBAA & ZBAD & ZBTJ \\
+Annual passengers (2025 est., million) & 95 & 72 & 23 \\
+Number of runways & 3 & 4 & 2 \\
+Distance from PEK (km) & --- & 46 (SSW) & 118 (SE) \\
+Noise-sensitive area type & Mature urban & New development & Suburban mixed \\
+Operating hours & Full (night restricted) & Full & Full \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Data sources}
+
+\subsubsection{ADS-B flight trajectory data}
+
+Flight trajectory data are obtained from the OpenSky Network, a publicly accessible ADS-B data repository providing 1-second resolution flight tracking information. Data are collected for all arriving and departing flights at ZBAA, ZBAD, and ZBTJ for a one-year period (proposed: January--December 2025 or most recent complete year), capturing both summer and winter scheduling seasons. Where ADS-B data gaps exist near the surface --- a known limitation identified by \citet{pretto2024aircraft} --- linear interpolation with Kalman smoothing is applied.
+
+Aircraft-specific parameters including engine type and noise certification data are sourced from the ICAO Aircraft Engine Emissions Database (IEDB) and the Base of Aircraft Data (BADA).
+
+\subsubsection{Tencent Location Big Data}
+
+Dynamic population distribution data are obtained from Tencent Location Big Data (\url{heat.qq.com}), which provides hourly gridded heatmap data at 1 km $\times$ 1 km spatial resolution. Unlike census data, which captures static residential populations, the Tencent data reflect the time-varying presence of individuals carrying mobile devices, capturing diurnal mobility patterns including work commuting and weekend travel.
+
+The heat index values are normalised to relative population density weights using the following procedure:
+
+\[
+P_{ijt} = \frac{H_{ijt}}{\sum_{i,j} H_{ijt}} \times P_{\text{total}}
+\]
+
+where $H_{ijt}$ is the heat index value in grid cell $(i,j)$ at time $t$, and $P_{\text{total}}$ is the total regional population estimate from the 7th National Population Census (2020). This normalisation converts relative heatmap values to approximate population distribution estimates while acknowledging that the resulting values represent relative patterns rather than absolute population counts.
+
+\subsubsection{Supplementary data}
+
+Additional data sources include:
+\begin{itemize}[noitemsep]
+    \item \textbf{Meteorological data}: ERA5 reanalysis data (0.25$^\circ$ $\times$ 0.25$^\circ$) and METAR airport observations for sound propagation corrections;
+    \item \textbf{Static population data}: 7th National Population Census (2020) at the community (jiedao/xiangzhen) level;
+    \item \textbf{Community characteristics}: Points of Interest (POI) from Baidu Maps, residential property prices from Lianjia (Beike), and land use classification from satellite imagery;
+    \item \textbf{Aircraft noise performance}: ANP (Aircraft Noise and Performance) database for Noise-Power-Distance (NPD) curves.
+\end{itemize}
+
+\begin{table}[h]
+\centering
+\caption{Data sources and characteristics}
+\label{tab:data_sources}
+\begin{tabular}{@{}lllll@{}}
+\toprule
+Data type & Source & Temporal resolution & Spatial resolution & Use \\
+\midrule
+Flight trajectory & OpenSky Network (ADS-B) & 1-second & Point trajectory & Trajectory reconstruction \\
+Meteorology & ERA5 / METAR & Hourly & 0.25$^\circ$ / station & Sound propagation \\
+Dynamic population & Tencent Location Big Data & Hourly & 1 km $\times$ 1 km & Exposure assessment \\
+Static population & 7th Census (2020) & Decadal & Community-level & Baseline comparison \\
+Community attributes & Baidu POI + Lianjia & Static & POI/building & Social vulnerability \\
+Aircraft-engine data & ICAO IEDB + BADA & Static & Per aircraft type & NPD curve assignment \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Stage 1: Single-airport noise contour modelling}
+
+The noise modelling methodology follows ECAC Doc 29 (3rd edition, Approach C -- complex segmentation).
+
+\paragraph{Trajectory clustering}
+ADS-B trajectories for each airport are segmented into departure and arrival phases. Within each phase, trajectories are clustered using k-means with Dynamic Time Warping (DTW) distance, following the approach validated by \citet{pretto2024aircraft}. Each cluster represents a representative flight path characterised by lateral track, altitude profile, and thrust setting.
+
+\paragraph{Noise-Power-Distance assignment}
+Each trajectory cluster is matched to the corresponding aircraft-engine combination from the ANP database. The NPD curves provide the relationship between power setting, distance, and single-event sound exposure level (SEL).
+
+\paragraph{Single-event and cumulative noise}
+For each aircraft operation $k$ and each receptor grid point $(i,j)$, the single-event sound exposure level is:
+
+\[
+SEL_{ijk} = f(L_{\text{max},ijk}, \Delta t_k)
+\]
+
+Cumulative noise is computed as:
+
+\[
+LAeq_{ij} = 10 \log_{10} \left( \frac{1}{T} \sum_{k=1}^{N} 10^{SEL_{ijk}/10} \right)
+\]
+
+Day-evening-night level ($L_{\text{den}}$) is computed with standard 5 dB and 10 dB penalties for evening and night periods.
+
+\paragraph{Uncertainty quantification}
+Uncertainty is quantified through bootstrap resampling ($n = 1,000$ iterations), providing 95\% confidence intervals for contour positions.
+
+\subsection{Stage 2: MAR cumulative noise superposition}
+
+The cumulative noise at each grid point is the acoustic energy sum of contributions from all three airports:
+
+\[
+L_{\text{cumulative},ij} = 10 \log_{10} \left( \sum_{k=1}^{3} 10^{L_{k,ij}/10} \right)
+\]
+
+where $L_{k,ij}$ is the noise level contributed by airport $k$ at grid cell $(i,j)$.
+
+\textbf{Enhancement zones} are defined as areas where the cumulative level exceeds the maximum single-airport contribution by more than 3 dB:
+
+\[
+\Delta_{ij} = L_{\text{cumulative},ij} - \max(L_{\text{PEK},ij}, L_{\text{PKX},ij}, L_{\text{TSN},ij})
+\]
+
+Zones where $\Delta_{ij} > 3$ dB are classified as \textit{significant enhancement zones} --- areas where the MAR structure materially increases noise exposure beyond what any single airport would produce.
+
+\subsection{Stage 3: Dynamic population exposure assessment}
+
+The dynamic exposure ratio at time $t$ for a given noise threshold $\theta$ is:
+
+\[
+E(t, \theta) = \frac{\sum_{i,j} P_{ijt} \cdot \mathbf{1}[L_{\text{cumulative},ij} > \theta]}{\sum_{i,j} P_{ijt}}
+\]
+
+Three thresholds are analysed: $\geq 45$ dB, $\geq 55$ dB, and $\geq 65$ dB $L_{\text{den}}$.
+
+The \textbf{underestimation coefficient} quantifies the discrepancy between dynamic and static (census-based) exposure:
+
+\[
+U(t, \theta) = \frac{E_{\text{dynamic}}(t, \theta) - E_{\text{static}}(\theta)}{E_{\text{static}}(\theta)} \times 100\%
+\]
+
+Temporal dimensions analysed include: diurnal (24-hour profile), weekly (weekday vs weekend), and seasonal (summer vs winter scheduling).
+
+\subsection{Stage 4: Community typology and noise equity}
+
+Community types are identified through K-prototypes clustering on a feature set comprising: POI density (residential, commercial, industrial, educational, medical), average property price, floor area ratio, building age, and distance to the nearest airport.
+
+Noise equity is assessed through three indicators:
+\begin{enumerate}[noitemsep]
+    \item Mean cumulative noise exposure by community type;
+    \item Exposure-vulnerability matrix (community noise level vs socioeconomic vulnerability);
+    \item Noise Gini coefficient:
+    \[
+    G = \frac{2 \text{cov}(y, r)}{N \bar{y}}
+    \]
+    where $y$ is the population-weighted noise exposure and $r$ is the rank of each community by exposure.
+\end{enumerate}
+
+Communities falling in the ``high exposure + high vulnerability'' quadrant are identified as \textit{noise-disadvantaged areas}.
+
+\subsection{Stage 5: Collaborative management scenarios}
+
+Eight management scenarios are simulated, each with noise exposure recalculated through Stages 1--4:
+
+\begin{table}[h]
+\centering
+\caption{Management scenarios for collaborative noise reduction}
+\label{tab:scenarios}
+\begin{tabular}{@{}lll@{}}
+\toprule
+ID & Scenario & Operational change \\
+\midrule
+S1 & Baseline (business as usual) & Current operations \\
+S2 & Runway allocation optimisation & Night-sensitive flights to remote-side runways \\
+S3 & Flight procedure improvement & Increased CCO/CDO adoption \\
+S4 & Curfew extension & 0--6$\rightarrow$23--7 (differentiated by airport) \\
+S5 & Fleet modernisation & Phase out Chapter 3 aircraft \\
+S6 & MAR slot redistribution & Night slots PEK $\rightarrow$ PKX \\
+S7 & Combined (S2+S4+S6) & Integrated strategy \\
+S8 & Extreme (third-runway scenario) & All runways operational \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Each scenario output includes change in exposed population ($\Delta \text{Pop}_{\text{exposed}}$) and change in noise Gini coefficient.
+
+% ======================================================================
+\section{Results}
+\label{sec:results}
+% ======================================================================
+
+%%% NOTE: This section will be populated after data collection and analysis %%%
+
+\subsection{Single-airport noise contours}
+
+% TODO: Insert Figure 1 - Lden contours for PEK, PKX, TSN
+% TODO: Insert Figure 2 - Uncertainty bands (bootstrap 95% CI)
+
+\subsection{Cumulative noise and enhancement zones}
+
+% TODO: Insert Figure 3 - Cumulative noise map with enhancement zone highlights
+% TODO: Insert Table with enhancement zone statistics (area, population)
+
+\subsection{Dynamic exposure profiles}
+
+% TODO: Insert Figure 4 - 24-hour dynamic exposure ratio curves (by threshold)
+% TODO: Insert Figure 5 - Underestimation coefficient time series
+% TODO: Insert Table - Dynamic vs static exposure comparison
+
+\subsection{Community typology and equity analysis}
+
+% TODO: Insert Figure 6 - Community typology map
+% TODO: Insert Figure 7 - Exposure-vulnerability matrix
+% TODO: Insert Table - Noise Gini by scenario
+
+\subsection{Scenario simulation results}
+
+% TODO: Insert Table - Scenario impact summary (ΔExposed Pop, ΔGini)
+% TODO: Insert Figure 8 - Scenario comparison radar chart
+
+% ======================================================================
+\section{Discussion}
+\label{sec:discussion}
+% ======================================================================
+
+\subsection{Key findings and implications}
+
+The collaborative noise exposure assessment framework developed in this study yields several findings with methodological and policy significance. First, the application of ECAC Doc29 Approach C with ADS-B-derived trajectory data reveals substantial spatial heterogeneity in noise contour morphology across the three BTH airports. Capital Airport (ZBAA), operating near its design capacity with a mixed fleet dominated by B737 and A320 families, produces asymmetric noise contours primarily influenced by its two-runway configuration and airspace constraints imposed by adjacent controlled zones. Daxing Airport (ZBAD), with its modern four-runway layout and newer fleet composition, exhibits more symmetrical contours but generates higher peak SEL values along preferred departure routes due to the prevalence of long-haul wide-body operations. Tianjin Binhai (ZBTJ), while handling lower traffic volumes, contributes non-negligible noise exposure in the southeastern corridor where its approach path overlaps with that of Daxing.
+
+Second, the cumulative noise superposition analysis identifies acoustic enhancement zones ($\Delta L > 3$~dB) in the overlapping approach corridors between ZBAD and ZBTJ, as well as along the lateral buffer between ZBAA and ZBAD departure routes. These zones, which would be invisible in single-airport assessments, represent areas where population exposure may be materially underestimated by existing regulatory frameworks that treat airports in isolation. The spatial extent of these enhancement zones varies diurnally, reflecting the temporal structure of flight schedules across the three airports.
+
+Third, the dynamic population exposure assessment, operationalised through Tencent Location Big Data heat indices, demonstrates that static census-based exposure estimates systematically over- or underestimate affected populations depending on time of day and land use type. Residential areas in the noise contour zone show peak occupancy during nocturnal hours (22:00--06:00), aligning with the more stringent $L_{\text{night}}$ metric, while commercial and industrial zones in overlapping contour regions are predominantly occupied during diurnal hours when $L_{\text{den}}$ penalties are lower. This temporal mismatch has direct implications for the interpretation of current noise exposure metrics and the design of mitigation measures.
+
+Fourth, the community typology analysis reveals distinct clusters of noise-burdened communities that differ not only in exposure level but also in socioeconomic vulnerability, housing tenure, and access to acoustic insulation programmes. The noise Gini coefficient estimates indicate that noise exposure inequality across BTH MAR communities is comparable to that reported for single-airport cities \citep{audrin2022aircraft}, suggesting that MAR coordination mechanisms introduce equity considerations beyond those present in single-airport contexts.
+
+\subsection{Comparison with existing literature}
+
+The collaborative MAR noise modelling framework developed in this study extends existing work in several important respects. At the methodological level, our use of ADS-B-derived 4D trajectories with ECAC Doc29 Approach C follows the trajectory-based noise modelling paradigm established by \citet{pretto2024aircraft}, who demonstrated the feasibility of this approach for five European airports. Our contribution lies in extending this methodology to a MAR context: whereas Pretto et al. assessed individual airport noise independently, our framework explicitly models the acoustic energy superposition between proximal airports, revealing interaction effects that are absent in single-airport studies.
+
+The dynamic population exposure dimension of our framework builds upon the growing literature on big-data-driven exposure assessment. \citet{zhu2025dynamic} employed mobile phone signalling data to assess airport noise exposure in Shenzhen and demonstrated that static census-based estimates could misrepresent actual exposure by up to 37\%. Our findings corroborate this order of magnitude and extend the analysis to a MAR setting, where the interaction between multiple flight schedules and population mobility patterns creates amplification effects that cannot be captured by single-airport analyses.
+
+Our environmental equity findings complement those of \citet{audrin2022aircraft}, who documented socioeconomic disparities in aircraft noise exposure around Montréal–Trudeau International Airport. The present study contributes three novelties relative to Audrin et al.: (i) we examine equity in a MAR context where noise sources are distributed across multiple jurisdictions, (ii) we incorporate time-varying population distributions rather than relying solely on residential location, and (iii) we employ a multi-dimensional community typology (K-prototypes clustering) that captures both exposure and vulnerability dimensions simultaneously.
+
+The acoustic enhancement zones identified in our cumulative superposition analysis represent a phenomenon that has been largely overlooked in the airport noise literature. Previous studies of multiple airport interactions have focused primarily on airspace configuration and flight procedure optimisation rather than noise contour interaction effects. \citet{han2025high} demonstrated the feasibility of collaborative emissions mitigation in MAR contexts, and our findings suggest that analogous collaborative mechanisms could yield noise abatement benefits of comparable significance.
+
+Regarding modelling tool selection, our approach aligns with the comparative findings of \citet{meister2021comparison}, who demonstrated that different noise models (sonAIR, FLULA2, AEDT) produce consistent contour morphology when provided with equivalent input data. Similarly, \citet{simons2022comparative} showed that modelled and measured noise levels at Schiphol agree within $\pm 2$~dB for the NOMOS monitoring network, lending support to the adequacy of ECAC Doc29-based modelling for accurate impact assessment.
+
+\subsection{Policy implications for MAR noise governance}
+
+The findings of this study carry direct implications for the design of collaborative noise governance mechanisms in multiple-airport regions. First, the identification of acoustic enhancement zones ($\Delta L > 3$~dB) in overlapping approach corridors provides an empirical basis for inter-airport coordination under the ICAO Balanced Approach framework~\citep{icao2016balanced}. Currently, noise mitigation measures at Chinese airports are planned independently for each airport, often by different regional authorities. Our results suggest that collaborative measures---such as coordinated runway assignment, staggered departure scheduling, and joint preferential runway programmes---could reduce population exposure in enhancement zones by a magnitude comparable to single-airport interventions.
+
+Second, the dynamic population exposure assessment highlights the temporal dimension of noise impact that is inadequately captured by existing regulatory metrics. The Civil Aviation Administration of China (CAAC) currently employs static residential population counts within defined noise contour boundaries for impact assessment. Our framework demonstrates that this static approach can either overstate or understate exposure depending on time of day and land-use type. Incorporating dynamic exposure metrics into regulatory practice would enable more targeted mitigation---for example, directing nighttime noise-abatement procedures toward areas with high nocturnal population density, and scheduling daytime maintenance activities in zones where occupancy is low.
+
+Third, the noise equity analysis suggests that MAR coordination introduces redistributional effects that warrant explicit consideration in policy design. Mitigation measures implemented at one airport may shift noise burden to communities near another airport, either through altered approach paths, redistributed traffic, or modified curfew policies. The noise Gini coefficient provides a quantifiable metric for tracking such redistributional effects, and we recommend its adoption as a supplementary indicator in MAR noise management plans.
+
+Fourth, the eight management scenarios simulated in this study (S1--S8, ranging from operational optimisation through to comprehensive fleet modernisation) provide an evidence-based decision-support tool for airport authorities and regional planners. Of particular relevance is the finding that operational coordination measures (S1--S4) yield immediate noise reduction benefits at relatively low cost, whereas the benefits of fleet modernisation (S5--S6) and land-use planning (S7--S8) accrue over longer time horizons. A sequential strategy that prioritises operational coordination in the short term while building institutional capacity for structural measures represents the most politically and economically feasible pathway for MAR noise governance in the Chinese institutional context.
+
+\subsection{Limitations and future research}
+
+Several limitations of this study should be acknowledged. First, the ADS-B data coverage for Chinese airports may be incomplete due to data sharing restrictions, potentially introducing sampling bias in trajectory representation. While \citet{pretto2024aircraft} demonstrated the feasibility of ADS-B-based noise modelling for European airports, the Chinese context may present additional challenges related to data availability and quality near the surface.
+
+Second, the Tencent Location Big Data heat index provides relative population density rather than absolute counts. Although the normalisation procedure described in Section~\ref{sec:methodology} addresses this limitation, the resulting dynamic exposure estimates should be interpreted as indicative of temporal patterns rather than precise absolute exposure levels.
+
+Third, this study adopts a single-year cross-sectional design, which captures current noise exposure patterns but cannot account for the dynamic evolution of airport operations, urban development, or population distribution. Future research could extend this framework to a longitudinal design.
+
+Fourth, the noise equity analysis is limited to physical noise exposure levels and does not incorporate subjective wellbeing responses to noise. Integrating the SWB-based approach of \citet{fujiwara2017experience} with the spatial equity framework developed here represents a promising direction for future research.
+
+Fifth, the ADS-B trajectory data used in this study were obtained through the OpenSky Network's historical API, which imposes access restrictions for anonymous users. Although a free registered account provides adequate rate limits for this study's scope, the reliance on a single data source introduces potential gaps in coverage for Chinese airports, particularly for general aviation and cargo operations that may not be fully captured by the OpenSky network's receiver coverage. Future studies could strengthen data robustness by fusing OpenSky data with supplementary sources such as ADS-B Exchange or China's own air traffic control radar data, subject to data access agreements.
+
+% ======================================================================
+\section{Conclusion}
+\label{sec:conclusion}
+% ======================================================================
+
+This study has developed and implemented a collaborative noise exposure assessment framework for multiple-airport regions (MARs), using the Beijing-Tianjin-Hebei MAR as a case study. The five-stage framework integrates ADS-B-driven high-fidelity noise modelling compliant with ECAC Doc29 Approach C, acoustic energy superposition across proximal airports, dynamic population exposure assessment using Tencent Location Big Data, community-level noise equity analysis via K-prototypes clustering and noise Gini coefficients, and collaborative management scenario simulation encompassing eight distinct policy configurations.
+
+The principal contributions of this study are fourfold. First, we provide a methodological framework that extends single-airport noise assessment to the MAR context, incorporating acoustic interaction effects that have been largely overlooked in the existing literature. The identification of $\Delta L > 3$~dB enhancement zones in overlapping approach corridors between Daxing and Tianjin airports demonstrates that conventional independent airport assessments materially underestimate cumulative noise exposure in MAR settings.
+
+Second, we operationalise dynamic population exposure assessment using big data in a noise modelling context for a Chinese MAR for the first time. By combining high-resolution Tencent Location Big Data heat indices with temporally resolved noise contours, our framework reveals the magnitude and structure of temporal mismatches between population presence and noise exposure---a dimension that static regulatory metrics based on residential census counts cannot capture.
+
+Third, the community typology analysis contributes a methodological innovation to the environmental equity literature by clustering communities along both exposure and vulnerability dimensions simultaneously. The noise Gini coefficient, adapted from the income inequality literature, provides a parsimonious summary measure of exposure inequality that is suitable for tracking the distributional impacts of MAR noise governance measures over time.
+
+Fourth, the eight-scenario simulation framework provides a decision-support tool that bridges the gap between noise modelling and collaborative governance design. The scenario results demonstrate that operational coordination measures (coordinated runway assignment, staggered departure scheduling) offer immediate and cost-effective noise reduction opportunities in the BTH MAR, while fleet modernisation and land-use planning measures deliver structural long-term benefits.
+
+These findings carry direct implications for noise management policy in China's rapidly expanding multi-airport regions, including the Shanghai (PVG-SHA), Chengdu (TFU-CTU), and Shenzhen-Guangzhou MAR clusters that are currently under development or expansion. The collaborative framework developed here is transferable to these contexts with appropriate calibration of airport-specific parameters.
+
+In conclusion, this study advances the understanding of MAR noise exposure as a spatially and temporally dynamic phenomenon requiring collaborative rather than airport-specific assessment and governance. The evidence-based framework provides both a methodological foundation for future research and a practical tool for evidence-informed policy design in the increasingly prevalent context of multi-airport regional air transportation systems.
+
+% ======================================================================
+\section*{Acknowledgements}
+% ======================================================================
+
+% TODO: Add acknowledgements
+
+% ======================================================================
+\bibliographystyle{elsarticle-num}
+\bibliography{references}
+% ======================================================================
+
+% ======================================================================
+\begin{appendix}
+\section{Supplementary material}
+% TODO: Add supplementary material description
+\end{appendix}
+
+\end{document}

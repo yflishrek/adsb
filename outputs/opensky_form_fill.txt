@@ -1,0 +1,59 @@
+============================================================
+ OpenSky 数据申请表 — 字段填写参考
+============================================================
+（以下内容可直接复制粘贴到 online 表单中）
+============================================================
+
+[1] Project URL
+————————————————————————————
+https://www.cauc.edu.cn/ (中国民航大学官网)
+或留空（如无可填的项目网站）
+建议：填导师个人页面或学院页面
+
+[2] Description（300-1000 字符！注意长度要求）
+————————————————————————————
+This research aims to assess aviation noise exposure in the Beijing-Tianjin-Hebei (BTH) multi-airport region using FAA's Integrated Noise Model (INM) and Aviation Environmental Design Tool (AEDT). The study area covers three major airports operating in close proximity: Beijing Capital (ZBAA), Beijing Daxing (ZBAD), and Tianjin Binhai (ZBTJ). Accurate flight operations data from OpenSky is essential as primary input for noise modeling, including aircraft type, departure/arrival times, flight trajectories, and altitude profiles. The research is supervised by Prof. Zhao Yifei at the College of Air Traffic Management, Civil Aviation University of China. Expected outputs include noise exposure contour maps, a comparative analysis across the three airports, and peer-reviewed journal publications. All data will be used exclusively for non-commercial academic purposes.
+
+=== 字符检查 ===
+上面的内容约 750 字符，符合 300~1000 要求。
+============================================================
+
+[3] Other Users（最多 150 字符）
+————————————————————————————
+Prof. Zhao Yifei (supervisor), [如还有其他同学可加，没有就填 "None" 或 "N/A"]
+
+[4] Funding
+————————————————————————————
+University-funded academic research project at Civil Aviation University of China (无外部商业资助的校内学术研究项目)
+
+[5] Commercial Use
+————————————————————————————
+☑ No （非商业学术用途）
+
+[6] Required Data — Area（最多 500 字符，地理范围描述）
+————————————————————————————
+Geographic bounding box covering the Beijing-Tianjin-Hebei (BTH) multi-airport region: Latitude 38.5N to 41.0N, Longitude 116.0E to 118.5E. This area encompasses three major airports: Beijing Capital International Airport (ZBAA), Beijing Daxing International Airport (ZBAD), and Tianjin Binhai International Airport (ZBTJ), as well as their respective approach and departure corridors including noise-sensitive populated areas.
+
+[7] Required Data — Time period（最多 500 字符，时间范围描述）
+————————————————————————————
+January 6, 2025 to January 19, 2025 (14 consecutive days). This period was selected to capture normal winter operational patterns at all three BTH airports, covering a full two-week cycle with both weekdays and weekends for representative traffic conditions. The data will be used to analyze daily noise exposure patterns, peak/off-peak variations, and cumulative noise impact from simultaneous operations across the three airports.
+
+[8] Data Type（至少选一项）
+————————————————————————————
+☑ Trino  （需要通过 Trino shell 查询 state_vectors_data4 表）
+☐ Raw
+☐ VHF
+
+[9] Other Comments（最多 250 字符）
+————————————————————————————
+We only need access to the state_vectors_data4 table for the specified 14-day period and geographic region. No raw message data or VHF/voice data is required. Thank you for supporting academic research.
+
+============================================================
+ 填写要点总结
+============================================================
+✓ Description 务必控制在 300~1000 字符之间
+✓ Data Type 至少勾选 Trino
+✓ Commercial Use 选 No
+✓ [您的姓名] 和 [您的 edu 邮箱] 记得在页面顶部的个人信息部分填写
+✓ 提交前检查所有字段是否有红色报错提示
+============================================================

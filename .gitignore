@@ -1,0 +1,31 @@
+# Secrets - never commit
+credentials.json
+*.conf
+!scripts/*.conf
+
+# Large source PDFs (keep repo light)
+*.pdf
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+
+# Large archives / test data (single file must stay under 100 MB for Gitee)
+*.tar
+新建文件夹/adsb_project/test_data/
+
+# WorkBuddy 工作记忆（含密钥/日志，不入库）
+.workbuddy/
+
+# 早期遗留样例目录（占推送体积 95%，与采集管线无关，不入库）
+新建文件夹/

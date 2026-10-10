@@ -1,0 +1,32 @@
+# Gitee Go 流水线 —— BTH ADS-B 采集
+#
+# 注意：Gitee Go 只识别仓库根目录 `.workflow/` 下的 YAML，
+# `.gitee/workflows/` 不会被识别（已踩坑验证）。
+#
+# cron 为 5 位（分 时 日 月 周）：
+#   '0 */6 * * *'  = 每 6 小时的整点触发
+#
+# 需在仓库「流水线 → 通用变量」中配置（建议密文）：
+#   OPENSKY_CLIENT_ID
+#   OPENSKY_CLIENT_SECRET
+#   PUSH_URL = https://<用户名>:<私人令牌>@gitee.com/<用户名>/<仓库名>.git
+
+version: '1.0'
+name: bth_adsb_collect
+displayName: BTH ADS-B 采集
+triggers:
+  schedule:
+    - cron: '0 */6 * * *'
+stages:
+  - stage: collect_stage
+    displayName: 采集并回传数据
+    strategy: naturally
+    trigger: auto
+    steps:
+      - step: build@python
+        name: run_collect
+        displayName: 运行长时采集器
+        pythonVersion: '3.9'
+        commands:
+          - pip install --quiet requests
+          - python3 scripts/collect_longrun.py --interval 30 --max-minutes 300 --commit-every 10

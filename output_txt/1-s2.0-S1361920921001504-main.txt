@@ -1,0 +1,664 @@
+                                                             Transportation Research Part D 95 (2021) 102847
+
+
+                                                                 Contents lists available at ScienceDirect
+
+
+                                                         Transportation Research Part D
+                                                           journal homepage: www.elsevier.com/locate/trd
+
+
+
+
+The case for a design-led, end-user focused airport noise
+management process
+Graeme Heyes a, *, Paul Hooper a, Fiona Raje a, Jack Sheppard b
+a
+ Manchester Metropolitan University, Ecology and Environment Research Centre, Department of Natural Sciences, Manchester Metropolitan
+University, Manchester M1 5GD, United Kingdom
+b
+ A Good Design Studio, 3 Fencegate Avenue, Stockport SK4 5EP, United Kingdom
+
+
+
+
+A R T I C L E I N F O                                          A B S T R A C T
+
+Keywords:                                                      Designing and implementing noise management actions is complex, with research showing that
+Design thinking                                                airports tend to develop such actions in an inconsistent manner, rather than through robust
+Airport noise                                                  processes based on a rich evidence base, and that aim to deliver targeted outcomes, through
+Noise management
+                                                               evaluable interventions. This article presents some key airport noise management challenges, and
+Innovation
+Balanced approach
+                                                               proposes that a framework to guide noise managers in the development of management actions
+Human-centred design                                           may enhance their capacity to respond to noise management challenges. The paper presents the
+                                                               concept of Design Thinking, a popular user-centric and iterative problem-solving approach. We
+                                                               argue that Design Thinking can play a key role in guiding noise managers through a series of
+                                                               propositions that lay the ground for future research to provide airports with the best possible
+                                                               guidance with which to develop – and implement – effective noise management actions.
+
+
+
+
+1. Introduction
+
+    Environmental noise produced by airport activity is a major constraint to operations at many airports, and the source of well
+documented health impacts on local communities. Airport noise managers are thus required to respond to a variety of noise man­
+agement problems over which they have influence, for example, the adoption of new interventions as described under the ICAO
+Balanced Approach, or their subsequent adaptation over time due to a range of factors including new technologies, changes to
+legislation, or changes to avoid overflying noise sensitive communities. Previous research in noise management at airports has focused
+on themes such as noise modelling and monitoring (El-Fadel et al., 2002; Torija, Self and Flindell, 2018), the use of metrics to describe
+the noise environment (Hooper and Flindell, 2013; Gasco, Asensio and de Arcas, 2017; Brink et al., 2018), policy (Murphy and King,
+2010; King, Murphy and Rice, 2011), and the role of non-acoustic factors (Vader, 2007; Schreckenberg and Schuemer, 2010; Bartels,
+Márki and Müller, 2015) in the human response to noise. There has however been a paucity of research pertaining to the process that
+noise managers go through in order to understand which noise management actions may be effective in a given setting (i.e. the
+adoption of a Performance-Based Navigation optimised flight path), or how those actions should be implemented in real terms (i.e.
+where an optimised flight path should be located).
+    This paper discusses the range of noise management challenges that exist for airports in terms of the process of designing and
+implementing noise management interventions (Section 2). In so doing we highlight the need for guiding processes or frameworks that
+can assist in the development of noise management actions that can produce targeted and evaluable outcomes, and we highlight six key
+
+
+    * Corresponding author.
+      E-mail addresses: G.heyes@mmu.ac.uk (G. Heyes), jack@madebyshepperd.com (J. Sheppard).
+
+https://doi.org/10.1016/j.trd.2021.102847
+
+Available online 24 April 2021
+1361-9209/© 2021 The Authors.                          Published by Elsevier Ltd.     This is an open access article under the CC BY-NC-ND license
+(http://creativecommons.org/licenses/by-nc-nd/4.0/).
+G. Heyes et al.                                                                                   Transportation Research Part D 95 (2021) 102847
+
+
+requirements that should underpin any such process. In Section 3 we introduce the concept of Design Thinking (DT), a popular
+approach taken in the development of products and services, that has been used in strategic management contexts, and that is
+increasingly advocated in the academic literature for application to solve a range of environmental challenges. In Section 4, the
+potentially significant role that DT can have in guiding airport noise managers in the design and delivery of noise management actions
+is discussed via a series of research propositions, before the paper concludes in Section 5 with a call for research case study research to
+apply DT approaches in real noise management settings.
+    It is our belief that this paper makes an important contribution to the literature. It summarises the various challenges of imple­
+menting noise management interventions from a process perspective for the first time. Moreover, we believe that the paper represents
+the first time that DT has been introduced in a noise management context, thus representing an important transposition of methods
+from the strategic and management literature into noise management dialogues. Our propositions of the role that DT can play in
+guiding noise managers represents an important call to action for further investigation via case study research, and makes a significant
+contribution to the development of much-needed guidance material that can support noise managers in the design and delivery of
+noise management interventions.
+
+2. The airport noise management challenge
+
+    The effective management of airport noise requires that noise managers address complex, varied and multi-scale challenges linked
+to noise induced health outcomes, including annoyance (Heyes et al., 2018b; Kranjec et al., 2019). This is accomplished through noise
+management strategies and actions that fall under four categories of the ICAO Balanced Approach (European Union, 2014), that may,
+for instance, seek to: reduce noise footprints or change the temporal or spatial distribution of noise (operational procedures); redis­
+tribute populations exposed to noise (land-use planning); and, protect people from noise (i.e. through insulation and noise zoning).
+More recently, researchers have identified a range of non-acoustic factors known to play a role in noise impact (Vader, 2007; Haubrich
+et al., 2019), and have stated that comprehensive approaches to noise management should aim to address such factors directly,
+through communication and engagement initiatives (Heyes et al., 2020), exemplified by public participation (Gasco, Asensio and de
+Arcas, 2017), that can provide for ‘social-learning’ (Webler, Kastenholz and Renn, 1995) to take place (Haubrich et al., 2019; Heyes
+et al., 2020), where through enhanced ‘competence’ and ‘fairness’ in the decision-making process, the public can unite to solve a
+problem.
+    The implementation of such management actions must be tailored to the specific and diverse needs of different airports, which can
+differ significantly depending on a range of characteristics (Heyes et al., 2018b). Indeed, such flexibility is at the core of the ICAO
+Balanced Approach (European Union, 2014), and the Environmental Noise Directive (European Union, 2002), which require airports
+of over 50,000 movements to produce strategic noise maps and develop noise action plans. A range of guidance exists to aid noise
+managers in developing noise management strategies and individual actions associated with the balanced approach (International
+Civil Aviation Organization, 2004). This includes guidance at the national level (Department for Transport, 2017), however for many
+nations such guidance is lacking (Heyes et al., 2018b). Moreover, the different characteristics of airports and the challenges that they
+face may mean that national guidance cannot be directly transposed between nations (Heyes et al., 2018b). Such guidance does not
+provide any sort of step-framework in terms of guiding an airport through the development of solutions to noise management chal­
+lenges in a holistic manner (Heyes et al., 2019). Nor does it embed the emerging concepts of communication and engagement as means
+to influence non-acoustic factors in the development of noise management actions (Heyes et al., 2020). This is a particular challenge
+for small but rapidly growing airports that can quickly fall under legal requirements for noise management actions, but who may lack
+experience in their implementation. The danger is that they may seek ‘copy-out’ transpositions of what has been done elsewhere (i.e.
+
+
+
+
+                     Fig. 1. Noise management action success factors (Adapted from Shapira, Ketchie and Nehe, 2017).
+
+                                                                    2
+G. Heyes et al.                                                                                 Transportation Research Part D 95 (2021) 102847
+
+
+implementing what has been applied elsewhere rather than what may be most appropriate in their own setting). This approach is
+understandable and may be effective at demonstrating action in the short-term, however it may also lead to sub-optimal outcomes.
+This is particularly the case seeing how lead-edge airports are constantly developing and redefining their own noise strategies in
+response to the maturing noise management landscape, and an emerging research base. These findings are supported by research
+conducted in the H2020 ANIMA research project which highlighted that no universal best practice management actions that can be
+applied across airports due to the radically different characteristics of airports, their surrounding communities and the disparate range
+of management problems they may face as a result (Heyes et al., 2019).
+   Borrowing from the field of Human-Centred design (Shapira, Ketchie and Nehe, 2017), we illustrate the requirements of a suc­
+cessful noise management action below, and in Fig. 1, as needing to be:
+
+ • Viable in terms of complex factors such as safety, security, environmental interdependencies and legislative compliance;
+ • Feasible in terms of airport infrastructure and financial capabilities; and
+ • Desirable to industry and community stakeholders.
+
+   Each of these factors are heavily influenced by the characteristics of each airport, meaning that not only are universal best practice
+management actions difficult to propose, but airports need to understand which characteristics are important to their own circum­
+stances, in order to increase the likelihood of interventions being successful. Such a process must also consider the complex multi-
+stakeholder nature of noise management and the fact that noise management actions ultimately exist to benefit the lives of resi­
+dents. This implies that such a process should be:
+
+ • Collaborative, to enable cross-stakeholder input and consultation.
+ • Iterative, yet flexible, to help develop solutions to unique challenges in a robust manner than can be demonstrated to stakeholders.
+ • Human-Centric and End-user focused, to produce outcomes that seek to benefit residents in an empathetic way which takes due
+   account of their perspectives and needs.
+ • Impactful, reflecting the need for management actions that can deliver targeted and evaluated outcomes that aim to address the core
+   issues behind noise problems.
+
+    ANIMA research (Heyes et al., 2019) found that whilst airports tend to do a good job at understanding the viability and feasibility
+elements of developing noise management actions, responses to noise management problems were typically undertaken in an un­
+structured manner, lacking in targeted outcomes, and evaluation beyond quantitative measures such as reductions in noise level (as
+described through aggregated noise metrics such as Lden), and number of homes insulated or resources spent.
+    This is an important observation, as when taken together with the aforementioned importance of non-acoustic factors, the lack of
+‘desirability’ focus in noise management can explain why the air transport industry has generally struggled in delivering reductions in
+noise impacts as described through complaints and annoyance. Both have risen in recent decades despite remarkable achievements by
+the aviation industry to reduce noise from source from individual aircraft. Indeed, aircraft today are some 75% quieter than they were
+30 years ago (EC, 2021) and the fact that noise contours around airports have in many cases contracted. Complaints and reported
+annoyance at airports have, however, not shown a corresponding reduction, with annoyance rising in many areas owing to continued
+airport development and an increase in the awareness of aviation noise health impacts (Asensio, Gasco and de Arcas, 2017), indeed
+annoyance itself has been demonstrated to be a health impact in its own right (Kranjec et al., 2019; Haubrich et al., 2019). Part of this
+anomaly may be explained by the way in which airport noise is typically modelled, monitored, communicated, and used in decision
+making processes. Noise exposure is usually summarised utilising aggregated noise metrics (e.g. Leq) that, although useful at capturing
+the total exposure to sound energy over a given period and in helping define thresholds to inform decision making at the policy level,
+are less effective at explaining noise to residents, whose experience is dominated by the number, loudness and timing of events rather
+than by an artificial objective overview of overall exposure to sound energy. Thus, conventional level-equivalent based metrics have
+been criticised for being incomprehensible to non-experts and even exacerbating annoyance as they can mask acoustic attributes
+central to the perception of noise on the ground (Hooper and Flindell, 2013). This weakness is compounded by a failure of the industry
+to effectively evaluate and demonstrate outcomes of noise management interventions that are able to prove actual enhancements in
+resident perceptions of the noise source, the acceptability of management decisions, or changes in quality of life. From the afore­
+mentioned case analysis, Heyes et al. (2019) posit that by following the approach described below airports can better understand what
+effective practice looks like:
+
+        ▪ the identification of a need to make a change;
+        ▪ the design of a range of management actions;
+        ▪ the selection of the most appropriate action; and,
+        ▪ its implementation and subsequent on-going evaluation (Heyes et al., 2019).
+
+    Heyes et al. 2019 provide no additional information as to what such an approach may look like in real terms for airport managers
+and this suggests a place for a step-framework for noise management that can provide an iterative process of noise management action
+development and delivery. This approach is similar to the approach advocated in industry guidance such as the United Kingdom’s Civil
+Aviation Authorities CAP 1616 document (CAA, 2021), and the United States FAA Part 150 Program (FAA, 2015). The former de­
+scribes the modernisation of airspace in the United Kingdom and the Department for Transport’s Air Navigation Guidance and its
+
+                                                                   3
+G. Heyes et al.                                                                                    Transportation Research Part D 95 (2021) 102847
+
+
+consequent encapsulation in CAP 1616 (CAA, 2021). The latter specifies a 7 Stage design-agree-implement-evaluate process which
+acknowledges the need for stakeholder input into early stages of airspace design to build consensus on design principles. Stages are
+defined as: Define; Develop and assess; Consult; Update and submit; Decide; Implement; Post-implementation review. Although there
+is specific space for consultation in the first step here, identifying key stakeholders and incorporating their perspectives into the process
+is also called for in the preceding stages. The FAA Part 150 program provides a similar methodology and series of procedures that can
+be followed when preparing aircraft noise exposure maps and developing airport land use compatibility programs. The aim of Part 150
+is to empower airports to think innovatively and creatively when addressing noise problems, and to do so in a manner that considers all
+stakeholders. In so doing, Part 150 can help to enhance the understanding of noise and the decisions made by airports in its man­
+agement. In so doing, its application can lead to outcomes that are perceived to be fair and acceptable, based on an enhanced
+competence and understanding of noise.
+    Both the findings of ANIMA, CAA CAP1616 and FAA Part 150 suggest iterative processes can help airports in the development and
+implementation of noise management interventions. What is less clear however is how this level of engagement should be achieved and
+what it should include. Below we present 6 key requirements of what a standardised process to help inform on the development of
+noise management interventions and decision making might look like, and in the next section introduce the concept of design thinking,
+and its potential role in informing noise management processes more generally. The presented recommendations are based on the
+contextual information presented in the preceding sections of this paper, and on our experiences of working with aviation industry and
+stakeholder groups in the ANIMA project which set out to understand noise from an impact and management process perspective,
+rather than seeking to enhance noise management through purely technical innovations, such as via noise at source enhancements.
+
+        ▪ Requirement 1: A process must be robust, yet flexible enough to lead to bespoke solutions to the unique challenges faced by
+          different airports (Heyes et al., 2018b).
+        ▪ Requirement 2: The process should embed concepts of stakeholder engagement and two-way dialogues to develop empathy,
+          enhance opportunities for social-learning, and where appropriate, public participation in the decision-making process
+          (Kranjec et al., 2019; Haubrich et al., 2019).
+        ▪ Requirement 3: A process should consider stakeholder needs, including local citizens who are affected by, and who are the
+          ultimately the primary beneficiaries of, noise management actions (Kranjec et al., 2019; Haubrich et al., 2019).
+        ▪ Requirement 4: The process is able to support airport requirements to meet existing policy, for example the Environmental
+          Noise Directive (European Union, 2002), and the ICAO Balanced Approach (European Union, 2014).
+        ▪ Requirement 5: The process should generate noise actions based on targeted outcomes, valued by communities, that address
+          core problems (for instance, involving qualitative non-acoustic factors), rather than focusing on quantitative data alone (for
+          instance, through aggregated noise metrics such as Lden) (Heyes et al., 2019).
+        ▪ Requirement 6: The process should be creative enough to consider novel solutions, whilst ensuring that any outcomes are
+          consistent with a series of underpinning noise management principles that may be universal (i.e. safety and technological
+          feasibility), or local (i.e. airport location, regional policy, airport priorities) in nature (Heyes et al., 2019).
+
+3. Design thinking
+
+3.1. The design thinking concept
+
+    Design Thinking (DT) is a human-centred (van der Bijl-Brouwer and Dorst, 2017) and iterative approach to problem-solving that
+
+
+
+
+                    Fig. 2. The ‘Double Diamond’ design process. Adapted from Design Council (2020) and Nessler (2018).
+
+                                                                     4
+G. Heyes et al.                                                                                  Transportation Research Part D 95 (2021) 102847
+
+
+emulates the ways in which designers think and work (Hoolohan and Browne, 2020). It is based on the idea that problems faced by
+organisations are complex, involve a range of stakeholders, and there may exist several layers of understanding required to
+comprehend and solve, the core design challenge. Through an iterative process, it is possible to move from a hypothetical starting
+question with an unknown answer, towards solutions that are empathetic to the needs of end-users and that are able to address the root
+cause of the problem at hand. There is no formal agreed upon definition of DT, and the concept has been critiqued for the fact that it
+was developed by innovation firm IDEO (IDEO, 2015) without proper academic grounding (Kimbell, 2011), however the concept has
+nonetheless become widely adopted by the design community, businesses and increasingly by researchers, who have been attracted to
+its ability to drive innovation and business success (Dorst, 2011; Johansson-Sköldberg, Woodilla and Çetinkaya, 2013; Glen et al.,
+2015; Redante et al., 2019). Redante et al. (2019) went as far as suggesting that DT can be used as an alternative approach to
+stakeholder engagement.
+    The DT process does not provide a hard and fast set of rules and actions. Rather, it is about creating a sequence of spaces in which
+different types of activities take place (Brown, 2008; Liedtka, 2015), notably need-seeking, brainstorming, and prototyping (Seidel and
+Fixson, 2013), or as Brown (2008) defines them: inspiration, ideation and implementation. The process also embeds concepts of
+collaboration (reflecting the fact that organisations and their challenges are complex and involve a range of stakeholders), iterative
+thinking (reflecting the fact that innovation requires phases of research, exploration and ideation), and end-user focus (accounting for
+the fact that products and services exist to serve the needs of those who use them, or are affected by them). A number of versions of the
+DT process exist, however all essentially follow the fundamental process outlined in the ‘Double Diamond’, described below and
+illustrated in Fig. 2.
+    The first two phases of the diamond (discovery and define) describe the aim of ‘doing the right thing’, by getting to the bottom of
+the problem and identifying what needs to change in order for the problem to be solved, and hence what kind of solutions might be
+appropriate. This is important as what may appear to be the problem at a superficial level may have its roots in a range of other factors
+that need to be addressed in order for the problem to be solved. The final two phases (design and delivery) describe the aim of ‘doing
+things the right way’ by exploring a range of suitable approaches to solve the problem faced, and through iterative exploratory
+processes identifying the best possible way to develop and deliver a solution to the original problem. The phases are typically described
+as diverging or converging. During a diverging phase, the design team aims to be as creative and open minded as possible, with the aim
+of maximising the potential to get to the bottom of the design challenge, or to identify its potential solution. In converging phases, the
+focus shifts to condensing and narrowing findings or ideas to provide focus, and ultimately, effective and implementable outcomes.
+    The process is typically led through a multi-stakeholder design team, which convenes to participate in, and drive the design process.
+An on-going design team can be beneficial in that it acts as an enduring group that aims to work together over time to address
+challenges as they arise. In so doing the team is able to develop long-term relationships amongst members and thus establish trust
+between each other, in the design process, and in their own creative capacity. The convening of the design team begins with what is
+termed the ‘point of departure’, which should include a review of the initial hypothesis, or design problem, to be addressed, followed
+by the establishment of DT principles that are necessary for the process to be successful. These include establishing roles and re­
+sponsibilities, available resources and deadlines, the requirement for open two-way dialogues through which held expertise can be
+challenged, and the development of success and failure criteria. The key phases of DT are summarised in below, further descriptions of
+the process can be found in a wide range of sources in the academic and grey literature that advocate the approach to solve a range of
+organisational and societal problems (Seidel and Fixson, 2013; IDEO, 2015; Shapira, Ketchie and Nehe, 2017; Design Council, 2020;
+Hoolohan and Browne, 2020).
+
+ • Discover; The discovery phase sees the design team define the overarching problem as they currently understand it, and through the
+   acquisition of primary or secondary research data look to provide additional insight into the question. Research often includes a
+   strong qualitative element to reflect the empathetic, human-centeredness of DT. Every aspect of the initial problem is questioned to
+   identify a range of elements, characteristics and areas of interest that can be explored. The findings from this activity can then be
+   clustered into topics that provide an overview of the problem and areas that require investigation. With the key topics identified,
+   research takes place to provide insight into the reality of the design problem.
+ • Define; Next the design team converge into a defining or interpretive stage, with the aim of assessing the collected information to
+   form insights that may provide additional clarity or perspectives on the design problem. Creativity can be useful here to help bring
+   the research to light, for example by synthesising data to ‘tell stories’ about the experiences of different stakeholders. Doing so is
+   useful in building empathy for stakeholders. Following this session, the results are reviewed and clustered into themes of relevance
+   as part of a ‘search for meaning’ so that insights can be drawn. The aim is to uncover the hidden truths that may (or may not) exist
+   regarding the situation and can be particularly useful when considering human issues, such as people’s frustrations, wishes, or
+   perceptions regarding a specific topic. From this, opportunity areas can be identified that can be adapted into headline statements
+   that can subsequently lead to the development of ‘How Might We’ questions designed to inspire the design process by acting as a
+   tangible statement of what needs to be accomplished for the design problem to be addressed.
+ • Develop; With a better understood design problem uncovered and defined, it is now possible to begin to look at solutions in a
+   workshop where the design team comes together to identify and evaluate solutions that aim to solve the redefined problem. The
+   workshop can be broadly split into two sessions, the first being to brainstorm solutions related to the redefined design problem. It is
+   important that this stage is approached with a creative and open mind with no judging or evaluation taking place as this can
+   constrain thinking and the ability to think of potentially unique and powerful solutions. After the ideation phase, an evaluation
+   phase takes place to appraise ideas and identify those with the most potential to solve the problem the group is attempting to solve.
+   This is typically accomplished by placing the generated ideas on a matrix of impact and feasibility.
+
+                                                                    5
+G. Heyes et al.                                                                                    Transportation Research Part D 95 (2021) 102847
+
+
+ • Deliver; In the delivery phase, the design team converge once more to prototype, test, and refine the selected option, or options, in
+   order to determine which is the most appropriate, and how it may be implemented. A key concept at this stage is the idea of
+   ‘minimal viable products’(MVPs) – simple representations of proposed solutions that can be tested as fast as possible by offering just
+   enough for initial feedback to be obtained. These MVPs can then be developed and refined over time as they move closer and closer
+   to becoming final products.
+
+3.2. DT principles
+
+    In an application of DT to the concept of sustainable development, Buhl et al., (2019) cite the work of Carlgren et al. (2016), who,
+via a series of interviews with employees from a range of innovation and DT practitioners, distinguished five key principles that
+characterise DT. This classification has since been used by several authors to discuss DT in different settings (Glen et al., 2015; Carlgren
+et al., 2016a; Shapira, Ketchie and Nehe, 2017; Buhl et al., 2019; Dell’Era et al., 2020; Hoolohan and Browne, 2020; Nagaraj et al.,
+2020). These are:
+
+        ▪ Problem framing; DT is built on the notion that “identifying a larger problem space helps create a larger solution space”
+          (Carlgren et al., 2016b, p. 47). As such a key requirement of the process is not to begin with an assumption that the design
+          problem is already understood, but rather having the confidence to acknowledge that there are a host of contextual factors
+          that may not yet be understood, but which could lead to a better understanding of the problem, and thus the generation of
+          solutions that might otherwise not have been arrived at. The iterative nature of DT means that the design problem can be
+          redefined following data collection, in such a way that may inform on not just the outcome of the process, but also the criteria
+          on which it was selected, and how it may be evaluated after implementation (Buhl et al., 2019).
+        ▪ Empathy; humans, their needs, practices and preferences are placed at the centre of the design process (Shapira, Ketchie and
+          Nehe, 2017). This sort of ‘human-centred’ approach acknowledges that humans are complex, with multiple experiences,
+          pains, required gains, and priorities (Osterwalder and Pigneur, 2010; Liedtka, 2015; Carlgren et al., 2016b). Hence a
+          cornerstone of DT is building empathy for stakeholders, through qualitative research, that can be refined over time through
+          iterative learning.
+        ▪ Diversity; Capturing inputs from a wide range of stakeholders and synthesizing them into the decision-making process
+          through two-way dialogues is central to DT (Carlgren et al., 2016b). It refers to the incorporation of voices from different
+          hierarchies, with different experiences who are able to provide a range of different perspectives on the design problem. The
+          DT process can act as a means to level such hierarchies ensuring that all voices are heard, and thus increasing the likelihood
+          for novel outcomes, rather than outcomes based on the understanding of a limited number of people used to working in a
+          certain way (Buhl et al., 2019).
+        ▪ Visualisation; Visualising helps to make abstract ideas tangible. For instance, prototypes can be made more real by telling
+          stories, through the use of simple prototype ‘mock-ups’(Carlgren et al., 2016b; Buhl et al., 2019). As well as helping to gather
+          empathy for end-users, such visualisation can help to gather feedback and thus aid further experimentation and development
+          of ideas (Liedtka, 2015).
+        ▪ Experimentation and iteration; the iterative nature of DT enables assumptions to be tested and refined, for trials and pro­
+          totyping to take place, and for ideas and concepts to evolve over time as the evidence base for the potential success (or failure)
+          builds through iterative testing and evaluation (i.e. through modelling, monitoring and user feedback). This sort of experi­
+          mental thinking can provide greater freedom for creativity by ensuring that ideas can be evaluated and refined, rather than
+          teams sticking at the first solution that they arrive at (Shapira, Ketchie and Nehe, 2017).
+
+4. Design thinking for noise management
+
+    As outlined in Section 2, airport noise managers face a number of challenges in terms of the process that underpins the successful
+design and implementation of management actions. As stated in the ANIMA project, airports can benefit from a step-framework to help
+work through such processes, but at present no such frameworks exist, beyond a generic outline provided by ANIMA researchers
+(Heyes et al., 2019). Whilst there is no evidence of DT being applied in a noise management context, design and DT have been used to
+solve a range of environmental challenges (Tukker and Tischner, 2006; Braungart, McDonough and Bollinger, 2007; Carlsson et al.,
+2015; Geissdoerfer, Bocken and Hultink, 2016; Fischer and Pascucci, 2017; Prendeville and Bocken, 2017; Shapira, Ketchie and Nehe,
+2017; Maher et al., 2018; Buhl et al., 2019; Rocha, Antunes and Partidário, 2019; Hoolohan and Browne, 2020). Similar iterative
+processes that take an initial research problem and creatively generate solutions and pathways to implementation have also been used
+extensively in the management, strategy and innovation fields (Boardman, Shapiro and Vining, 2004; Heyes, 2016; Broman and
+Robèrt, 2017; Mendoza et al., 2017; Heyes et al., 2018a). Perhaps most notably, DT principles have also previously been used to solve a
+range of aviation industry challenges related to issues such as safety, air cabin design, and digital services, by organisations such as
+airlines, the military, and NASA (Hall et al., 2013; Goodheart, 2016; ThisIsDesignThinking.net, 2016; McGowan et al., 2017; Turner
+Donald, 2017; Design For Europe, 2020).
+    Considering the noise management challenges and requirements outlined at the start of this article, and the characteristics of DT
+introduced above, the case for adopting design processes to guide noise managers in solving noise problems is compelling. Taking a
+similar approach to that used by Buhl et al., (Buhl et al., 2019), who proposed DT as a suitable tool for sustainability-orientated
+innovation, we summarise the requirements for a noise action development process below, and describe how we see DT as playing
+
+                                                                     6
+G. Heyes et al.                                                                                        Transportation Research Part D 95 (2021) 102847
+
+
+an informing role as a series of propositions that we hope can be further investigated through future research, and invite others to
+further this work through research or dialogue.
+
+ • Requirement 1: A process must be robust, yet flexible enough to lead to bespoke solutions to the unique challenges faced by
+   different airports.
+
+
+
+Proposition. The iterative nature of DT means that it is able to build a deep understanding of a noise management problem, creatively ideate
+solutions to that problem, and enable the one deemed most likely to succeed being selected through relevant success criteria. Moreover, the
+Delivery phase of DT is driven around the idea of prototyping and evaluation, which fits well with airport tools such as noise monitoring and
+modelling, scenario development and forecasting, as well as trials, and consultation events – all of which can lead to interventions being refined
+over time.
+
+ • Requirement 2: The process should embed concepts of stakeholder engagement and two-way dialogues to develop empathy,
+   enhance opportunities for social-learning, and where appropriate, public participation in the decision-making process.
+
+
+
+Proposition. DT fits perfectly with these ideals in that the process is inherently multi-stakeholder, with all stakeholders recommended to be
+represented in the design team, or as a minimum having their needs and perspectives accounted for in the Discovery phase. Likewise, empathy
+building and human-centric ideation enhances the potential for outcomes to be developed with stakeholder needs as a key concern. It does this by
+building stories of experiences rather than explaining things purely through quantitative data.
+
+ • Requirement 3: A process should consider stakeholder needs, including local citizens who are affected by, and who are the ul­
+   timately the primary beneficiaries of noise management actions.
+
+
+
+Proposition. Similar to requirement 2, DT is inherently ‘end-user’ focused, and so able to consider the needs of all airport stakeholders,
+including the communities who are the ultimate beneficiaries of noise management actions. Evaluation criteria developed by the airport can raise
+or lower the importance of community needs as deemed appropriate by the design team, and based on wider airport strategy. In this way
+stakeholder values can be fully explored and help in determining the desirability of proposed courses or action.
+
+ • Requirement 4: The process is able to support airport requirements to meet existing policy, notably the Environmental Noise
+   Directive (European Union, 2002), and the ICAO Balanced Approach (European Union, 2014).
+
+
+
+Proposition. DT is perfectly suited to ensuring that wider policy and other requirements (i.e. from industry, or as articulated by senior airport
+management) are accounted for, and in such a way that policy priorities can be put into the context of stakeholder expectations. The process is
+capable of considering any outcomes (including those articulated through the Balanced Approach), whilst the evaluation of ideated solutions can
+ensure that selected outcomes of the process are consistent with airport noise action plans. Indeed, the DT process may itself be used to help
+develop noise action plans.
+
+ • Requirement 5: The process should generate noise actions based on targeted outcomes that address core problems (that may
+   involve qualitative non-acoustic factors), rather than those based on quantitative data alone (i.e. through aggregated noise metrics
+   such as Lden).
+
+
+
+Proposition. The iterative nature of DT, including iterative learning in the discovery phase, can empower the design team to capture any
+information that is perceived to be of relevance to the noise management problem, thus enabling the core characteristics of the problem to be
+understood. Furthermore, DT is well suited to considering non-acoustic factors and other qualitative data, through the application of workshops,
+focus groups and interviews, and articulating such factors through creative methodologies such as story-telling.
+
+ • Requirement 6: The process should be creative enough to consider novel solutions, whilst ensuring that any outcomes are
+   consistent with a series of underpinning noise management principles that may be universal (i.e. safety and technological feasi­
+   bility), or local (i.e. airport location, regional policy, airport priorities) in nature.
+
+
+
+Proposition. The design phase of DT begins with ‘green-light’ brainstorming, aimed to facilitate novel ideas to the management problem.
+However, a secondary phase of brainstorm analysis is able to identify which of the ideated options are feasible, and to evaluate them against
+
+                                                                        7
+G. Heyes et al.                                                                                         Transportation Research Part D 95 (2021) 102847
+
+
+selection-criteria developed by the design team based on the desirability of the outcomes discussed. These processes are often visually sketched or
+told through stories to better visualise proposed innovations and to help foster empathy. The design phase, and DT in general, also takes an
+iterative process of ideation, testing, and revision so that outcomes can move from initial concepts to tested, evaluated and implemented
+solutions.
+    Overall, this step-process provides a structure to achieve a comprehensive understanding of all the dimensions of a noise problem
+and to inform those attributes of a potential solution that provide for the most desirable outcomes, thereby ensuring that potential
+courses of action are impactful and that evaluation is fully aligned to the desirability criteria established through application of the
+design thinking process.
+    As an exploratory article, we recognise that there is much we do not know about the potential for DT to inform noise management
+actions, even though we believe the case is compelling. Specifically, we acknowledge a number of barriers to DT methods being
+adopted by noise managers, which are explored below:
+
+ • The process needs time and commitment, as well as the acquisition of new skills to either lead the DT process, or to work through
+   the process with a practitioner in a creative, collaborative and open manner.
+ • Creative thinking may be challenging for some individuals, as it requires confidence in one’s own abilities, and may go against
+   organisational or institutional practice.
+ • The collaborative nature of DT means potentially giving away control to other stakeholders, which can be a daunting proposition
+   for any organisation – although the establishment of noise management principles is part of the process, and hence influences the
+   perceived feasibility and impact of developed solutions in the design phase, which should ensure that proposed solutions are viable
+   and lead to desirable outcomes.
+ • DT is best performed with expert facilitation by DT professionals. Airports should either seek independent facilitation (in so doing
+   also helping to overcome issues with trust by providing an independent voice), or follow as yet undeveloped guidance for DT
+   facilitation similar to those produced for other sectors (IDEO, 2015).
+ • Noise stakeholders can differ significantly, and gaining equal and fair representation from all parties may be challenging.
+ • In some cases, there may not be a perfect solution to a noise problem and obtaining a consensus agreement between the design team
+   may be difficult and require some participants to cede on certain issues. This can be a particular challenge when the development of
+   a noise solution may result in ‘winners’ and ‘losers’ from, for instance, deciding where a flight path may be best situated in densely
+   populated areas.
+ • Integrating community members in to a design team may be challenging in terms of recruitment and facilitation. Those likely to
+   volunteer to a DT process are likely to be from the ‘vocal minority’ of community voices who complain and campaign about noise.
+   Such individuals are typically more distrustful of airport activity and obtaining their buy-in to the design process could be difficult,
+   and participation could prove to be non-constructive.
+ • Much of DT can take place in a small number of workshops, however the research and delivery phases can be time intensive,
+   meaning that a full DT process may not be suitable when a rapid response is required.
+
+    Despite these barriers, we believe that the track record of DT at solving complex issues, and the synergies between the design
+process and the requirements for a noise management framework, mean that there is potential for design processes to inform on the
+development of a flexible yet structured and iterative approach to thinking about, and solving noise challenges. We call for the research
+community to contribute to understanding and overcoming these barriers through case study research with airports. Such research
+should seek to gain expert input into the potential development of a tailored design-led noise management process that can be tested in
+a real setting and to identify what barriers exist, and how they can be overcome. Doing so should assess how the phases of DT described
+in this article may need to be adapted, or if alternative models may be more suitable.
+
+5. Conclusion
+
+    Airport noise management is a complex subject, with influencing factors at both the macro- (complying with international and
+national policy), and the micro-level (implementing noise management actions designed to benefit individual communities). As such,
+noise managers are faced with the difficult challenge of satisfying a range of stakeholders with different priorities and different levels of
+comprehension regarding the noise challenge, and a range of complex technical and legislative factors. For large airports, the challenge
+can be acute, due to the potentially significant number of people exposed to noise, due to encroachment around the airport, and the
+sheer number of aircraft movements making absolute reductions in noise level difficult, and with many interventions that benefit
+some, having the potential to disbenefit others. For smaller airports, the noise challenge may not be as urgent, however such airports
+often lack the experience of larger airports, and may not have the same resources available. The result can be that opportunities such as
+preventing the encroachment of noise sensitive dwellings, which could have benefit into the long term, are not fulfilled, as ‘copy-out’
+transpositions of what has been attempted at larger airports may be sought after instead.
+    Recent research has highlighted that airports appear to lack a systematic approach to noise management based on iterative steps of
+thinking, and that this could lead to sub-optimal outcomes from interventions, notably through noise problems being poorly defined,
+and stakeholder perspectives being inadequately considered in the development process. In this article we presented Design Thinking
+as having the potential to inform on the development of a process that could guide airports in the development of noise actions, owing
+to its capacity to: (i) frame problems clearly, revealing the core challenges that underpin them – including non-acoustic factors, (ii)
+
+
+                                                                        8
+G. Heyes et al.                                                                                                        Transportation Research Part D 95 (2021) 102847
+
+
+include the perspectives of a wide range of stakeholders and (iii), develop empathy for them – ensuring that actions are more likely to
+be accepted, or that the attitude towards them is likely to be enhanced, (iv) creatively ideate novel solutions and demonstrate them
+through visualisation, and (v), enable such solutions to be investigated and developed iteratively based on quantitative and qualitative
+data, including trialling, modelling, and the use of trials.
+    Hence, we believe that DT represents a method to overcome airport noise challenges, if not in terms of formal adoption of the DT
+process, then as a guiding framework of principles, and the requirement for a sequence of spaces in which different types of activities
+take place. Research has demonstrated that no universal best practice solutions to noise management exist, but that effective practice is
+defined by the system through which airports design noise management strategies that are suitable for their own circumstances, and
+the characteristics of the challenges they face. In this sense we believe that DT can make a valuable contribution that may drastically
+enhance the capacity of managers to develop effective interventions.
+    We are exploring opportunities to further explore research in this area and call for other researchers interested in enhancing airport
+noise management to consider how DT can be implemented by themselves or by airports, in such a way that its advantages can be
+exploited, and barriers to implementation can be circumvented. Such discussion may also include an assessment of the proposed
+requirements of such a process framework, including the addition of any other requirements that may further inform on the role of DT
+in noise management contexts. We also call for noise managers to begin to think more like designers, by approaching noise man­
+agement problems with creativity, collaboration, and human-centred empathy to their stakeholders.
+
+Funding
+
+   This work reflects the perspectives of the researchers based on their expertise in noise management, and their experience in
+working in environmental management, strategy, and innovation fields. The authors acknowledge the contribution of EU project
+ANIMA (Grant agreement ID: 769627) to the initiation of some the ideas presented here; but their development has been conducted
+independently. The authors are solely responsible for the content presented, and the opinions expressed.
+
+CRediT authorship contribution statement
+
+   Graeme Heyes: Conceptualization, Writing - original draft. Paul Hooper: Writing - review & editing, Supervision. Fiona Raje:
+Writing - review & editing, Supervision. Jack Sheppard: Conceptualization, Writing - original draft.
+
+
+Declaration of Competing Interest
+
+    The authors declare that they have no known competing financial interests or personal relationships that could have appeared to
+influence the work reported in this paper.
+
+
+References
+
+Bartels, S., Márki, F., Müller, U., 2015. The influence of acoustical and non-acoustical factors on short-term annoyance due to aircraft noise in the field - The COSMA
+    study. Sci. Total Environ. 538, 834–843. https://doi.org/10.1016/j.scitotenv.2015.08.064.
+van der Bijl-Brouwer, M., Dorst, K., 2017. Advancing the strategic impact of human-centred design. Des. Stud. 53, 1–23. https://doi.org/10.1016/j.
+    destud.2017.06.003.
+Boardman, A., Shapiro, D., Vining, A., 2004. A framework for comprehensive strategic analysis. J. Strategic Manage. Educ.
+Braungart, M., McDonough, W., Bollinger, A., 2007. Cradle-to-cradle design: creating healthy emissions - a strategy for eco-effective product and system design.
+    J. Cleaner Prod. 15 (13–14), 1337–1348. https://doi.org/10.1016/j.jclepro.2006.08.003.
+Brink, M., et al., 2018. Conversion between noise exposure indicators Leq24h, LDay, LEvening, LNight, Ldn and Lden: principles and practical guidance. Int. J. Hyg.
+    Environ. Health 221 (1), 54–63. https://doi.org/10.1016/j.ijheh.2017.10.003.
+Broman, G.I., Robèrt, K.H., 2017. A framework for strategic sustainable development. J. Cleaner Prod. 140, 17–31. https://doi.org/10.1016/j.jclepro.2015.10.121.
+Brown, T., 2008. Design thinking. Harvard Bus. Rev. https://doi.org/10.5749/minnesota/9780816698875.003.0002.
+Buhl, A., et al., 2019. Design thinking for sustainability: Why and how design thinking can foster sustainability-oriented innovation development. J. Cleaner Prod.
+    231, 1248–1257. https://doi.org/10.1016/j.jclepro.2019.05.259.
+CAA, 2021 Airspace Change. Guidance on the regulatory process for changing the notified airspace design and planned and permanent redistribution of air traffic, and
+    on providing airspace information. CAP 1616. Civil Aviation Authority. March 2021. Available on-line: Guidance on the regulatory process for changing the
+    notified airspace design and planned and permanent redistribution of air traffic, and on providing airspace information. CAP 1616. Available at: https://
+    publicapps.caa.co.uk/docs/33/CAA_Airspace%20Change%20Doc_Mar2021.pdf (Accessed: 09 March 2021).
+Carlgren, L., Elmqvist, M., Rauth, I., 2016a. Exploring the use of design thinking in large organizations: towards a research agenda. Swedish Design Res. J. 11 (1), 55.
+    https://doi.org/10.3384/svid.2000-964x.14155.
+Carlgren, L., Rauth, I., Elmquist, M., 2016b. Framing design thinking: the concept in idea and enactment. Creativity Innov. Manage. https://doi.org/10.1111/
+    caim.12153.
+Carlsson, A., et al., 2015. Sustainability Jam Sessions for vision creation and problem solving. J. Cleaner Prod. https://doi.org/10.1016/j.jclepro.2014.10.041.
+Dell’Era, C., et al., 2020. Four kinds of design thinking: from ideating to making, engaging, and criticizing. Creativity Innov. Manage. 29, 324–344. https://doi.org/
+    10.1111/caim.12353.
+Department for Transport, 2017. UK Airspace Policy: A framework for balanced decisions: on the design and use of airspace: Moving Britain Ahead. Available at:
+    www.gov.uk/government/publications (Accessed: 9 June 2020).
+Design Council, 2020. The Double Diamond: 15 years on | Design Council. Available at: https://www.designcouncil.org.uk/news-opinion/double-diamond-15-years
+    (Accessed: 23 June 2020).
+Design For Europe, 2020. Brussels Airlines | Design for Europe. Available at: http://www.designforeurope.eu/case-study/brussels-airlines (Accessed: 11 June 2020).
+Dorst, K., 2011. The core of “design thinking” and its application. Des. Stud. 32 (6), 521–532. https://doi.org/10.1016/j.destud.2011.07.006.
+El-Fadel, M., et al., 2002. Assessment of noise impacts at airports. Int. J. Environ. Stud. 59 (4), 447–467. https://doi.org/10.1080/00207230212739.
+
+
+                                                                                   9
+G. Heyes et al.                                                                                                         Transportation Research Part D 95 (2021) 102847
+
+EC, 2021. Aircraft Noise. The European Commission. Available at: https://ec.europa.eu/transport/modes/air/environment/aircraft_noise_en (Accessed:08 March
+    2021).
+European Union, 2002. DIRECTIVE 2002/49/EC OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL of 25 June 2002 relating to the assessment and
+    management of environmental noise.
+European Union, 2014. Regulation (EU) No 598/2014 of the European Parliament and of the Council of 16 April 2014 on the establishment of rules and procedures
+    with regard to the introduction of noise-related operating restrictions at Union airports within a Balanced Approach and repealing Directive 2002/30/EC.
+FAA, 2015. Fact Sheet – The FAA Airport Noise Program. Federal Aviation Authority. Available at: https://www.faa.gov/news/fact_sheets/news_story.cfm?
+    newsId=18114#:~:text=Airports%20may%20collaboratively%20address%20noise,The%20program%20began%20in%201981 (Accessed:08 March 2021).
+Fischer, A., Pascucci, S., 2017. Institutional incentives in circular economy transition: the case of material use in the Dutch textile industry. J. Cleaner Prod. 155,
+    17–32. https://doi.org/10.1016/j.jclepro.2016.12.038.
+Gasco, L., Asensio, C., de Arcas, G., 2017. Communicating airport noise emission data to the general public. Sci. Total Environ. https://doi.org/10.1016/j.
+    scitotenv.2017.02.063.
+Asensio, C., Gasco, L., de Arcas, G., 2017. A review of non-acoustic measures to handle community response to noise around airports. Curr. Pollut. Rep. 3, 230–244.
+    https://doi.org/10.1007/s40726-017-0060-x.
+Geissdoerfer, M., Bocken, N.M.P., Hultink, E.J., 2016. Design thinking to enhance the sustainable business modelling process – A workshop based on a value mapping
+    process. J. Cleaner Prod. 135, 1218–1232. https://doi.org/10.1016/j.jclepro.2016.07.020.
+Glen, R., et al., 2015. Teaching design thinking in business schools. Int. J. Manage. Educ. 13 (2), 182–192. https://doi.org/10.1016/j.ijme.2015.05.001.
+Goodheart, B., 2016. Design Thinking for aviation safety. Aviation Bus. J. 4.
+Hall, A., et al., 2013. Future aircraft cabins and design thinking: optimisation vs. win-win scenarios. Propul. Power Res. 2 (2), 85–95. https://doi.org/10.1016/j.
+    jppr.2013.04.001.
+Haubrich, J., et al., 2019. ANIMA D2.4 - Recommendations on annoyance mitigation and implications for communication and engagement. doi: 10.5281/
+    ZENODO.2616668.
+Heyes, G., 2016. The Potential for Sustainable Business Model Innovation: A Case Study of the Airport Retail Sector. Manchester Metropolitan University.
+Heyes, G., et al., 2018a. Developing and implementing circular economy business models in service-oriented technology companies. J. Cleaner Prod. 177, 621–632.
+    https://doi.org/10.1016/j.jclepro.2017.12.168.
+Heyes, G., et al., 2019. ANIMA D2.5 - Critical review of Balanced Approach Implementation across EU Member States. doi: 10.5281/ZENODO.3146128.
+Heyes, G., et al., 2020. Exemplar Case Studies of Aviation Noise Mitigation Strategies in the European Union: A Review of the communication and engagement state of
+    the art.
+Heyes, G., Dimitriu, D., Hooper, P., 2018. ANIMA D2.1 - Pan-European overview of Existing Knowledge and Implementation of Noise Reduction Strategies. doi:
+    10.5281/ZENODO.2599726.
+Hoolohan, C., Browne, A.L., 2020. Design thinking for practice-based intervention: co-producing the change points toolkit to unlock (un)sustainable practices. Des.
+    Stud. 67, 102–132. https://doi.org/10.1016/j.destud.2019.12.002.
+Hooper, P., Flindell, I., 2013. Exchanging aircraft noise information with local communities around airports: The devil is in the detail. In: 42nd International Congress
+    and Exposition on Noise Control Engineering 2013, INTER-NOISE 2013: Noise Control for Quality of Life.
+IDEO, 2015. Design Kit: The Human-Centered Design Toolkit | ideo.com. Available at: https://www.ideo.com/post/design-kit (Accessed: 11 June 2020).
+International Civil Aviation Organization, 2004. Guidance on the Balanced Approach to Aircraft Noise Management (Doc 9829).
+Johansson-Sköldberg, U., Woodilla, J., Çetinkaya, M., 2013. Design thinking: past, present and possible futures. Creativity Innov. Manage. 22 (2), 121–146. https://
+    doi.org/10.1111/caim.12023.
+Kimbell, L., 2011. Rethinking design thinking: Part I. Des. Cult. 3 (3), 285–306. https://doi.org/10.2752/175470811x13071166525216.
+King, E.A., Murphy, E., Rice, H.J., 2011. Implementation of the EU environmental noise directive: lessons from the first phase of strategic noise mapping and action
+    planning in Ireland. J. Environ. Manage. 92 (3), 756–764. https://doi.org/10.1016/j.jenvman.2010.10.034.
+Kranjec, N., et al., 2019. ANIMA D2.3 - Recommendations on noise and health. doi: 10.5281/ZENODO.2562749.
+Liedtka, J., 2015. Perspective: linking design thinking with innovation outcomes through cognitive bias reduction. J. Prod. Innov. Manage. Blackwell Publishing Ltd
+    925–938. https://doi.org/10.1111/jpim.12163.
+Maher, R., et al., 2018. Integrating design thinking with sustainability science: a Research through Design approach. Sustain. Sci. 13 (6), 1565–1587. https://doi.org/
+    10.1007/s11625-018-0618-6.
+McGowan, A.M., Bakula, C., Castner, R., 2017. Lessons learned from applying design thinking in a nasa rapid design study in aeronautics. In: 58th AIAA/ASCE/AHS/
+    ASC Structures, Structural Dynamics, and Materials Conference, 2017.
+Mendoza, J.M.F., et al., 2017. Integrating backcasting and eco-design for the circular economy: the BECE Framework. J. Ind. Ecol. 21 (3), 526–544. https://doi.org/
+    10.1111/jiec.12590.
+Murphy, E., King, E.A., 2010. Strategic environmental noise mapping: methodological issues concerning policy implications. Environ. Int. 36 (3), 290–298. https://
+    doi.org/10.1016/j.envint.2009.11.006.
+Nagaraj, V., et al., 2020. Team design thinking, product innovativeness, and the moderating role of problem unfamiliarity. J. Prod. Innov. Manage 37 (4), 297–323.
+    https://doi.org/10.1111/jpim.12528.
+Nessler, D., 2018. How to apply a design thinking, HCD, UX or any creative process from scratch, Medium. Available at: https://medium.com/digital-experience-
+    design/how-to-apply-a-design-thinking-hcd-ux-or-any-creative-process-from-scratch-b8786efbf812 (Accessed: 23 June 2020).
+Osterwalder, A., Pigneur, Y., 2010. Business Model Generation – Canvas. Wiley.
+Prendeville, S., Bocken, N., 2017. Sustainable business models through service design. Procedia Manuf. 8, 292–299. https://doi.org/10.1016/j.promfg.2017.02.037.
+Redante, R.C., et al., 2019. Creative approaches and green product development: using design thinking to promote stakeholders’ engagement. Sustainable Prod.
+    Consum. 19, 247–256. https://doi.org/10.1016/j.spc.2019.04.006.
+Rocha, C.S., Antunes, P., Partidário, P., 2019. Design for sustainability models: a multiperspective review. J. Cleaner Prod.. Elsevier Ltd 1428–1445. https://doi.org/
+    10.1016/j.jclepro.2019.06.108.
+Schreckenberg, D., Schuemer, R., 2010. The impact of acoustical, operational and non-auditory factors on short-term annoyance due to aircraft noise. In: 39th
+    International Congress on Noise Control Engineering 2010, INTER-NOISE 2010.
+Seidel, V.P., Fixson, S.K., 2013. Adopting design thinking in novice multidisciplinary teams: the application and limits of design methods and reflexive practices.
+    J. Prod. Innov. Manage 30 (SUPPL 1), 19–33. https://doi.org/10.1111/jpim.12061.
+Shapira, H., Ketchie, A., Nehe, M., 2017. The integration of design thinking and strategic sustainable development. J. Cleaner Prod. 140, 277–287. https://doi.org/
+    10.1016/j.jclepro.2015.10.092.
+ThisIsDesignThinking.net, 2016. Be rebellious! How ANA is Utilizing Design Thinking to Connect its Past with its Future | This is Design Thinking! Available at:
+    https://thisisdesignthinking.net/2016/12/ana-design-thinking-japan/ (Accessed: 11 June 2020).
+Torija, A.J., Self, R.H., Flindell, I.H., 2018. Airport noise modelling for strategic environmental impact assessment of aviation. Appl. Acoust. 132, 49–57. https://doi.
+    org/10.1016/j.apacoust.2017.10.017.
+Tukker, A., Tischner, U., 2006. Product-services as a research field: past, present and future. reflections from a decade of research. J. Cleaner Prod. 14 (17),
+    1552–1556. https://doi.org/10.1016/j.jclepro.2006.01.022.
+Turner Donald, E.I.I.I., 2017. A case study in Design Thinking applied through Aviation Mission Support Tactical Advancements for the Next Generation (TANG).
+    Calhoun. Available at: https://calhoun.nps.edu/handle/10945/56830.
+Vader, R., 2007. D/R&D 07/026 Noise Annoyance Mitigation at Airports by Non-Acoustic Measures.
+Webler, T., Kastenholz, H., Renn, O., 1995. Public participation in impact assessment: a social learning perspective. Environ. Impact Assess. Rev. 15 (5), 443–463.
+    https://doi.org/10.1016/0195-9255(95)00043-E.
+
+
+
+                                                                                   10
+

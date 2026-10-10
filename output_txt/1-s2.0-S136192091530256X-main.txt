@@ -1,0 +1,837 @@
+                                                          Transportation Research Part D 56 (2017) 43–54
+
+
+
+                                                          Contents lists available at ScienceDirect
+
+
+                                                Transportation Research Part D
+                                                journal homepage: www.elsevier.com/locate/trd
+
+
+
+
+Experience sampling in and around airports. Momentary subjective
+                                                                                                                                             T
+wellbeing, airports, and aviation noise in England
+                                                               ⁎
+Daniel Fujiwaraa,b, Ricky N. Lawtonb, , George MacKerronc
+a
+    London School of Economics and Political Science, Centre for Economic Performance, Houghton Street, London WC2A 2AE, United Kingdom
+b
+    Simetrica Research Consultancy, The Shepherds Building (West Entrance), Rockley Road, Shepherds Bush, London, W14 0DA, United Kingdom
+c
+    Department of Economics, University of Sussex, Jubilee Building, Falmer, Brighton BN1 9SL, United Kingdom
+
+
+
+
+AR TI CLE I NF O                                         AB S T R A CT
+
+Keywords:                                                We explore the wellbeing of people in and around English airports using real-time data from a
+Aircraft noise                                           large spatial positioning experience sampling dataset (Mappiness). We analyze the association
+Subjective wellbeing                                     between subjective wellbeing reported in the moment and aviation, in terms of airport location,
+Airport location                                         aircraft noise, and activities within airports. This is the ﬁrst time that a large Experience Sample
+Quality of life
+                                                         Method (ESM) of momentary wellbeing measurements has been used to quantify the associations
+Transport policy
+Experience Sampling Method
+                                                         between aviation and subjective wellbeing. Being within areas of high levels of aircraft noise is
+                                                         associated with lower levels of happiness and relaxation. Those surveyed in proximity to airports
+                                                         report signiﬁcantly lower levels of relaxation. These ﬁndings have important implications to
+                                                         policy. Exploiting the panel nature of the ESM data provides the strongest causal claims to date of
+                                                         the negative association between aviation activities and subjective wellbeing. The Mappiness
+                                                         application also allows us to assess the association between airports and wellbeing on those
+                                                         inside them, and divide activities within airports between those who work there and those who
+                                                         are passing through for travel purposes, as well as the eﬀects of aircraft noise beyond airports.
+                                                         This gives us a broader insight into the range of impacts, both positive and negative, that aviation
+                                                         has on peoples’ momentary wellbeing, which may be used to inform aviation noise mitigation
+                                                         and compensation policies in the future.
+
+
+
+
+1. Introduction
+
+    Aviation provides a range of economic and social beneﬁts, ranging from jobs and employment at the local and national level, to
+the individual leisure beneﬁts of foreign holidays (Airports Commission, 2013; Caves, 2003; Reynolds et al., 2007). However,
+aviation noise is also a leading environmental complaint in the European Union (European Parliament, 2002), and an issue of intense
+public debate for residents in aﬀected areas around airports (Howarth and Griggs, 2013). Aviation noise and pollution are associated
+with negative health and wellbeing eﬀects (Black et al., 2007; Clark and Stansfeld, 2011; Franssen et al., 2004), and environmental
+damages (Wolfe et al., 2014), all of which are associated with lower levels of individual welfare (Frey and Stutzer, 2010; MacKerron
+and Mourato, 2009; Welsch, 2006).
+    In recent years there have been calls for alternative metrics to the standard monetary national GDP and cost-beneﬁt analysis
+(CBA) to be used for estimating the impacts of policies and interventions (Stiglitz et al., 2009). The trend to date in academic and
+policy discourse on aviation impacts has focused on objective list measures and preferences, for example noise, health and GDP
+
+
+  ⁎
+    Corresponding author at: Simetrica Research Consultancy, The Shepherds Building (West Entrance), Rockley Road, Shepherds Bush, London, W14 0DA, United
+Kingdom.
+    E-mail addresses: D.F.Fujiwara@lse.ac.uk (D. Fujiwara), r.lawton@simetrica.co.uk (R.N. Lawton), george.mackerron@sussex.ac.uk (G. MacKerron).
+
+http://dx.doi.org/10.1016/j.trd.2017.07.015
+
+Available online 27 July 2017
+1361-9209/ © 2017 Published by Elsevier Ltd.
+D. Fujiwara et al.                                                                               Transportation Research Part D 56 (2017) 43–54
+
+
+(Dolan et al., 2011; Navrud, 2002). However, increasing attention is being placed on subjective wellbeing (SWB) data in policy
+decisions and academic research, evidenced by the growing number of academic publications and recent government-level guidance
+on using wellbeing metrics in policy evaluation (Fujiwara and Campbell, 2011; OECD, 2013). Traditional preference-based accounts
+of welfare are based on the premise that we can infer welfare from looking at people's choices and market behaviour (Parﬁt, 1984).
+However, this approach relies on perfect functioning markets to signal the eﬀects that non-market externalities have on welfare. In
+contrast, SWB accounts refer to people’s subjective experiences of their own wellbeing. They look at how the individual feels and
+thinks about their life, measuring what conditions make people feel their lives are going better or worse. This provides a more direct
+account of the eﬀects that a non-market good, like environmental noise, has on peoples’ welfare. In addition, the SWB approach is
+particularly attractive because it excludes the possibility of framing eﬀects and response bias that arise when asking people directly
+about their experience living with noise (Kahneman and Tversky, 1984).
+    To date, few studies have addressed the impacts of airport proximity or noise on SWB, or have been limited to surveying the
+impact of aviation at the global or household level on those that live around airports or within aircraft noise contours (Lawton and
+Fujiwara, 2016; Navrud, 2002; Van Praag and Baarsma, 2005). This is the ﬁrst study to explore the relationships between airports and
+SWB using a large Experience Sampling Method (ESM) dataset for the United Kingdom (UK). The Mappiness survey provides over a
+million observations taken in real-time during diﬀerent moments of the day. ESM surveys allow us to explore issues of causality in a
+more robust way than standard regression analysis (which is the method typically used to assess the drivers of wellbeing in the
+academic literature). This is because our ESM survey collects data from the same individuals over short periods of time (usually
+around a few months). The structure of the ESM surveys means that most other drivers of an individual’s wellbeing are controlled for
+as individual ﬁxed eﬀects, meaning that we can better single out the impact of an activity or event on someone’s wellbeing. ESM
+methods provide the closest estimate to causal eﬀects that can be achieved with wellbeing data, excluding the use of randomised
+control trials (Csikszentmihalyi and Hunter, 2003; Stone and Shiﬀman, 1994). This means that the level of causal inference are
+stronger than in existing studies of aviation and SWB which use cross-sectional data (Lawton and Fujiwara, 2016; Navrud, 2002; Van
+Praag and Baarsma, 2005), providing greater certainty for policy-makers. Furthermore, the Mappiness application provides a more
+ﬁne-grained alternative to analyzing SWB than national household datasets as peoples’ responses are more closely aligned with
+speciﬁc locations and activities undertaken at the time of the survey.
+    Our analysis using the Mappiness data considers three potential impacts: (1) the association between being near an airport and
+aﬀective wellbeing (at the time of the survey); (2) the association between being in an airport noise contour and aﬀective wellbeing
+(at the time of the survey); and (3) the association between working in an airport and non-work activities (leaving/departing/picking
+up or dropping oﬀ people for non-work reasons) and aﬀective wellbeing.
+    Mappiness provides a number of insights of relevance for practitioner and policy purposes. Since SWB responses in Mappiness are
+more closely aligned with the activity of interest and provide longitudinal data for each individual over the course of a day, we are
+able to make more robust inferences about the direction of cause and eﬀect between aviation and SWB (Kahneman et al., 2004). This
+gives us a broader insight into the range of impacts, both positive and negative, that airports have on the wellbeing of those in and
+around them. It allows us to divide activities within airports between those who work there and those who are passing through for
+what we assume are travel purposes, as well as capture the eﬀects of aircraft noise beyond airports, in ways which have not been
+explored in previous cross-sectional analysis. This provides important insights on the impacts of aviation noise on wellbeing, and the
+aviation features that have most aﬀect, positive and negative, on individual wellbeing. In the ﬁnal analysis, we outline how these
+analytical insights may be used to quantify potential mitigation and compensation measures required to oﬀset the impacts of aviation
+activities on those whose wellbeing is negatively aﬀected.
+
+2. Literature review
+
+    The use of SWB data for academic and policy purposes has tended to focus on two broad categories of wellbeing (Di Tella and
+MacCulloch, 2006; Diener et al., 1999; Dolan et al., 2008; Frey and Stutzer, 2002; Kahneman et al., 2003). Evaluative SWB data, such
+as life satisfaction, are usually measured in annual national surveys, such as the Annual Population Survey (APS) in the UK. The most
+commonly used measure of evaluative SWB taps into a cognitive assessment of one’s life, which incorporate an assessment of how
+well one’s life measures up to aspirations, goals, and peers, as well as a reﬂection on how one feels now (Diener, 1984; Kahneman and
+Krueger, 2006).
+    The majority of studies on aviation and SWB to date have explored evaluative measures of SWB. Lawton and Fujiwara (2016)
+merge English population statistics on 189,162 individuals at the postcode level, provided by the APS, with noise measurement maps
+for seventeen English airports to test for associations between aviation noise and airport proximity within 5 km of an airport. They
+ﬁnd a consistent negative association between the presence of daytime aviation noise at and above 55 dB and ﬁve SWB measures,
+including evaluative measures of life satisfaction, eudemonic sense of worthwhile, and aﬀective measures of happiness (yesterday)
+and anxiety yesterday), as well as positive aﬀect balance (PAB). The magnitude of the impact is equivalent to around half the eﬀect of
+being a smoker for some wellbeing measures, with a marginal negative association detected with every additional decibel of aircraft
+noise. Notably, the study ﬁnds no signiﬁcant association between wellbeing and living in close airport proximity. The study also ﬁnds
+no signiﬁcant association between SWB and living within night-time noise contours.
+    The Lawton and Fujiwara (2016) study is limited in the geographical level at which it captures the eﬀects of aircraft noise or
+airport proximity. Household surveys record SWB at the residential postcode level. Furthermore, data in the APS is cross-sectional,
+meaning that it captures a one-oﬀ measure of an individual’s SWB, and is therefore unable to capture factors operating on the
+individual at the time the survey is conducted. For this reason, the results of analysis on large-scale national cross-sectional datasets
+
+                                                                   44
+D. Fujiwara et al.                                                                                                      Transportation Research Part D 56 (2017) 43–54
+
+
+are expected to be better suited to evaluative measures of wellbeing life satisfaction, than aﬀective measures of wellbeing (happiness
+and anxiety/relaxation), which are more variable to momentary environmental conditions (Kahneman et al., 2003; Pavot and Diener,
+1993).
+    Van Praag and Baarsma (2005) analyze the association between evaluative ‘quality of life’ on a Cantril scale (Cantril, 1966) and
+subjective noise perception measured by subjective evaluations on a discrete scale, with objective noise linked at the postcode level
+and measured in Kosten units.1 The study surveyed 1400 individuals living within 50 km of the Amsterdam Schiphol Airport. The
+authors ﬁnd no signiﬁcant association between wellbeing and objective noise. Subjective noise produced a signiﬁcant and negative
+association with wellbeing. They also ﬁnd evidence that non-acoustic factors, like family size and presence of a garden, increased
+subjective noise nuisance, and of heterogeneous eﬀects between perceived noise and the presence of noise insulation, which sig-
+niﬁcantly reduced impact on life satisfaction.
+    Kroesen et al. (2010) used household surveys to assess the association between objective noise variables, noise annoyance and
+residential satisfaction in a 25 km radius around Amsterdam Schiphol. In comparison to other environment eﬀects (road traﬃc noise
+annoyance, age and neighbor noise annoyance), aircraft noise was a signiﬁcant but weak predictor of residential satisfaction, but
+ranked higher than the eﬀect of neighbour noise annoyance. In common with Van Praag and Baarsma (2005), the Kroesen et al. study
+was limited to surveys at the household level.
+    Aﬀective SWB, is concerned with a person’s feelings ‘in the moment’ and can encompass both positive and negative feelings
+(Kahneman et al., 2003; Pavot and Diener, 1993; Schwarz and Clore, 1983). Positive feelings are often measured in terms of hap-
+piness and negative feelings about stress and anxiety. Aﬀective wellbeing is typically measured on a more frequent basis than
+evaluative measures. The Experience Sampling Method (ESM) (Csikszentmihalyi and Hunter, 2003; Hektner et al., 2007) and Day
+Reconstruction Method (DRM) (Kahneman et al., 2004) collect information on people‘s reported feelings in diary or electronic real-
+time during selected moments of the day. The ESM approach provides the closest estimate to causal eﬀects that can be achieved with
+wellbeing data. This means that the level of causal inference that can be made of the results in this paper are stronger than in existing
+studies using cross-sectional data (Lawton and Fujiwara, 2016; Navrud, 2002; Van Praag and Baarsma, 2005) To date no research has
+been undertaken on the association between aviation and aﬀective SWB using ESM methods.
+
+3. Methods
+
+3.1. Data
+
+    Mappiness is an iPhone application that permits individuals to record their wellbeing scores on a scale of 0–100 via their phone.
+The data contain more than one million observations from tens of thousands of individuals in the UK, collected since August 2010.2
+Individuals who have downloaded the application receive randomly timed signals on their phone to request that they complete a very
+short survey. The survey asks individuals to rate themselves on three dimensions of momentary wellbeing, stating how happy,
+relaxed, and awake they feel (full survey instrument in Appendix A1). We focus on happiness and relaxation in this paper. Each score
+is elicited by means of a continuous slider (a form of visual analogue scale — see Couper et al., 2006). The ends of each scale are
+labelled “Not at all” and “Extremely”, and an individual positions themselves on the scale by drawing a ﬁngertip across the screen.3
+    Individuals are asked whom they are with and can choose either ‘alone’ or as many as apply out of seven other categories: partner;
+child(ren); relative(s); peer(s); work client(s); friend(s); other. They are then asked whether they are indoors, outdoors, or in a
+vehicle, and whether they are at home, at work, or elsewhere. Finally, they are asked what they were doing “just now”. The
+respondent chooses all that apply out of 40 response options, which include a range of cultural activities.4
+    Together with the responses to the survey, the application transmits the satellite positioning (GPS) location of the individual and
+the precise time at which the survey is completed. It also records the time elapsed between the random signal and response, allowing
+analysts to distinguish between immediate responses and delayed responses. We exclude responses made more than an hour after the
+signal was sent, on the basis that these no longer represent a suﬃciently random sample of experiences. Individuals complete a short
+survey about their personal circumstances, work status and household characteristics when registering for Mappiness.
+
+3.1.1. Airport location and noise contours
+    We link the GPS signal coded at the time of the response in Mappiness to the locations of airport sites and aircraft noise contours.
+We can therefore determine whether people are near airports or noise contours when responding to the SWB questions and for those
+
+   1
+     Kosten Units (Ke) are used as a measure of annual exposure to aircraft noise in theNetherlands. The calculation is based on maximum (peak) levels above 65 dB. As
+it is based on a maximum noise level the Ke unit cannot be converted to average noise exposure in dB(A).
+   2
+     Mappiness responses may be received my one individual on a number of occasions. There is on average approximately a 2:1 ratio of responses to individual
+respondents.
+   3
+     Frijters (2001) shows that the results of OLS (where SWB is assumed to be cardinal) and ordered response models (models where it is assumed that SWB is ordinal)
+provide very similar results. Tests have found no diﬀerences in reliability and concurrent validity between 7, 11 and 101 point scales (Lewis and Oğuzhan, 2017), and
+the 101 point scale provides more variation in the outcome data, which not only solves the problems of information loss, but also allows for applying advanced robust
+statistical analyses. This scale issue is pertinent in any kind of SWB measure, where we may ask how consistently a respondent distinguishes between 8 and 9.
+However, the evidence suggests that SWB questions are responsive theoretical expectations (Dolan and Fujiwara, 2016; Dolan and Peasgood, 2008). The beneﬁt of the
+Mappiness tool is that it requires the respondent to answer on a sliding scale which is converted into the 0–100 scale. Interactive sliding scales have a long history in
+psychophysical measurement and have been found to be more accurate than standard likert scales (Treiblmaier and Filzmoser, 2011).
+   4
+     All ‘With whom’ and Activity variables are coded as dummy variables: 1 if with that person, and 0 otherwise; 1 if doing the activity, and 0 otherwise.
+
+
+                                                                                   45
+D. Fujiwara et al.                                                                                                 Transportation Research Part D 56 (2017) 43–54
+
+
+people inside an airport we can determine what they are doing when responding to the SWB questions.
+    To create proximity variables, we generate polygons around airport sites using Google Earth. We looked at the 17 Defra 'noise
+action plan' airports. We calculate the distance from each response to the nearest of the 17 Defra airports. The distances are calculated
+(in metres) from the midpoint of the runway, or in the case of London Heathrow from the midpoint of the nearest of the two runways.
+    We merged the Mappiness data with the Department for Transport’s (DfT) noise contours for London Heathrow (LHR), London
+Gatwick (LGW), and Stansted (STN).5 Noise contour data are matched to GPS locations recorded in Mappiness surveys. A 15 km
+perimeter was created around the London airports (LHR, LGW, STN). To avoid overlap, if respondents fall within more than one
+airport perimeter, we choose the nearest one. After the data merge, each Mappiness response is linked with the associated decibel
+level from the three airports. There are approximately 12,000 responses in Mappiness from the 57 dB+ noise contours for these three
+airports. By including region dummies in all models, we control for diﬀerences between London and non-London populations (note,
+Stansted is not classed within the London region).
+
+
+3.2. Analysis
+
+    We run the following regression models using Ordinary Least Squares (OLS):
+
+         Wit = α it + β1Ait + β2 OAit + β3 Pit + β4 Ait Pit + β5 Xit + εit                                                                                     (1)
+
+where W is wellbeing (happiness or relaxation) measured on a scale of 0–100; the subscripts i and t respectively denote the individual
+and time period; A is a vector of airport-related variables; OA is a vector of other activities; and X is a vector of control variables that
+is made up of location dummies, time indicators (month, day of week, time of day), weather conditions at time of survey and the
+number of responses an individual has given previously.
+    Eq. (1) is estimated using individual ﬁxed eﬀects (hence the time subscript t is dropped from α i ). Given the short time periods in
+the data, socio-demographic variables that are collected from respondents on registration are in eﬀect time-invariant and hence
+controlled for in the individual ﬁxed eﬀects. Standard errors are clustered at the person level to account for non-independent repeat
+observations and a robust standard error estimator is deployed to account for heteroscedasticity.
+    Due to the observational nature of the data, causation cannot be directly inferred and future research should consider this further.
+Impact estimates may be biased to some degree if there are confounding factors that have not been controlled for in the analysis. This
+is a risk with any wellbeing analysis using non-experimental data. We provide controls for land cover (using the Generalised Land Use
+Database 2005), distance from the coast, region, and day of the week (mid-week, weekend, and Bank Holiday) (MacKerron and
+Mourato, 2013).
+    Fixed eﬀects estimation allows us to control for all time invariant factors speciﬁc to the individual. ESM methods do not require
+the inclusion of sociodemographic controls for time invariant factors like education, health, income. The modelling design focuses the
+analysis on time variant factors like respondent activity and location in the moment. There is a growing literature which demon-
+strates the explanatory power of ESM methods in the evaluation of momentary wellbeing, showing that wellbeing in the moment is
+associated with theoretically consistent drivers (Csikszentmihalyi and Hunter, 2003; Hektner et al., 2007; Kahneman et al., 2004).
+The focus of the present study is to analyze the associations between aircraft noise and presence within airports, with momentary
+wellbeing.
+    It should be acknowledged that the population of Mappiness respondents diﬀers in a number of ways from the population at large;
+wealthier people, young people and employed people are over-represented relative to the UK adult population. These issues regarding
+sample composition in Mappiness should be taken into account when interpreting and extrapolating the results from this study.
+However, Mappiness measures align more closely with the activity of interest and provide longitudinal data for each individual,
+allowing us to make more robust inferences about the direction of cause and eﬀect between aviation and SWB (Kahneman et al.,
+2004).
+
+
+3.2.1. Stage 1 - Proximity to airports
+    We produced two OLS regression models for happy and relaxed scores where Ait = distance to the 17 English airports (banded
+as < 3 km, 3–4 km, 5–5 km, 5–7 km, 7–11 km, and 11–15 km). Responses in the coordinates of the airport polygons were excluded
+from all analyses to exclude those who were in an airport, since people inside airports are likely to have diﬀerent experiences – they
+may be leaving for or returning from holiday (or picking someone up) and have happiness levels associated primarily with this
+(otherwise unobserved) activity.
+
+
+3.2.2. Stage 2 - Aircraft noise contours
+    We produced two OLS regression models for happy and relaxed scores where Ait = a binary variable that equals 1 if the GPS
+location of the response falls within an aircraft noise contour (≥57 dB) for LHR, LGW, and STN airports. Again we exclude people
+within the airport perimeter.
+
+  5
+    There were some limitations in the noise data that was available from DfT. This meant we had to restrict noise analysis to London airports. By including region
+dummies in all models, we control for diﬀerences between London and non-London populations.
+
+
+                                                                                46
+D. Fujiwara et al.                                                                               Transportation Research Part D 56 (2017) 43–54
+
+
+3.2.3. Stage 3 - Airport activities
+    We assessed the happiness and relaxation scores for those individuals who stated that they were at work and who responded from
+within the airport polygons. In each case, the reference group is the population at work, but not currently located at an airport.
+    We assessed the happiness and relaxation scores for those individuals not at work and who responded from within the airport
+polygons against a reference group of people not at work and not at airports. This captures the wellbeing impacts of airports on
+travellers and those picking up/dropping oﬀ friends and relatives at the airport.
+
+4. Results
+
+    The population of Mappiness respondents diﬀers in a number of ways from the population at large. As one might expect from a
+survey conducted with smartphones, respondents are wealthier than the population at large: the median household income category
+is £40,000–£56,000, and the midpoint of this range is approximately double the ﬁgure for the UK as a whole. They are also relatively
+young: 66% are aged 35 or under, and 95% are aged 50 or under, compared to 29% and 56% respectively in the UK adult population.
+Seventy-seven per cent of participants are in employment and 14% are in full-time education. These groups are over-represented
+relative to the UK adult population, in which the proportions are respectively 57% and 4%, primarily at the expense of retired people,
+who constitute 1% of Mappiness participants but 22% of the population. Participants’ sex ratio is nearly balanced, at 53% male,
+compared to 49% in the UK adult population (MacKerron, 2012) (see Appendix A2 for full description of all variables used in
+analysis).
+
+4.1. Stage 1 - Proximity to airports
+
+    We found a signiﬁcant negative association between airports proximity and relaxation (at distance bands of less than 3 km and
+between 4 and 5 km) (Table 1). Compared with other activities in the Mappiness dataset the association between airport proximity
+and relaxation was slightly less than the negative eﬀect of doing shopping errands (β = −1.294). Being near an airport was not
+signiﬁcantly associated with happiness at any distance. We note that in all results reported in this paper, r2 model ﬁt for SWB is within
+the range of 10–20% found as standard for SWB regression analysis, as genetic factors may account for as much as up to 80% of the
+variance in SWB (Rietveld et al., 2013).
+
+4.2. Stage 2 – Aircraft noise contours
+
+    We found a signiﬁcant negative association between aircraft noise at the 66 dB level and both happiness and relaxation (Table 2).
+The negative association between aircraft noise at the 66 dB level and happiness was high compared to the negative eﬀects of an
+activity like queuing (β = −3.802) or caring for adults (β = −4.527). The negative association between aircraft noise at the 66 dB
+level and relaxation was greater than the negative eﬀects of travelling or commuting (β = −4.087). There was also a statistically
+signiﬁcant negative association between happiness and noise at the highest (72 dB) level. However, we disregard this result due to the
+small sample of respondents within this noise contour (n = 12). These ﬁndings suggest that there was some association with being in
+aircraft noise contours at the time of responding to the Mappiness application, but only at high dB levels.
+
+4.3. Stage 3 - Airport activities
+
+    We did not ﬁnd a statistically signiﬁcant diﬀerence between workers inside and outside of airports for happiness or relaxation.
+    As well as assessing the associations between airport proximity and SWB, we are able to explore Mappiness to understand how
+people respond to the ESM when located within airports, and how this is associated with the activities undertaken there. We found a
+signiﬁcant positive association between being at an airport and happiness (Table 3). The eﬀects are similar to the happiness increases
+associated with drinking a tea or coﬀee (β = 1.353) and the happiness associated with watching TV. We found a signiﬁcant negative
+association between being at an airport for non-work purposes and relaxation with an eﬀect comparable to more than twice the
+negative coeﬃcient for doing housework and chores (β = −3.454). These results suggest that being in an airport is associated with a
+sense of happiness and excitement, but that it is also stressful.
+
+5. Discussion
+
+    This study analyzes the relationship between airports and wellbeing using data from the Mappiness iPhone application, a large
+experience sampling method dataset for the UK. Analyzing how being within airports or aviation noise contours explains variation in
+people’s responses to aﬀective (momentary) SWB is an innovative way of appraising impact at a detailed level of time and location
+using a large-scale national data set. We match peoples’ reported SWB to their geolocated positions in airport locations and aviation
+noise contours using noise measurement maps from airport operators in England. This is the ﬁrst time that momentary ESM data has
+been applied to the aviation sector. The ESM method provides stronger levels of causal inference by controlling for time invariant
+ﬁxed eﬀects like health, personality, and sociodemographic characteristics. It also allows the analyst to make stronger links between
+the location a person is in and their self-reported wellbeing (Csikszentmihalyi and Hunter, 2003; Stone and Shiﬀman, 1994).
+    Being in a high-level aircraft noise contour (66 dB) was negatively associated with happiness and feeling relaxed at that time. By
+comparing these results to other coeﬃcients within the Mappiness survey, we observe that the magnitude of the association with
+
+                                                                   47
+D. Fujiwara et al.                                                                                                Transportation Research Part D 56 (2017) 43–54
+
+
+Table 1
+OLS regressions for SWB and airport distance controlling for background variables (all wellbeing variables measured on a scale of 0–100).
+
+  Airport distance model                                                         Happiness                                  Relaxation
+
+                                                                                 Coeﬃcient           Standard error         Coeﬃcient              Standard error
+
+  Nearest of 18 runways < 3 km                                                   0.069               0.45                   −1.136  **
+                                                                                                                                                   0.488
+  Nearest of 18 runways ≥3 km, < 4 km                                            −0.021              0.346                  −0.169                 0.45
+  Nearest of 18 runways ≥4 km, < 5 km                                            −0.504              0.384                  −1.034**               0.525
+  Nearest of 18 runways ≥5 km, < 7 km                                            −0.164              0.274                  −0.252                 0.298
+  Nearest of 18 runways ≥7 km, < 11 km                                           0.03                0.187                  −0.034                 0.207
+  Nearest of 18 runways ≥11 km, < 15 km                                          0.131               0.185                  −0.098                 0.203
+  Outdoors                                                                       2.869***            0.111                  1.991***               0.11
+  Vehicle                                                                        0.037               0.117                  −0.12                  0.133
+  Elsewhere                                                                      1.583***            0.081                  0.193**                0.09
+  Work                                                                           −2.418***           0.121                  −4.621***              0.14
+  Admin, ﬁnances, organising                                                     −1.385***           0.142                  −2.822***              0.159
+  Birdwatching, nature watching                                                  4.243***            0.425                  5.244***               0.478
+  Browsing the Internet                                                          0.720***            0.082                  1.599***               0.094
+  Care or help for adults                                                        −3.925***           0.518                  −4.795***              0.491
+  Childcare, playing with children                                               2.880***            0.155                  0.856***               0.167
+  Computer games, iPhone games                                                   2.612***            0.11                   3.679***               0.119
+  Cooking, preparing food                                                        2.172***            0.084                  0.719***               0.094
+  Drinking alcohol                                                               3.642***            0.1                    4.229***               0.109
+  Drinking tea/coﬀee                                                             1.396***            0.073                  1.331***               0.082
+  Eating, snacking                                                               2.011***            0.058                  1.752***               0.058
+  Exhibition, museum, library                                                    5.278***            0.271                  4.324***               0.333
+  Gambling, betting                                                              1.368**             0.663                  −0.874                 0.752
+  Gardening, allotment                                                           5.087***            0.296                  3.486***               0.337
+  Hobbies, arts, crafts                                                          5.177***            0.241                  4.410***               0.247
+  Housework, chores, DIY                                                         −0.687***           0.088                  −3.325***              0.103
+  Hunting, ﬁshing                                                                2.790**             1.145                  2.555**                1.3
+  In a meeting, seminar, class                                                   0.398***            0.136                  −1.213***              0.162
+  Intimacy, making love                                                          12.706***           0.277                  10.289***              0.274
+  Listening to music                                                             3.379***            0.103                  3.238***               0.104
+  Listening to speech/podcast                                                    1.886***            0.134                  2.410***               0.141
+  Match, sporting event                                                          2.312***            0.292                  −0.619**               0.31
+  Meditating, religious activities                                               4.143***            0.419                  5.577***               0.435
+  Other games, puzzles                                                           2.292***            0.228                  2.309***               0.258
+  Pet care, playing with pets                                                    3.322***            0.174                  2.601***               0.196
+  Reading                                                                        1.802***            0.091                  3.753***               0.105
+  Shopping, errands                                                              0.649***            0.095                  −1.294***              0.11
+  Sick in bed                                                                    −19.032***          0.273                  −13.711***             0.282
+  Singing, performing                                                            6.050***            0.284                  2.425***               0.425
+  Sleeping, resting, relaxing                                                    0.804***            0.077                  5.705***               0.108
+  Smoking                                                                        0.463**             0.185                  0.019                  0.201
+  Something else (version < 1.0.2)                                               −1.334***           0.169                  −2.341***              0.175
+  Something else (version ≥ 1.0.2)                                               −3.037***           0.156                  −4.168***              0.145
+  Sports, running, exercise                                                      6.645***            0.164                  0.819***               0.242
+  Spouse, partner, girl/boyfriend                                                3.999***            0.107                  2.588***               0.104
+  Talking, chatting, socialising                                                 4.235***            0.074                  3.450***               0.07
+  Texting, email, social media                                                   0.947***            0.086                  0.767***               0.086
+  Theatre, dance, concert                                                        6.278***            0.254                  3.281***               0.288
+  Travelling, commuting                                                          −2.192***           0.101                  −4.432***              0.117
+  Waiting, queueing                                                              −3.943***           0.127                  −5.479***              0.154
+  Walking, hiking                                                                2.524***            0.149                  2.223***               0.17
+  Something else (version < 1.0.2)                                               −1.334***           0.169                  −2.341***              0.175
+  Something else (version ≥ 1.0.2)                                               −3.037***           0.156                  −4.168***              0.145
+  Children                                                                       0.382***            0.138                  −0.810***              0.147
+  Clients, customers                                                             1.018***            0.307                  −0.19                  0.331
+  Colleagues, classmates                                                         −0.354***           0.12                   −0.971***              0.137
+  Friends                                                                        4.197***            0.082                  3.221***               0.088
+  Other family members                                                           0.770***            0.091                  0.263***               0.095
+  Other people participant knows                                                 −0.781***           0.168                  −1.587***              0.175
+  Spouse, partner, girl/boyfriend                                                3.999***            0.107                  2.588***               0.104
+  Between sunrise and sunset, based on time, date and GPS coords (0/1)           0.450***            0.072                  0.294***               0.075
+  Proportion domestic gardens                                                    −0.906***           0.336                  −0.034                 0.398
+  Proportion of green space                                                      0.532**             0.234                  1.123***               0.26
+  Proportion of water                                                            1.321               0.815                  1.36                   0.961
+  East Midlands                                                                  0.043               0.288                  0.429                  0.328
+  East of England                                                                0.447*              0.242                  0.484                  0.305
+  North East                                                                     0.542               0.477                  0.321                  0.491
+                                                                                                                                            (continued on next page)
+
+
+                                                                               48
+D. Fujiwara et al.                                                                                                      Transportation Research Part D 56 (2017) 43–54
+
+
+Table 1 (continued)
+
+  Airport distance model                                                            Happiness                                     Relaxation
+
+                                                                                    Coeﬃcient             Standard error          Coeﬃcient            Standard error
+
+  North West                                                                        0.072                 0.257                   0.375                0.281
+  South East                                                                        0.248                 0.175                   0.645***             0.211
+  South West                                                                        0.690***              0.249                   1.542***             0.333
+  West Midlands                                                                     0.366                 0.306                   0.529                0.336
+  Yorkshire and The Humber                                                          0.147                 0.285                   0.557                0.34
+  Constant                                                                          57.455***             0.608                   55.843***            0.701
+  Observations                                                                      1842854                                       1842854
+  R squared                                                                         0.129                                         0.152
+
+Fixed eﬀects OLS models. Reference groups: (i) for location variables ref = inside; (ii) for place ref = home; (iii) for region variables ref = London. Control variables
+for days of the week and national holidays are included (not shown). Sample is restricted to England and those aged 16 and over.
+   * p < 0.05.
+   ** p < 0.01.
+   *** p < 0.001.
+
+
+
+
+aviation noise at these high levels was considerable compared to airport proximity and the eﬀects of other activities in the Mappiness
+dataset (such as adult care, queuing, and waiting). We note that noise levels of 66 dB and above are particularly high, with less than
+1% of ﬂight contours in England reaching this level (the majority (95%) of aviation noise in the UK sits around the 55–60 dB range).6
+In addition, aircraft noise analysis was restricted to noise contours around three London airports, due to limitations in data available
+from other English airport operators. We found that being near an airport was negatively associated with feeling relaxed, but did not
+have an association with happiness in the moment. The magnitude of this association was not large compared with other activities in
+the Mappiness dataset.
+    These ﬁndings have important implications for policy, providing the strongest evidence to date of the negative association be-
+tween aircraft noise, airport location, and subjective wellbeing. Where previous cross-sectional studies have identiﬁed a negative
+association with life satisfaction at the household level (Lawton and Fujiwara, 2016; Van Praag and Baarsma, 2005), ESM provides
+greater robustness and higher levels of causal inference by controlling for a wider range of factors (Csikszentmihalyi and Hunter,
+2003; Stone and Shiﬀman, 1994). This provides important evidence of the negative externalities produced by the aviation industry,
+not only on those living in the local area, but also those within proximity to airports or aircraft noise.
+    Within the data we are also able to explore the reported wellbeing of people within airports within the moment. The relationship
+between airport travel, happiness and relaxation is a particularly interesting one, because it is associated positively with happiness
+but negatively with relaxation. This is almost a unique ﬁnding in the momentary SWB literature to date (MacKerron and Mourato,
+2013). Typically the relationship between perceived stress and happiness has been found to be inverse (i.e., individuals with per-
+ceived higher levels of stress report being less happy than those with lower levels of stress, see Schiﬀrin and Nelson, 2008). Yet this
+ﬁnding is intuitive, suggesting that airports are a place of pleasure at travelling or holidaying accompanied by the stress of organising
+and tight schedules. There was no diﬀerence in happiness and relaxation when comparing people who work in airports against similar
+people that work outside of airports. This suggests that the positive association between employment and wellbeing is not weakened
+by the job being in an airport.
+    These ﬁndings demonstrate a wider perspective that shows the positive impacts that airports have in terms of air travel, leisure,
+and employment opportunities, providing a more balanced view for policy-makers. The ability to identify the range of work and non-
+work activities associated with wellbeing within airports gives us broader insight into the range of impacts, both positive and
+negative, that aviation has on people’s momentary wellbeing.
+    A policy-relevant interpretation stemming from the present study is that the negative eﬀects of aviation noise may be oﬀset by
+positive aspects of air travel on the economy and leisure. It does not, however, imply that some people will not lose out. Those present
+in noise contours and not beneﬁting from the economic or leisure beneﬁts airports provide are likely to suﬀer negative eﬀects on their
+SWB due to noise. Standard policy solutions for mitigating the negative eﬀects of aircraft noise have focused on noise insulation
+measures to reduce the negative eﬀect of high levels of aircraft noise. An alternative approach to mitigate the negative eﬀects of
+aviation noise on wellbeing may involve improving the provision of services that have a known positive eﬀect on SWB. These may
+include measures to improve health conditions in the local area, through improved health provisioning services, communication
+drives for health education and discouraging smoking, and measures to reduce unemployment in the local area. Improvement to the
+local economy is one of the economic factors commonly presented in airport expansion options (Airports Commission, 2014). It is
+important to ensure that these opportunities are made available to those in the local community who are most likely to be aﬀected by
+increases in air traﬃc and aviation noise.
+    The results also provide quantitative estimates of the association between noise and peoples’ wellbeing. In recent years academics
+
+
+  6
+    Based on Environmental Research and Consultancy Department (ERCD) 2006 LDEN Noise Mapping, see http://www.gatwickairport.com/globalassets/
+publicationﬁles/business_and_community/all_public_publications/s_runway/airports_commission/gatwick_appendix_a7_air_noise.pdf.
+
+
+                                                                                   49
+D. Fujiwara et al.                                                                                                 Transportation Research Part D 56 (2017) 43–54
+
+
+Table 2
+OLS regressions for Mappiness SWB responses within noise contours for three London airports controlling for background variables (all wellbeing variables measured
+on a scale of 0–100).
+
+                                                                                  Happiness                                  Relaxation
+
+                                                                                  Coeﬃcient           Standard error         Coeﬃcient           Standard error
+
+  LHR/LGW/STN standard contours average mode 2012 (dB bands) = 57                 1.342               1.206                  0.176               1.292
+  LHR/LGW/STN standard contours average mode 2012 (dB bands) = 60                 0.358               0.844                  −1.285              1.182
+  LHR/LGW/STN standard contours average mode 2012 (dB bands) = 63                 0.415               1.115                  −0.389              1.241
+  LHR/LGW/STN standard contours average mode 2012 (dB bands) = 66                 −6.344**            3.039                  −5.614*             3.225
+  LHR/LGW/STN standard contours average mode 2012 (dB bands) = 69                 0.899               2.22                   −3.892              2.848
+  LHR/LGW/STN standard contours average mode 2012 (dB bands) = 72                 −10.419*            5.356                  −3.015              5.848
+  Outdoors                                                                        3.060***            0.163                  2.193***            0.154
+  Vehicle                                                                         −0.007              0.153                  −0.261              0.173
+  Elsewhere                                                                       1.573***            0.104                  0.308***            0.115
+  Work                                                                            −2.720***           0.167                  −4.933***           0.192
+  Admin, ﬁnances, organising                                                      −1.214***           0.159                  −2.710***           0.167
+  Birdwatching, nature watching                                                   4.408***            0.472                  5.347***            0.531
+  Browsing the Internet                                                           0.718***            0.108                  1.496***            0.127
+  Care or help for adults                                                         −4.527***           0.658                  −5.225***           0.584
+  Childcare, playing with children                                                2.771***            0.179                  0.746***            0.193
+  Computer games, iPhone games                                                    2.763***            0.134                  3.674***            0.141
+  Cooking, preparing food                                                         2.187***            0.099                  0.666***            0.112
+  Drinking alcohol                                                                3.565***            0.127                  4.031***            0.138
+  Drinking tea/coﬀee                                                              1.233***            0.087                  1.226***            0.099
+  Eating, snacking                                                                1.984***            0.068                  1.677***            0.071
+  Exhibition, museum, library                                                     5.705***            0.377                  4.262***            0.504
+  Gambling, betting                                                               0.784               0.88                   −1.215              0.946
+  Gardening, allotment                                                            4.804***            0.364                  2.828***            0.409
+  Hobbies, arts, crafts                                                           5.196***            0.288                  4.433***            0.302
+  Housework, chores, DIY                                                          −0.770***           0.103                  −3.457***           0.124
+  Hunting, ﬁshing                                                                 3.066**             1.359                  2.105               1.537
+  In a meeting, seminar, class                                                    0.204               0.202                  −1.307***           0.226
+  Intimacy, making love                                                           12.877***           0.359                  10.220***           0.354
+  Listening to music                                                              3.387***            0.107                  3.215***            0.116
+  Listening to speech/podcast                                                     2.098***            0.162                  2.559***            0.168
+  Match, sporting event                                                           2.421***            0.323                  −0.382              0.351
+  Meditating, religious activities                                                4.000***            0.544                  5.274***            0.598
+  Other games, puzzles                                                            2.416***            0.296                  2.440***            0.301
+  Pet care, playing with pets                                                     3.282***            0.203                  2.391***            0.229
+  Reading                                                                         1.883***            0.115                  3.859***            0.134
+  Shopping, errands                                                               0.581***            0.121                  −1.407***           0.137
+  Sick in bed                                                                     −19.571***          0.348                  −14.363***          0.336
+  Singing, performing                                                             5.861***            0.355                  2.293***            0.583
+  Sleeping, resting, relaxing                                                     0.846***            0.09                   5.764***            0.122
+  Smoking                                                                         0.531**             0.235                  0.06                0.267
+  Sports, running, exercise                                                       6.709***            0.212                  0.495*              0.3
+  Talking, chatting, socialising                                                  4.176***            0.087                  3.322***            0.084
+  Texting, email, social media                                                    0.941***            0.112                  0.785***            0.111
+  Theatre, dance, concert                                                         5.684***            0.344                  2.391***            0.429
+  Travelling, commuting                                                           −1.909***           0.13                   −4.087***           0.147
+  Waiting, queueing                                                               −3.802***           0.159                  −5.394***           0.191
+  Walking, hiking                                                                 2.687***            0.19                   2.283***            0.224
+  Washing, dressing, grooming                                                     1.962***            0.105                  0.09                0.124
+  Watching TV, ﬁlm                                                                2.211***            0.074                  3.915***            0.084
+  Working, studying                                                               −1.656***           0.112                  −4.229***           0.128
+  Something else (version < 1.0.2)                                                −1.477***           0.211                  −2.646***           0.215
+  Something else (version ≥ 1.0.2)                                                −3.409***           0.188                  −4.410***           0.186
+  Children                                                                        0.460***            0.156                  −0.768***           0.164
+  Clients, customers                                                              0.755               0.459                  −0.391              0.457
+  Colleagues, classmates                                                          −0.463***           0.173                  −1.160***           0.199
+  Friends                                                                         4.212***            0.099                  3.223***            0.111
+  Other family members                                                            0.618***            0.107                  0.175               0.109
+  Other people participant knows                                                  −0.926***           0.229                  −1.734***           0.227
+  Spouse, partner, girl/boyfriend                                                 3.726***            0.122                  2.408***            0.116
+  Between sunrise and sunset, based on time, date and GPS coords (0/1)            0.464***            0.09                   0.354***            0.093
+  Proportion domestic gardens                                                     −0.226              0.51                   0.781               0.568
+  Proportion of green space                                                       0.760**             0.337                  1.532***            0.352
+                                                                                                                                          (continued on next page)
+
+
+
+
+                                                                               50
+D. Fujiwara et al.                                                                                                    Transportation Research Part D 56 (2017) 43–54
+
+
+Table 2 (continued)
+
+                                                                                    Happiness                                    Relaxation
+
+                                                                                    Coeﬃcient            Standard error          Coeﬃcient            Standard error
+
+                                                                                          *                                           **
+  Proportion of water                                                               2.836                1.483                   4.242                1.714
+  East Midlands                                                                     0.529                0.328                   0.997**              0.388
+  East of England                                                                   0.955***             0.297                   1.256***             0.37
+  North East                                                                        0.418                0.64                    0.28                 0.682
+  North West                                                                        0.652*               0.371                   1.359***             0.385
+  South East                                                                        0.741***             0.229                   1.113***             0.265
+  South West                                                                        1.235***             0.308                   1.983***             0.426
+  West Midlands                                                                     0.843**              0.37                    1.103***             0.396
+  Yorkshire and The Humber                                                          0.501                0.338                   1.244***             0.456
+  Constant                                                                          56.371***            0.808                   55.662***            0.927
+  Observations                                                                      1156270                                      1156270
+  r2                                                                                0.124                                        0.142
+
+Fixed eﬀects OLS models. Reference groups: (i) for location variables ref = inside; (ii) for place ref = home; (iii) for region variables ref = London. London airports
+consist of London Heathrow (LHR), London Gatwick (LGW), and Stansted (STN). Control variables for days of the week and national holidays are included (not
+shown). Sample is restricted to England and those aged 16 and over.
+  * p < 0.05.
+  ** p < 0.01.
+  *** p < 0.001.
+
+
+and some policy-makers have argued that alternative metrics to the standard monetary GDP and CBA measures may be required for
+estimating the impacts (positive and negative) of policies and interventions on citizens (Stiglitz et al., 2009). The analysis outlined in
+this paper represents an attempt to estimate the impacts of government decisions in one sector – that of aviation policy – using SWB
+measures. Going forward, governments may increasingly aim to apply measures such as these to better quantify the level of com-
+pensation required to oﬀset the negative eﬀects of aviation activity. This compensation may be calculated in terms of activities that
+produce an equivalent uplift in SWB, in non-monetary terms. It could alternatively be calculated in monetary terms by estimating the
+compensating level of income required to give individuals the same amount of wellbeing as they would have had without the
+experience of aircraft noise/airport location (Dolan and Fujiwara, 2016; Fujiwara, 2013). The advantage of this approach is that it
+provides a more direct measure of welfare changes than other forms of monetary valuation, such as revealed preference hedonic
+models, which are dependent on proxy markets, such as housing which may be subject to distortions.
+    We conclude with some ﬁnal methodological considerations and recommendations for future research. In contrast to existing
+studies on aviation noise which have focused on evaluative measures of satisfaction at the household level in the UK, we found that
+proximity to airports at less than 5 km had a signiﬁcant negative association with feeling relaxed. This ﬁnding is in contrast to Lawton
+and Fujiwara (2016), who found no association between airport proximity and SWB using household surveys. Household surveys are
+attached to residential postcodes meaning that respondents with higher tolerance of aircraft noise may have self-selected into the area
+(Frederick and Loewenstein, 1999). In contrast, Mappiness respondents are by deﬁnition present within the 5 km airport perimeter at
+the time of the survey, but may be non-residents or commuters passing through or using some other facilities around the airport. This
+suggests that the reason that an individual is within an airport (the activity they are performing, whether travelling, working, or some
+other leisure purpose) is an important factor in the relationship between airports and SWB. More advanced analysis could test what
+types of activities are most commonly performed within 5 km of the airport to the wellbeing of residents within the same survey.
+Finally, there is room for innovation in this analysis by inclusion of daily or hourly ﬂight path information that could be temporally
+linked to the GPS of the Mappiness response. Improvements in this area would require the release of more detailed noise contour data
+from the airport operators.
+    In sum, this study presents a highly novel approach through its use of ESM methods to assess the associations between aircraft
+noise/location and wellbeing, which has not been analysed in the context infrastructure generally, or airport noise speciﬁcally.
+Among the advantages of the ESM method is that it allows for more robust levels of causal inference than that involved in the
+standard OLS regression modelling commonly used for SWB analysis and focused on peoples’ actual location rather than household
+postcode. Our paper makes stronger inferences around the issue of cause and eﬀect between aircraft noise and wellbeing, and so
+constitutes a novel addition to the literature in this area.
+
+
+Acknowledgements
+
+    We thank all Mappiness participants for volunteering their data. George MacKerron acknowledges the ESRC’s funding for data
+collection (grant number PTA-031-2006-00280). Part of the research was originally funded by the Airports Commission.
+
+
+
+
+                                                                                  51
+D. Fujiwara et al.                                                                                                      Transportation Research Part D 56 (2017) 43–54
+
+
+Table 3
+OLS regressions for SWB and non-working activity within any English airports controlling for background variables (all wellbeing variables measured on a scale of
+0–100).
+
+                                                                                    Happiness                                     Relaxation
+
+                                                                                    Coeﬃcient             Standard error          Coeﬃcient            Standard error
+
+  Inside any airport                                                                1.548 ***
+                                                                                                          0.332                   −0.803  **
+                                                                                                                                                       0.395
+  Outdoors                                                                          2.939***              0.077                   2.021***             0.089
+  Vehicle                                                                           0.06                  0.106                   −0.004               0.124
+  Elsewhere                                                                         1.941***              0.073                   0.552***             0.077
+  Admin, ﬁnances, organising                                                        −1.339***             0.117                   −2.926***            0.138
+  Birdwatching, nature watching                                                     4.584***              0.389                   5.741***             0.457
+  Browsing the Internet                                                             0.623***              0.083                   1.374***             0.083
+  Care or help for adults                                                           −6.436***             0.553                   −6.964***            0.579
+  Childcare, playing with children                                                  2.895***              0.135                   0.923***             0.142
+  Computer games, iPhone games                                                      2.442***              0.106                   3.277***             0.109
+  Cooking, preparing food                                                           2.246***              0.077                   0.747***             0.084
+  Drinking alcohol                                                                  3.595***              0.087                   4.044***             0.093
+  Drinking tea/coﬀee                                                                1.353***              0.074                   1.259***             0.077
+  Eating, snacking                                                                  2.027***              0.056                   1.738***             0.056
+  Exhibition, museum, library                                                       5.206***              0.268                   4.039***             0.328
+  Gambling, betting                                                                 1.208*                0.711                   −0.683               0.833
+  Gardening, allotment                                                              5.201***              0.251                   3.469***             0.303
+  Hobbies, arts, crafts                                                             4.889***              0.21                    4.174***             0.217
+  Housework, chores, DIY                                                            −0.688***             0.085                   −3.454***            0.101
+  Hunting, ﬁshing                                                                   2.858**               1.123                   2.483*               1.286
+  In a meeting, seminar, class                                                      −0.488***             0.184                   −2.248***            0.228
+  Intimacy, making love                                                             12.694***             0.264                   10.153***            0.258
+  Listening to music                                                                3.266***              0.084                   3.010***             0.086
+  Listening to speech/podcast                                                       1.860***              0.129                   2.244***             0.147
+  Match, sporting event                                                             2.126***              0.247                   −0.826***            0.26
+  Meditating, religious activities                                                  4.009***              0.422                   5.395***             0.434
+  Other games, puzzles                                                              2.358***              0.232                   2.271***             0.252
+  Pet care, playing with pets                                                       3.191***              0.148                   2.435***             0.174
+  Reading                                                                           1.925***              0.088                   3.756***             0.101
+  Shopping, errands                                                                 0.367***              0.094                   −1.877***            0.112
+  Sick in bed                                                                       −19.142***            0.278                   −13.860***           0.282
+  Singing, performing                                                               6.118***              0.264                   2.121***             0.364
+  Sleeping, resting, relaxing                                                       0.788***              0.068                   5.589***             0.092
+  Smoking                                                                           0.747***              0.175                   0.308*               0.182
+  Sports, running, exercise                                                         6.412***              0.154                   0.407                0.249
+  Talking, chatting, socialising                                                    3.871***              0.072                   3.013***             0.068
+  Texting, email, social media                                                      0.834***              0.092                   0.599***             0.089
+  Theatre, dance, concert                                                           6.170***              0.239                   2.971***             0.275
+  Travelling, commuting                                                             −2.545***             0.099                   −5.050***            0.124
+  Waiting, queueing                                                                 −4.232***             0.131                   −6.164***            0.16
+  Walking, hiking                                                                   2.375***              0.138                   2.138***             0.168
+  Washing, dressing, grooming                                                       1.998***              0.083                   0.037                0.096
+  Watching TV, ﬁlm                                                                  2.054***              0.056                   3.711***             0.063
+  Working, studying                                                                 −1.410***             0.1                     −4.718***            0.122
+  Something else (version < 1.0.2)                                                  −1.612***             0.178                   −2.826***            0.187
+  Something else (version ≥ 1.0.2)                                                  −3.328***             0.166                   −4.443***            0.151
+  Children                                                                          0.625***              0.116                   −0.631***            0.116
+  Clients, customers                                                                1.141***              0.307                   −0.598               0.403
+  Colleagues, classmates                                                            −0.033                0.133                   −0.588***            0.161
+  Friends                                                                           4.100***              0.081                   2.833***             0.082
+  Other family members                                                              0.707***              0.082                   0.210***             0.082
+  Other people participant knows                                                    −0.756***             0.159                   −1.609***            0.172
+  Spouse, partner, girl/boyfriend                                                   3.706***              0.097                   2.354***             0.088
+  Between sunrise and sunset, based on time, date and GPS coords (0/1)              0.432***              0.075                   0.248***             0.078
+  Constant                                                                          57.556***             0.657                   58.442***            0.789
+  Observations                                                                      1411998                                       1411998
+  r2                                                                                0.116                                         0.105
+
+Fixed eﬀects OLS models. Reference groups: (i) for location variables ref = inside; (ii) for place ref = home; (iii) for region variables ref = London. Control variables
+for days of the week and national holidays are included (not shown). Sample is restricted to England and those aged 16 and over.
+   * p < 0.05.
+   ** p < 0.01.
+   *** p < 0.001.
+
+
+
+
+                                                                                   52
+D. Fujiwara et al.                                                                                                                 Transportation Research Part D 56 (2017) 43–54
+
+
+Appendix A. Supplementary material
+
+   Supplementary data associated with this article can be found, in the online version, at http://dx.doi.org/10.1016/j.trd.2017.07.
+015.
+
+References
+
+Airports Commission, 2013. Airports Commission: Interim Report. Airports Commission, London, UK, p. 227 < https://www.gov.uk/government/uploads/system/uploads/
+     attachment_data/ﬁle/271231/airports-commission-interim-report.pdf > .
+Airports Commission, 2014. Airports Commission: Appraisal Framework. Airports Commission, London, UK, p. 136 < https://www.gov.uk/government/uploads/system/
+     uploads/attachment_data/ﬁle/300223/airports-commission-appraisal-framework.pdf > .
+Black, D.A., Black, J.A., Issarayangyun, T., Samuels, S.E., 2007. Aircraft noise exposure and resident’s stress and hypertension: a public health perspective for airport en-
+     vironmental management. J. Air Transp. Manage. 13 (5), 264–276. http://dx.doi.org/10.1016/j.jairtraman.2007.04.003.
+Cantril, H., 1966. The Pattern of Human Concerns. Rutgers University Press, New Brunswick, NJ.
+Caves, R., 2003. The social and economic beneﬁts of aviation. In: Upham, P. (Ed.), Towards Sustainable Aviation. Earthscan, London, UK, pp. 36–47.
+Clark, C., Stansfeld, S.A., 2011. The Eﬀect of Nocturnal Aircraft Noise on Health: a Review of Recent Evidence. Report prepared for the London Borough of Hounslow, London,
+     UK, p. 36 < http://www.hounslow.gov.uk/eﬀect_aircraft_noise_health.pdf > .
+Couper, M.P., Tourangeau, R., Conrad, F.G., Singer, E., 2006. Evaluating the eﬀectiveness of visual analog scales a web experiment. Social Sci. Comput. Rev. 24 (2), 227–245.
+     http://dx.doi.org/10.1177/0894439305281503.
+Csikszentmihalyi, M., Hunter, J., 2003. Happiness in everyday life: the uses of experience sampling. J. Happiness Stud. 4 (2), 185–199. http://dx.doi.org/10.1023/
+     A:1024409732742.
+Di Tella, R., MacCulloch, R., 2006. Some uses of happiness data in economics. J. Econ. Perspect. 20 (1), 25–46.
+Diener, E.D., 1984. Subjective well-being. Psychol. Bull. 95, 542–575. http://dx.doi.org/10.1037/0033-2909.95. 3.542.
+Diener, E., Suh, E.M., Lucas, R.E., Smith, H.L., 1999. Subjective well-being: three decades of progress. Psychol. Bull. 125 (2), 276–302. http://dx.doi.org/10.1037/0033-2909.
+     125.2.276.
+Dolan, P., Fujiwara, D., 2016. Happiness-Based Policy Analysis. In: Adler, M.D., Fleurbaey, M. (Eds.), The Oxford Handbook of Well-Being and Public Policy. < http://www.
+     oxfordhandbooks.com/view/10.1093/oxfordhb/9780199325818.001.0001/oxfordhb-9780199325818-e-9 > (accessed 4 January 2017).
+Dolan, P., Fujiwara, D., Metcalfe, R., 2011. A Step towards Valuing Utility the Marginal and Cardinal Way (CEP Discussion Paper No. 1062). Centre for Economic Performance,
+     LSE. < http://ideas.repec.org/p/cep/cepdps/dp1062.html > (accessed 21 May 2014).
+Dolan, P., Peasgood, T., 2008. Measuring well-being for public policy: preferences or experiences? J. Legal Stud. 37 (S2), S5–S31.
+Dolan, P., Peasgood, T., White, M., 2008. Do we really know what makes us happy? A review of the economic literature on the factors associated with subjective well-being. J.
+     Econ. Psychol. 29 (1), 94–122. http://dx.doi.org/10.1016/j.joep.2007.09.001.
+European Parliament, 2002. Declaration by the Commission in the Conciliation Committee on the Directive relating to the assessment and management of environmental noise.
+     < http://eur-lex.europa.eu/legal-content/EN/TXT/?uri = CELEX%3A32002L0049 > .
+Franssen, E.A.M., van Wiechen, C.M.A.G., Nagelkerke, N.J.D., Lebret, E., 2004. Aircraft noise around a large international airport and its impact on general health and medication
+     use. Occup. Environ. Med. 61 (5), 405–413. http://dx.doi.org/10.1136/oem.2002.005488.
+Frederick, S., Loewenstein, G., 1999. Hedonic adaptation. In: Kahneman, D., Diener, E., Schwarz, N. (Eds.), Well-Being: The Foundations of Hedonic Psychology. Russell Sage
+     Foundation, New York, NY, pp. 302–329.
+Frey, B.S., Stutzer, A., 2002. What can economists learn from happiness research? J. Econ. Literature 40 (2), 402–435. http://dx.doi.org/10.1257/002205102320161320.
+Frey, B.S., Stutzer, A., 2010. Happiness and Economics: How the Economy and Institutions Aﬀect Human Well-Being. Princeton University Press, Princeton, NJ.
+Frijters, P., 2001. Interpretation problems with changes in indices based on categorizations. Econ. Lett. 72 (3), 375–379. http://dx.doi.org/10.1016/S0165-1765(01)00451-7.
+Fujiwara, D., 2013. A General Method for Valuing Non-Market Goods Using Wellbeing Data: Three-Stage Wellbeing Valuation. In CEP Discussion Paper No 1233. Centre for
+     Economic Performance, London School of Economics, London, UK, pp. 1–29. < http://cep.lse.ac.uk/_new/publications/series.asp?prog = CEP > (accessed 21 May 2014).
+Fujiwara, D., Campbell, R., 2011. Valuation techniques for social cost-beneﬁt analysis: stated preference, revealed preference and subjective well-being approaches. A discussion
+     of the current issues. HM Treasury, London, UK, pp. 1–76. https://www.gov.uk/government/uploads/system/uploads/attachment_data/ﬁle/209107/greenbook_
+     valuationtechniques.pdf (accessed 13 April 2013).
+Hektner, J.M., Schmidt, J.A., Csikszentmihalyi, M., 2007. Experience Sampling Method: Measuring the Quality of Everyday Life. SAGE.
+Howarth, D., Griggs, S., 2013. The Politics of Airport Expansion in the United Kingdom: Hegemony, Policy and the Rhetoric of “Sustainable Aviation”. Manchester University
+     Press, Manchester, UK.
+Kahneman, D., Diener, E., Schwarz, N., 2003. Well-Being: Foundations of Hedonic Psychology, vol. 13 Russell Sage Foundation, New York, NY.
+Kahneman, D., Krueger, A.B., 2006. Developments in the measurement of subjective well-being. J. Econ. Perspect. 20 (1), 3–24. http://dx.doi.org/10.1257/
+     089533006776526030.
+Kahneman, D., Krueger, A.B., Schkade, D.A., Schwarz, N., Stone, A.A., 2004. A survey method for characterizing daily life experience: the day reconstruction method. Science 306
+     (5702), 1776–1780. http://dx.doi.org/10.1126/science.1103572.
+Kahneman, D., Tversky, A., 1984. Choices, values, and frames. Am. Psychol. 39 (4), 341–350. http://dx.doi.org/10.1037/0003-066X.39.4.341.
+Kroesen, M., Molin, E.J.E., Miedema, H.M.E., Vos, H., Janssen, S.A., van Wee, B., 2010. Estimation of the eﬀects of aircraft noise on residential satisfaction. Transp. Res. Part D:
+     Transp. Environ. 15 (3), 144–153. http://dx.doi.org/10.1016/j.trd.2009.12.005.
+Lawton, R.N., Fujiwara, D., 2016. Living with aircraft noise: airport proximity, aviation noise and subjective wellbeing in England. Transp. Res. Part D: Transp. Environ. 42,
+     104–118.
+Lewis, J.R., Oğuzhan, E., 2017. User experience rating scales with 7, 11, or 101 points: does it matter? J. Usab. Stud. 12 (2).
+MacKerron, G., 2012. Happiness economics from 35 000 feet. J. Econ. Surv. 26 (4), 705–735. http://dx.doi.org/10.1111/j.1467-6419.2010.00672.x.
+MacKerron, G., Mourato, S., 2009. Life satisfaction and air quality in London. Ecol. Econ. 68 (5), 1441–1453. http://dx.doi.org/10.1016/j.ecolecon.2008.10.004.
+MacKerron, G., Mourato, S., 2013. Happiness is greater in natural environments. Global Environ. Change 23 (5), 992–1000. http://dx.doi.org/10.1016/j.gloenvcha.2013.03.010.
+Navrud, S., 2002. The State-Of-The-Art on Economic Valuation of Noise (Final Report to European Commission DG Environment). Department of Economics and Social Sciences
+     Agricultural University of Norway, Brussels, Belgium, p. 12.
+OECD, 2013. OECD Guidelines on Measuring Subjective Well-being. OECD Publishing, Paris, France. http://dx.doi.org/10.1787/9789264191655-en. p. 265.
+Parﬁt, D., 1984. Reasons and Persons. Oxford University Press, Oxford UK.
+Pavot, W., Diener, E., 1993. The aﬀective and cognitive context of self-reported measures of subjective well-being. Soc. Indic. Res. 28 (1), 1–20. http://dx.doi.org/10.1007/
+     BF01086714.
+Reynolds, T.G., Barrett, S., Dray, L., Evans, A., Kohler, M.O., Morales, M.V., et al., 2007. Modelling environmental & economic impacts of aviation: introducing the aviation
+     integrated modelling project. In: 7th AIAA Aviation Technology, Integration and Operations Conference.
+Rietveld, C.A., Cesarini, D., Benjamin, D.J., Koellinger, P.D., Neve, J.-E.D., Tiemeier, H., et al., 2013. Molecular genetics and subjective well-being. Proc. Natl. Acad. Sci. 110 (24),
+     9692–9697. http://dx.doi.org/10.1073/pnas.1222171110.
+Schiﬀrin, H.H., Nelson, S.K., 2008. Stressed and happy? Investigating the relationship between happiness and perceived stress. J. Happiness Stud. 11 (1), 33–39. http://dx.doi.
+     org/10.1007/s10902-008-9104-7.
+Schwarz, N., Clore, G.L., 1983. Mood, misattribution, and judgments of well-being: informative and directive functions of aﬀective states. J. Pers. Soc. Psychol. 45 (3), 513–523.
+     http://dx.doi.org/10.1037/0022-3514.45.3.513.
+Stiglitz, J., Sen, A., Fitoussi, J., 2009. Report by the Commission on the Measurement of Economic Performance and Social Progress. Commission on the Measurement of
+     Economic Performance and Social Progress, Paris, France, p. 292 < http://www.stiglitz-sen-ﬁtoussi.fr/en/index.htm > .
+Stone, A.A., Shiﬀman, S., 1994. Ecological momentary assessment (EMA) in behavorial medicine. Ann. Behav. Med. 16 (3), 199–202.
+Treiblmaier, H., Filzmoser, P., 2011. Beneﬁts from Using Continuous Rating Scales in Online Survey Research. In: Presented at the ICIS 2011 Proceedings. < http://aisel.aisnet.
+
+
+                                                                                           53
+D. Fujiwara et al.                                                                                                                Transportation Research Part D 56 (2017) 43–54
+
+
+    org/icis2011/proceedings/researchmethods/1 > (accessed 2 June 2017).
+Van Praag, B.M.S., Baarsma, B.E., 2005. Using happiness surveys to value intangibles: the case of airport noise. Econ. J. 115 (500), 224–246. http://dx.doi.org/10.1111/j.1468-
+    0297.2004.00967.x.
+Welsch, H., 2006. Environment and happiness: valuation of air pollution using life satisfaction data. Ecol. Econ. 58 (4), 801–813. http://dx.doi.org/10.1016/j.ecolecon.2005.09.
+    006.
+Wolfe, P.J., Yim, S.H.L., Lee, G., Ashok, A., Barrett, S.R.H., Waitz, I.A., 2014. Near-airport distribution of the environmental costs of aviation. Transp. Policy 34, 102–108. http://
+    dx.doi.org/10.1016/j.tranpol.2014.02.023.
+
+
+
+
+                                                                                          54
+

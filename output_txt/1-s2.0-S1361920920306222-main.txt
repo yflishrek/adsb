@@ -1,0 +1,1052 @@
+                                                        Transportation Research Part D 85 (2020) 102435
+
+
+                                                            Contents lists available at ScienceDirect
+
+
+                                                  Transportation Research Part D
+                                                 journal homepage: www.elsevier.com/locate/trd
+
+
+
+
+Spatial characteristics of aircraft CO2 emissions at diﬀerent
+                                                                                                                                              T
+airports: Some evidence from China
+                                                                                                                ⁎
+Rong Hua, Jialin Zhua, Yu Zhangb, Junfeng Zhanga, Frank Witloxc,a,d,
+a
+  College of Civil Aviation, Nanjing University of Aeronautics and Astronautics, China
+b
+  Department of Civil and Environmental Engineering, University of South Florida, United States
+c
+  Department of Geography, Ghent University, Belgium
+d
+  Department of Geography, University of Tartu, Estonia
+
+
+
+
+A R T IC LE I N F O                                        ABS TRA CT
+
+Keywords:                                                  This paper analyzes aircraft CO2 emissions (in both quantity and intensity per passenger) during
+Carbon dioxide emission                                    landing and take-oﬀ cycles at nine diﬀerent airports in Jiangsu province (China) over a ten-year
+Economic development                                       time span (2007–2016). Our database is unique and very detailed in that we combine ﬂight
+Spatial aggregation model                                  schedules, with aircraft type (engines) used, and landing-and-take-oﬀ cycles. We are particularly
+Emission intensity
+                                                           interested in how the spatial characteristics impact emission levels. To this end we estimate a CO2
+Emission quantity
+Jiangsu province (China)
+                                                           emission model taking the airport characteristics into account, and apply a spatial classiﬁcation
+                                                           and autocorrelation model to distinguish between diﬀerent types of airports and systems. Our
+                                                           analysis shows that: (1) there are strong spatial distribution diﬀerences between airports due to
+                                                           the patterns of economic development, airport size and aircraft used; (2) most airports have a
+                                                           high reduction potential of CO2 emission, without a loss of economic performance; (3) signiﬁcant
+                                                           spatial aggregation eﬀects exist and are persistent during most observational years, which in-
+                                                           dicates a strong Matthew eﬀect of CO2 emission within Jiangsu province; and (4) airport size,
+                                                           linkage to the local economy, and airport location are closely related to aircraft CO2 emissions.
+                                                           We also provide a number of recommendations to improve airport CO2 emissions and add to
+                                                           sustainable development.
+
+
+
+
+1. Introduction
+
+    This paper sets three novel research goals. First, our analysis shows the performance of airports on several indicators and relates
+that to underlying patterns of economic development, airport size and aircraft used, and shows how this has evolved over time. To
+this end, we adopt a longitudinal approach (a 10-year time period) to evaluate changes using data from Jiangsu Province (China).
+Second, to the best of our knowledge, we examine and classify the spatial patterns of aircraft CO2 emissions at a regional level for the
+ﬁrst time, controlling for spatial distribution and autocorrelation. Finally, considering the spatial diﬀerence in the pollution mea-
+sures, we provide policy implications to help authorities to further reduce aircraft CO2 emissions. Our research approach is grounded
+in that emission reduction and sustainable economic development are both critical challenges for the future of air transport.
+    Carbon dioxide (CO2) emissions are produced every day by the burning of fossil fuels, which result from daily human activities
+including production and use of electricity, heating, industry, and transport. Increased CO2 emissions contribute to global warming
+
+
+
+    ⁎
+   Corresponding author at: Department of Geography, Ghent University, Belgium.
+   E-mail addresses: hoorong@nuaa.edu.cn (R. Hu), 1364302344@qq.com (J. Zhu), yuzhang@usf.edu (Y. Zhang),
+zhangjunfeng@nuaa.edu.cn (J. Zhang), frank.witlox@ugent.be (F. Witlox).
+
+https://doi.org/10.1016/j.trd.2020.102435
+
+Available online 23 June 2020
+1361-9209/ © 2020 Elsevier Ltd. All rights reserved.
+R. Hu, et al.                                                                                                 Transportation Research Part D 85 (2020) 102435
+
+
+and climate change. Many research results concluded that the aviation sector represents a small, but potentially signiﬁcant and
+increasing factor having a negative impact on climate change (Dessens et al., 2014; ICAO, 2010; IPCC, 1999; Lee et al., 2009; Zhang
+and Witlox, 2020). The IPCC (1999) estimated that the aviation sector contributes about 3% to global anthropogenic CO2 emissions in
+1992, which might increase to 5% for a mid-range emissions scenario by 2050. At the same time, the aviation sector is also the fastest-
+growing mode of transport with passenger demand projected to double by 2035 (IATA, 2016).
+    Emission reduction and sustainable development are critical challenges for the future of air transport. Airports, as key nodes in an
+air transport system, play a vital role in ground processing and handling of aircraft. These operations consume fuel and emit CO2.
+Additionally, and by way of an example, it has been shown that for a modern twin-engine aircraft operating over an 800 km range
+ﬂight, about 25% of the emissions are produced during the landing and take-oﬀ (LTO) cycle (Saravanamuttoo et al., 2001). Therefore,
+aircraft CO2 emission at the level of the airport deserves speciﬁc attention.
+    In response to the increasing concern for aircraft CO2 emissions at airports, a growing body of literature has examined the
+amounts and characteristics of aircraft CO2 emissions. The CO2 emissions of aircraft activities at airports have been investigated at a
+speciﬁc airport level (Ashok et al., 2017; Postorino and Mantecchini, 2014; Schäfer et al., 2003; Sherry, 2015; Shirmohammadi et al.,
+2017; Winther et al., 2006), at a regional/national multi-airport scale (Johansson and Ek, 2003; Song and Shon, 2014, 2012; Stettler
+et al., 2011; Wasiuk et al., 2015), and also globally (Kim et al., 2007; Simone et al., 2013; Wasiuk et al., 2015; Wilkerson et al., 2010)
+by using diﬀerent techniques and methodologies (Kurniawan and Khardi, 2011; Masiol and Harrison, 2014).
+    Apart from the geographical scale (local, regional, global), other impacts have been analyzed as well: i.c., temporal variation
+(Song and Shon, 2012; Winther et al., 2006), spatial dispersion (Shirmohammadi et al., 2017; Winther et al., 2006), development
+trends (ICAO, 2016; Schäfer and Waitz, 2014; Vedantham and Oppenheimer, 1998), and diﬀerent sources of uncertainty (Lee et al.,
+2007; Simone et al., 2013; Stettler et al., 2011; Underwood et al., 2004). Additionally, the main driving factors and reduction
+measures of CO2 emissions from aircraft movements at airports have also been widely discussed (Ashok et al., 2017; Evertse and
+Visser, 2017; ICAO, 2016; Koudis et al., 2017; Monsalud et al., 2014; Neuling and Kaltschmitt, 2018; Sherry, 2015; Simaiakis, 2009;
+Teoh and Khoo, 2016; Xu et al., 2018).
+    The overall ﬁnding is that aircraft CO2 emissions are closely related to the aircraft type, the airport capacity, and the geographical
+location of the airport.
+    Hence, knowing underlying patterns of economic development, airport size and aircraft used, and the characteristics and cor-
+relations of aircraft CO2 emissions at diﬀerent airports will contribute to a better understanding of aviation’s impact and how we can
+reduce CO2 emissions at these diﬀerent airports within that region. Previous studies have also pointed out that there exist some
+diﬀerences in CO2 emissions in the same regional area (Yim et al., 2013; Zhu et al., 2019). Such spatial diﬀerences and correlations
+should therefore also be taking into account apart from the temporal analysis.
+    In sum, assessment and reduction of CO2 emissions are among the most important issues of low-carbon airport development, and
+understanding CO2 emission disparities is crucial to reducing CO2 emissions at that regional level. However, previous research rarely
+investigated the spatial characteristics of aircraft CO2 emissions at the regional level. We aim to ﬁll this research gap.
+    The paper is organized as follows. Section 2 introduces the research methodology. Section 3 presents the research region and data
+sources. Section 4 presents our main ﬁndings (spatial distribution, spatial classiﬁcation, and spatial autocorrelation of aircraft CO2
+emissions). Section 5 provides a discussion of the policy implications, and Section 6 draws conclusions, discusses research limitations,
+and suggests avenues for future research.
+
+
+2. Research method
+
+    We focus on how spatial characteristics impact aircraft CO2 emission levels. To do this, we ﬁrst calculate the aircraft CO2 emission
+according to IPCC and ICAO recommended approaches. This input is then used to analyze the distribution of emission quantity and
+intensity, which will give us a general understanding of the spatial distribution of aircraft CO2 emissions. Next, airports are cate-
+gorized using classiﬁcation matrices. And, ﬁnally, we look for spatial patterns (i.e., spatial dispersion or aggregation) by applying a
+spatial autocorrelation analysis. Fig. 1 visualizes these diﬀerent steps.
+
+
+
+
+                                                          Aircraft CO2 emission calculation         IPCC & ICAO recommended methods
+
+
+
+                Emission quantity &      Spatial distribution analysis          Spatial classification analysis
+                                                                                                                    Classification matrices
+                intensity distribution    of aircraft CO2 emission                of aircraft CO2 emission
+
+                                                                 Spatial differences
+
+                                                          Spatial autocorrelation analysis of
+                                                                                                     Moran's I index
+                                                                aircraft CO2 emission
+
+                                                     Fig. 1. Flowchart of research methodology.
+
+
+                                                                            2
+R. Hu, et al.                                                                                    Transportation Research Part D 85 (2020) 102435
+
+
+2.1. Carbon dioxide emission estimation model
+
+    Aircraft engines emit CO2, H2O, CO, HC, NOX, SOX, and volatile and nonvolatile Particulate Matter (PM) primarily. Typically,
+aviation emission consists of 71% CO2 and 28% H2O (Pham et al., 2010). In this study, only the CO2 emission is investigated as the
+exhaust of modern aircraft engines has few other greenhouse gases, such as NO2 and CH4 (IPCC, 2006).
+    The level of CO2 emissions depends on the composition of carbon and hydrogen in the aviation fuel and the amount of fuel
+consumption only; the emission index of CO2 is generally regarded as constant. We follow the method recommended by the IPCC to
+calculate the CO2 emissions (IPCC, 2006). The calculation formula is as follows:
+         EQit = FQit × NCV × EF                                                                                                             (1)
+where EQit is the annual quantity of CO2 emission in year t at airport i (kg); FQit is the annual quantity of fuel consumption in year t at
+airport i (kg); NCV is the net caloriﬁc value of aviation fuel (kJ/g); and EF is the emission factor of aviation fuel (ng/J). NCV and EF
+are the default values according to the IPCC, 44.3 kJ/g and 70,000 ng/J, respectively.
+    To obtain the fuel consumption of aircraft movements at airports, we apply the landing-and-take-oﬀ (LTO) cycle method put
+forward by the International Civil Aviation Organization (ICAO). A typical LTO cycle contains all aircraft operations at/near an
+airport below the altitude of 3000ft above airﬁeld elevation, which consists of four operation modes: approach, taxi, take-oﬀ, and
+climb. The ICAO also gives engine thrust settings (expressed as a percentage of maximum rated thrust), standard operating time in
+each speciﬁc operating mode (Time-In-Mode, TIM), and fuel ﬂow rate of a particular engine type in each operating mode.
+    ICAO also provides three general approaches to quantify aircraft engine fuel consumption and emissions— a simple, advanced,
+and sophisticated approach—each with a degree of accuracy and an inverse degree of uncertainty. In this paper, the advanced
+approach is adopted, according to the availability of detailed and speciﬁc operating data and information.
+    The annual quantity of fuel consumption in year t can be calculated by the following formula:
+                                                  t
+         FQit = ∑ ∑ (TIMmn × 60) × FFmn × NEm × Nim
+                  m   n                                                                                                                     (2)
+where FQit is annual quantity of fuel consumption in year t at airport i (kg); TIMmn is time-in-mode n (approach, taxi, take-oﬀ, and
+climb) for aircraft m (min); FFmn is the fuel ﬂow for mode n for each engine used on the aircraft m (kg/s); NEm is the number of engines
+                           t
+used on aircraft m; and Nim  is the annual number of LTO cycle of aircraft m in year t at airport i.
+    The annual quantity of CO2 emission from an aircraft at an airport in a speciﬁc year can be determined by adding formulas (1) and
+(2).
+    Having determined the level of CO2 emission, we now want to link this to the airport type. This is done using a spatial distribution
+and classiﬁcation methods.
+
+2.2. Spatial distribution analysis
+
+    Spatial distribution analysis refers to how aircraft CO2 emissions are arranged across airports, which could help us to analyze the
+relative position of airports within that region. The simplest way to describe the spatial distribution of CO2 emissions is to refer to the
+quantity and intensity distribution of CO2 emissions over the geographical area. By means of map overlay the analysis of spatial
+distribution patterns of diﬀerent phenomena can be illustrated. If the gradients of distribution are more similar, then the association
+is more close, and vice versa.
+
+2.3. Spatial classiﬁcation analysis
+
+    Spatial classiﬁcation analysis is widely applied in data feature identiﬁcation (Oliker et al., 2016; Passarella et al., 2020;
+Stuhlmacher et al., 2019; Xing and Meng, 2020; Zou and Greenberg, 2019). We design three diﬀerent classiﬁcation matrices: (i)
+Carbon dioxide Emission Classiﬁcation Matrix (CECM), (ii) Economic Development Classiﬁcation Matrix (EDCM), and (iii) Sus-
+tainable Development Classiﬁcation Matrix (SDCM).
+    In the CECM (as shown in Fig. 2a), we will use two types of indices that are related to aircraft carbon dioxide emissions, one is
+linked to emission quantity: CO2 emission quantity — EQ, and another linked to emission intensity: CO2 emission intensity per
+passenger — EI. These two indices will be used to classify.
+    In the EDCM (as shown in Fig. 2b), we use two common indices which are related to the airport local economy (ICAO, 2002;
+InterVISTAS, 2015), one is linked to economic development quantity: Gross Domestic Product — GDP, and the other is linked to
+economic development eﬃciency: GDP per capita — GPC.
+    Then, we merge these two classiﬁcation matrices into the SDCM (as shown in Fig. 2c). One index combines GDP and GPC, which is
+linked to economic impact, and another index combines EQ and EI, which is linked to environmental impact.
+    First, all raw data need to be normalized. We opt for the Min-Max method to bring all values into the range of [0,1]. The general
+formula is given as:
+                  x − min(x )
+         x′ =
+                max(x ) − min(x )                                                                                                           (3)
+where x is original value of data (i.e., EQ, EI, GDP, and GPC), x’ is the normalized value, and min and max are the minimum and
+
+                                                                    3
+R. Hu, et al.                                                                                                                              Transportation Research Part D 85 (2020) 102435
+
+
+
+
+                                              LH                 HH                                                             LH                  HH
+                CO2 Emission Intensity
+                                High
+
+
+
+
+                                                                                                                    High
+                                         (permissible)        (unwanted)                                                   (permissible)         (desirable)
+
+
+
+
+                                                                                                        GDP per capita
+                                              LL                HL                                                             LL                   HL
+                Low
+
+
+
+
+                                                                                                      Low
+                                          (desirable)      (permissible)                                                    (unwanted)         (permissible)
+
+
+                                             Low               High                                                            Low                   High
+                                               CO2 Emission Quantity                                                                       GDP
+                (a) Carbondioxide Emission Classification Matrix                                      (b) Economic Development Classification Matrix
+
+
+
+
+                                                                                       LH                           HH
+                                                                        High
+
+
+
+
+                                                                                   (desirable)                  (permissible)
+                                                            Economic Impact
+
+
+
+
+                                                                                       LL                              HL
+                                                          Low
+
+
+
+
+                                                                                  (permissible)                     (unwanted)
+
+
+                                                                                       Low               High
+                                                                                        Environmental Impact
+                                                                  (c) Sustainable Development Classification Matrix
+                                                                               Fig. 2. Spatial classiﬁcation matrices.
+
+
+maximum value in x given its range.
+    Then, two combined indices (on behalf of environmental impact and economic impact, respectively) in the SDCM are calculated
+as follows:
+          ′ = (x′EQ + x′EI)/2
+         xENV                                                                                                                                                                         (4)
+
+                ′ + xGPC
+          ′ = (xGDP
+         xECO        ′ )/2                                                                                                                                                            (5)
+
+where subscript ENV means environmental impact and ECO is the economic impact.
+    Finally, the mean values of the normalized indices are chosen as class breaks in the spatial classiﬁcation analysis. The result is that
+the airports studied are classiﬁed into four groups in the CECM, the EDCM, and the SDCM—high-high (HH), high-low (HL), low-high
+(LH), and low-low (LL) as shown in Fig. 2c. We link each of these categories to outcomes that are labelled ‘unwanted’, ‘permissible’,
+and ‘desirable’. Clearly unwanted and permissible situations need to be developed into desirable situations.
+    Speciﬁcally, in the CECM, the HH group means that the airports in this cluster have high CO2 emission quantity and high CO2
+emission intensity per passenger, indicating that those airports produce large emission quantities and have low emission eﬃciencies.
+Clearly, this is an “unwanted” situation to be avoided. The HL group has high CO2 emission quantity and low CO2 emission intensity,
+whereas the LH group has low CO2 emission quantity and high CO2 emission intensity. All the airports located in these two categories
+have a lower negative environmental impact than the HH group, and thus can be considered as better, or more “permissible”. The LL
+group (low CO2 emission quantity and low CO2 emission intensity) performs best. These airports have the best environmental
+performance, which is clearly the most “desirable” situation.
+    Similarly, in the EDCM, the LL group is the “unwanted” situation, as the local economic development is of a poor economic
+performance both in quantity and eﬃciency. The HL and LH groups have a better economic impact in terms of economic quantity (the
+HL group) or eﬃciency (the LH group) and thus can be classiﬁed into a “permissible” cluster. The HH group with high GDP and GPC
+is clearly the “desirable” scenario from the perspective of economic development.
+    Finally, in the SDCM, the “unwanted” scenario is the HL group. Airports classiﬁed in this group score badly in terms of en-
+vironmental and economic impact. More permissible are the HH and the LL group. The HH group (high environmental and high
+economic impact) needs to improve (i.c. lower) their environmental impact, whereas the LL group (low environmental impact and
+
+                                                                                                  4
+R. Hu, et al.                                                                                   Transportation Research Part D 85 (2020) 102435
+
+
+with low economic impact) need to work on (i.c. higher) economic performance. The LH cluster (low impact on the environment,
+high economic impact) is clearly from a welfare economic point of view of the desired situation.
+   The next step is to know whether airports are spatially correlated.
+
+2.4. Spatial autocorrelation analysis method
+
+    To investigate whether aircraft CO2 emissions at airports are spatially correlated, we calculated the spatial autocorrelation using
+Moran’s I index analysis as put forward by Anselin (1995), Getis and Ord (1992), and Anselin et al. (2013). Moran’s I index analysis is
+a widely applied method that measures spatial autocorrelation by correlating the similarity of the value of a region’s neighboring
+areas (Cliﬀ and Ord, 1981; Qin et al., 2019; Stuhlmacher et al., 2019; Yan et al., 2017; Zheng et al., 2018). We focus on the spatial
+autocorrelation of CO2 emission intensities, and the characteristics of spatial aggregation measured as the spatial dependence degree
+of CO2 emission intensity in a speciﬁc airport and its neighboring airports. The calculations are as follows:
+                  k       k
+                                                       ¯)
+                                           ¯ )(EI j − EI
+                ∑i = 1 ∑ j = 1 wij (EIi − EI
+         I=                         k      k
+                              S 2 ∑i = 1 ∑ j = 1 wij                                                                                       (6)
+
+                      k
+          ¯ = 1 ∑ EIi
+         EI
+              k i=1                                                                                                                        (7)
+
+                      k
+                 1
+         S2 =      ∑ (EIi − EI¯ )2
+                 k i=1                                                                                                                     (8)
+
+where I represents the global Moran’s I index; wij is the spatial weights matrix (using k-nearest neighbors in this study as suggested by
+Xu (2007)); EIi and EIj are the CO2 emission intensities for airport i and j, respectively; and k is the number of airports within the
+region.
+    The Moran’s I index is deﬁned over the interval [−1,+1]. Positive values imply positive spatial autocorrelation; that is, a high
+value is adjacent to another high value, or a low value is adjacent to another low value, and a value of 1 indicates a perfect positive
+correlation. Conversely, negative values imply negative autocorrelation; that is, a high value is adjacent to a low value, or a low value
+is adjacent to a high value, and a value of −1 indicates a perfect negative correlation. A value of Moran’s I Index near 0 implies a
+random spatial pattern lacking spatial association.
+
+3. Research region and data sources
+
+3.1. Research region
+
+   Our research area is Jiangsu province, located in eastern China. It is one of the fastest growing, aﬄuent and developing regions in
+China, with a GDP exceeding 8.5 trillion RMB yuan, ranking it second (after Guangdong) of all provinces in China. Jiangsu province
+has nine civil airports (in South Jiangsu: Nanjing Lukou Airport–NKG, Wuxi Shuofang Airport–WUX, Changzhou Benniu
+Airport–CZX; in Central Jiangsu: Nantong Xingdong Airport–NTG, Yangzhou Taizhou Airport–YTY; in North Jiangsu: Huai’an
+Lianshui Airport–HIA, Yancheng Nanyang Airport–YNZ, Xuzhou Guanyin Airport–XUZ, and Lianyungang Baitabu Airport-LYG, as
+shown in Fig. 3). This makes the region to have one of the highest airport densities in China. There exists high airport competition,
+with an overlapping catchment area of 71.3% of all domestic routes and 54.3% of all international routes. Additionally, the rapid
+
+
+
+
+                                                            Fig. 3. Map of Jiangsu Province.
+
+
+                                                                           5
+R. Hu, et al.                                                                                                Transportation Research Part D 85 (2020) 102435
+
+
+development of ground transports (HSR, highways, rail) has greatly promoted regional connectivity by linking airports that pre-
+viously operated independently from each other. All airports are state-owned, and the provincial government has established the
+China East Airport Group to manage the airports at the level of the Jiangsu region.
+    Since 2004, Jiangsu province has also become the top four energy consumers and carbon emitters throughout China. From 2006
+to 2015, aircraft CO2 emissions at all airports in Jiangsu have increased about 0.24 million tons, yielding an average annual growth
+rate of 15.1% (Xu et al., 2018) and is expected to grow continuously in the next years. Meanwhile, due to the shortage of energy
+resources in Jiangsu province, excessive fuel consumption and CO2 emission will inevitably cause a series of environmental problems.
+Few studies have looked at this impact. Xu et al. (2018) studied the driving factors on passenger aircraft CO2 emissions, and Zhu et al.
+(2019) investigated the temporal characteristics of aircraft CO2 emissions at the airports in Jiangsu. Hence, understanding the
+performance patterns of airports and spatial features of CO2 emissions will provide decision support for establishing policies of low-
+carbon aviation, making Jiangsu province a valid research case.
+
+
+3.2. Data sources
+
+    Diﬀerent data sources are needed. First, all ﬂight schedules were taken from the airline schedules database (www.OAG.com).
+OAG maintains an extensive ﬂight status and day-of-travel database. Each record of passenger and cargo ﬂights has comprehensive
+information, including ﬂight number, aircraft type, operating carrier, origin airport, destination airport. For our study, all ﬂights of
+passenger and cargo ﬂights operated at nine airports in Jiangsu province were collected from January 1st, 2007 to December 31st,
+2016. All ﬂights records had been sorted and checked by time and ﬂight number to avoid miscalculations (ﬂight double counting).
+    Second, as diﬀerent types of aircraft (engines) have diﬀerent performance on fuel consumption and emissions, identifying the
+aircraft/engine combinations is a key factor in calculating the CO2 emissions. Aircraft/engine combinations were collected from the
+oﬃcial websites of aircraft manufacturers, airlines, and academic literature. As the same type of aircraft may be installed with
+diﬀerent types of engines, even in the same airline, aircraft/engine combinations were too intricate and diﬃcult to determine; hence,
+the most typical aircraft/engine combinations from the aircraft manufacturers and airlines were singled out (see Appendix A).
+    Third, taxiing time accounts for the biggest proportion during a standard LTO cycle and it could be signiﬁcantly diﬀerent from
+airport to airport. We use the data from an Operation Monitoring Center of the Civil Aviation Administration of China (CAAC) airline
+on-time database, which covers the actual pushback time from the gate, the wheel-oﬀ time, the wheel-on time, and block-in time at
+the gate, and compute the taxi-out and taxi-in time. Due to the data available, we calculated the average taxiing time during January
+1st, 2013 to March 31st, 2013 and May 1st, 2016 to October 31st, 2016 at each airport in Jiangsu, and use it instead of the ICAO
+default taxiing time in order to improve the calculation accuracy.
+    Fourth, statistics of passenger and cargo throughput were extracted from the Statistics Yearbook of China Civil Aviation which
+was published oﬃcially by the CAAC. To analyze and contrast CO2 emission intensity clearly and conveniently, passenger and cargo
+throughput were converted to throughput by following equations according to the CAAC regulations.
+
+           90 kg (Tcargo) = 1 passenger(Tpax )                                                                                                          (9)
+
+
+           Tconverted = Tpax + Tcargo/ 90                                                                                                              (10)
+
+where Tcargo is cargo throughput (kg); Tpax is passenger throughput (passenger), and Tconverted is converted throughput (passenger).
+  Table 1 provides the descriptive statistics of used variables and calculated results.
+
+
+Table 1
+Descriptive statistics of all 9 airports.
+  Variables                Statistics   Nanjing      Wuxi        Changzhou       Nantong     Yangzhou    Huai’an   Yancheng     Xuzhou       Lianyungang
+
+  Number of LTO            Minimum      37,202       6720        2540            854         1069        2216      450          2850         1368
+                           Maximum      83,607       22,334      9119            7038        6471        3800      6094         6119         4332
+                           Mean         59,504       13,586      5778            2831        3612        3014      2129         4354         2955
+                           SD           14,162       5099        2527            2088        1763        575       1726         1093         1048
+  TConverted (passenger)   Minimum      10,041,645   1,578,841   570,347         181,832     264,725     247,762   80,325       429,502      208,293
+                           Maximum      26,149,855   6,628,413   2,130,182       1,931,170   1,525,587   913,061   1,265,871    1,588,065    864,805
+                           Mean         16,822,923   3,945,815   1,265,305       736,848     827,170     510,395   427,136      957,056      489,666
+                           SD           4,795,996    1,525,215   616,423         596,713     413,224     208,401   360,364      396,698      201,053
+  EQ (t)                   Minimum      95,646       16,608      6516            2070        2891        3668      1073         5876         3303
+                           Maximum      228,219      61,949      24,460          18,952      17,058      10,328    16,086       16,259       10,796
+                           Mean         157,087      36,693      15,214          7984        9584        6395      5554         11,041       6953
+                           SD           39,790       14,735      6842            6257        4604        2097      4577         3684         2551
+  EI (kg/pax)              Minimum      8.73         8.40        11.36           8.40        10.92       11.31     12.14        10.24        12.48
+                           Maximum      9.98         10.52       13.67           11.87       12.35       14.80     16.27        14.48        15.86
+                           Mean         9.42         9.30        12.23           10.99       11.59       12.94     13.44        12.02        14.46
+                           SD           0.38         0.55        0.77            1.03        0.51        1.17      1.37         1.23         0.99
+
+
+
+                                                                             6
+R. Hu, et al.                                                                                        Transportation Research Part D 85 (2020) 102435
+
+
+
+
+                        (a) Emission quantity                                                      (b) GDP per capita
+                               Fig. 4. Spatial distribution of CO2 emission quantity and GDP per capita, 2016.
+
+
+4. Results and discussions
+
+4.1. Spatial distribution analysis of CO2 emission
+
+    Spatial distribution analysis aims to describe the relative position of the airports in the region. Recall that we use two indicators to
+measure the spatial distribution analysis of CO2 emission (EQ and EI).
+    From the point of view of EQ (Fig. 4a), distinct diﬀerences were observed in Jiangsu province. On average, the EQ of airports in
+South Jiangsu (including Nanjing, Wuxi, and Changzhou highlighted in red) was more than 100,000 tons in 2016, which was more
+than twice the provincial average, followed by Central Jiangsu (Yangzhou and Nantong, in orange). North Jiangsu (Xuzhou, Lia-
+nyungang, Yancheng, and Huai’an) exhibited the lowest CO2 quantity with about 13,000 tons in 2016. Additionally, the features of
+EQ in these three parts of Jiangsu province were similar to the geographical and economic characteristics. In brief, the spatial
+distribution of EQ decreased from South Jiangsu to Central Jiangsu, then to North Jiangsu. This trend follows the economic de-
+velopment trend in Jiangsu province (Fig. 4b), and conﬁrms that air transport is positively related to regional economic development
+(Brueckner, 2003; ICAO, 2002). We did a simple correlation analysis; the result showed that CO2 emission quantity had a strong
+positive correlation with economic development in Jiangsu province (R2 = 0.98).
+    From the point of view of EI (Fig. 5), there were also distinct diﬀerences among the nine airports. On average, EI in South Jiangsu
+was about 9.85 kg/pax in 2016, which was the lowest, followed by Central Jiangsu at 10.50 kg/pax. North Jiangsu exhibited the
+highest EI, at 11.69 kg/pax, and displayed the opposite trend of CO2 emission quantity. Economies of scale may be the primary cause
+for this phenomenon, as the converted throughput per airport in South Jiangsu was 6.73 and 10.05 times more than in Central and
+North Jiangsu, respectively.
+    Furthermore, economies of scale in airline operations in South Jiangsu are achieved via the operation of larger aircrafts. Facing
+booming air travel demand and intercontinental ﬂights, airlines tend to operate bigger aircraft. Airports in South Jiangsu operated
+more trunk route aircrafts (e.g., A320, B738, B757, etc.) during the ten-year observation period, while more regional aircrafts (e.g.,
+CRJ, ERJ, etc.) were used in North Jiangsu (Fig. 6). The shares of international movements and ﬂights operated by trunk route
+aircrafts in South Jiangsu were 80.4% and 78.9% in the region in 2016, respectively. Givoni and Rietveld (2010) pointed out that
+increasing aircraft size will decrease climate change impact (emissions per seat). Hence, CO2 emission intensity in Jiangsu shows an
+
+
+
+
+                                  Fig. 5. Spatial distribution of CO2 emission intensity per passenger, 2016.
+
+
+                                                                      7
+R. Hu, et al.                                                                                                              Transportation Research Part D 85 (2020) 102435
+
+
+
+
+                                     Fig. 6. Aircraft movement percentage of diﬀerent aircraft categories across Jiangsu, 2007–2016.
+
+
+opposite gradient to emission quantity and economic development.
+   Overall, according to the distribution of EQ, EI, we notice some spatial patterns of aircraft CO2 emissions at diﬀerent airports. The
+spatial distribution features in Jiangsu province can be summarized as EQ is “high in the south and low in the north,” and EI is “low in
+the south and high in the north.” These diﬀerences may imply speciﬁc dependence; therefore, Moran’s I index will be applied to
+investigate the regional aggregation of CO2 emission.
+
+4.2. Spatial classiﬁcation analysis of CO2 emission
+
+    To better depict the characteristics of CO2 emission for airports in Jiangsu province, we apply our classiﬁcation matrixes for
+spatial classiﬁcation analysis.
+    Fig. 7 displays the classiﬁcation results of the Sustainable Development Classiﬁcation Matrix for 2007 and 2016. In 2007, the LH
+(‘desired’) group had two airports – Wuxi and Changzhou, and the HL (‘unwanted’) group also had two airports – Xuzhou and
+Lianyungang, the others were classiﬁed into the permissible groups (HH and LL groups). While in 2016, some important changes in
+grouping can be noted. Xuzhou had a positive change of environmental impact from HL to LL group, and Nantong had a positive
+change of economic impact from LL to LH group. While, Changzhou and Yancheng both had a negative change of environmental
+impact due to their rapid increase of CO2 emission intensity. Finally, there were two airports in the desirable LH group – Wuxi and
+Nantong, two airports in the unwanted HL group – Yancheng and Lianyungang, and the others were categorized in the permissible
+groups.
+    During the 10-year observational period, the classiﬁcation results of the SDCM revealed that most of the airports remained in the
+two permissible groups (HH and LL); the desirable LH group was concentrated at Wuxi; the unwanted HL group was mainly
+
+
+
+
+                                          Wuxi                     Nanjing                                      Wuxi                    Nanjing
+                                         (WUX)                     (NKG)                                       (WUX)                    (NKG)
+                              High
+
+
+
+
+                                                                                                     High
+
+
+
+
+                                         Changzhou                                                          Nantong               Changzhou
+                  Economic Impact
+
+
+
+
+                                                                                         Economic Impact
+
+
+
+
+                                           (CZX)                                                            (NTG)                   (CZX)
+
+
+                                      Nantong                                                                     Huai an
+                                       (NTG)                                                                Xuzhou (HIA)
+                                                         Xuzhou                                             (XUZ)                      Yancheng
+                Low
+
+
+
+
+                                                                                       Low
+
+
+
+
+                                           Yancheng       (XUZ)                                                 Yangzhou                 (YNZ)
+                                                                                                                                  Lianyungang
+                                            (YNZ)            Lianyungang                                         (YTY)                 (LYG)
+                                                                  (LYG)
+                                           Low                 High                                            Low                High
+                                            Environmental Impact                                                Environmental Impact
+                                                   (a) 2007                                                            (b) 2016
+                                                      Fig. 7. Classiﬁcation results of the SDCM in 2007 and 2016.
+
+
+                                                                                   8
+R. Hu, et al.                                                                                                           Transportation Research Part D 85 (2020) 102435
+
+
+
+
+                                                                                               High
+                              High
+                  Economic Impact
+
+
+
+
+                                                                                   GDP per capita
+                                     2016
+                                                                                                                             2016
+
+
+                                         2007
+
+
+
+
+                                                                                 Low
+                Low
+
+
+
+
+                                                                                                                        2007
+
+
+
+                                       Low                High                                               Low                 High
+                                        Environmental Impact                                                           GDP
+                                              (a) SDCM                                                               (b) EDCM
+                                        Fig. 8. Evolutional trends of the SDCM and EDCM of Nantong from 2007 to 2016
+
+
+concentrated at Lianyungang and Yancheng.
+    Especially, Nantong had a good evolutionary result (from the permissible to the desirable group), because of its faster economic
+development with an annual GDP growth rate at 13.82% and annual GDP per capita growth rate at 14.46% (compared with average
+growth rate 12.66% and 12.19% of Jiangsu province). Fig. 8 shows the 10-year evolutionary trends of the SDCM and the EDCM of
+Nantong.
+    In contrast, Changzhou reﬂects a negative trend, switching from the desired group in 2007 to the permissible group in 2016
+(Fig. 9a). This is because Changzhou had a poor environmental performance during this 10-year period (Fig. 9b). More concretely,
+the annual CO2 emission quantity growth rate was about 15.83%, which was above the 10.19% for the whole province; the emission
+intensity per passenger in 2016 increased about 0.51% in comparison with 2006, while the EI of the whole province had an 11.68%
+reduction during the same time period.
+    The cases of Nantong and Changzhou show that spatial classiﬁcation methods are useful to assess the performance of airports on
+economic and environmental impacts and ﬁnd underlying patterns of economic development, aircraft used and CO2 emissions, and
+show how this has evolved over time. All these are helpful to promote low-carbon and more sustainable development for airports.
+    Furthermore, from the point of view of airport locations, the airports in the unwanted group are concentrated in North Jiangsu,
+and the airports in the desired group are concentrated in South Jiangsu. These diﬀerences of spatial classiﬁcation may imply that
+these airports are spatially correlated; therefore, a spatial autocorrelation analysis will be carried out to investigate the regional
+aggregation of aircraft CO2 emission.
+    Finally, it is worth pointing out that more than half of all the airports (i.e., Yancheng, Lianyungang, Changzhou, Huai’an, and
+Yangzhou) were classiﬁed into “high emission intensity” groups in the CECM during the study period. If these airports could decrease
+their emission intensity, they would have great potential for CO2 emission reduction. As statistics data from the CAAC show that the
+average passenger/cargo load factor was 80.9% and 71.5% in the last decade, boosting throughput and increasing the load factors
+could be a feasible measure to achieve this goal.
+                                                                                 CO2 Emission Intensity
+                                                                                                 High
+                              High
+
+
+
+
+                                                     2016
+                  Economic Impact
+
+
+
+
+                                                                                                          2016
+                                     2007
+
+
+                                                                                                          2007
+                                                                                 Low
+                Low
+
+
+
+
+                                       Low                High                                               Low               High
+                                        Environmental Impact                                                   CO2 Emission Quantity
+                                             (a) SDCM                                                              (b) CECM
+                                       Fig. 9. Evolutional trends of the SDCM and CECM of Changzhou from 2007 to 2016
+
+
+                                                                             9
+R. Hu, et al.                                                                                        Transportation Research Part D 85 (2020) 102435
+
+
+                            Table 2
+                            Global Moran’s index of aircraft CO2 emission intensity per passenger.
+                              Year                           Global Moran’s I                         P-value
+
+                              2007                           0.5520                                   0.0063***
+                              2008                           0.5615                                   0.0156**
+                              2009                           0.3143                                   0.0718*
+                              2010                           0.0677                                   0.4379
+                              2011                           0.2121                                   0.2012
+                              2012                           0.2559                                   0.0499**
+                              2013                           0.3463                                   0.0145**
+                              2014                           0.2839                                   0.0357**
+                              2015                           0.3409                                   0.0179**
+                              2016                           0.3318                                   0.0663*
+
+                            Note: * 10% signiﬁcance; ** 5% signiﬁcance; *** 1% signiﬁcance.
+
+4.3. Spatial autocorrelation analysis of CO2 emission
+
+    In order to study the overall spatial dispersion or aggregation, a global Moran’s I index of the aircraft CO2 emission intensity EI at
+airports in Jiangsu province from 2007 to 2016 was calculated by using the software ArcGIS10.0, and the signiﬁcance level of the
+calculation results was also tested (Table 2).
+    According to Table 2, in terms of EI, the global Moran’s I index was above 0.3 in most of the years, and the corresponding p-values
+were less than 0.05, which indicates that positive spatial autocorrelations existed from the point of EI. Therefore, airports with a high
+(or low) intensity value often have nearby airports with high (or low) intensity values. It should be noted that the results of 2010 and
+2011 failed the test of signiﬁcance. The reason may be that Huai’an Lianshui Airport was put into operation in 2010, and this changed
+the spatial distribution of the regional airport layout and also had important impacts on the spatial weights matrix.
+    As the global Moran’s I index cannot identify speciﬁc positions of each airport, scatterplots for EI were further applied to study the
+spatial dependence.
+    As shown in Fig. 10, the spatial aggregation eﬀect in 2007 and 2016 is displayed from the perspective of EI. The scatterplot has
+four quadrants formed by the intersection of the horizontal and vertical axes, which represent EI and the corresponding spatial lag,
+respectively. The four quadrants in the scatterplot represent the clustering types and depict the following: (1) HH clustering
+(quadrant I) —airports with high EI are associated with adjacent airports with high EI; (2) LH clustering (quadrant II) — airports with
+low EI are associated with adjacent airports with high EI; (3) LL clustering (quadrant III) — airports with low EI are associated with
+adjacent airports with low EI; and (4) HL clustering (quadrant IV) — airports with high EI are associated with adjacent airports with
+low EI.
+    Furthermore, the airports (e.g., Huai’an, Yancheng, and Lianyungang) that belonged to the HH clustering group were mainly
+located in North Jiangsu. The LL clustering group (e.g., Nanjing and Wuxi) concentrated primarily in South Jiangsu. This spatial
+aggregation phenomenon was mainly caused by geographical proximity, connected ground transport (road, rail, HSR (see Appendix
+B)), airline network, airport size, and economic pattern.
+    For airports in South Jiangsu (mainly belonged to the LL clustering group), Nanjing, Wuxi, and Changzhou are well connected by
+ground transports: 3 highways, 2 high-speed rail, and 1 traditional rail. Travelers from South Jiangsu can reach each airport within
+1.75 h by driving. For the airline network, Nanjing Lukou Airport connected more destinations (Table 3). Taking international routes
+as an example, one can ﬂy to Europe, America, Australia, and Asia directly from Nanjing. In contrast, one can only ﬂy to Asian
+countries directly from Wuxi and Changzhou. For economic development, South Jiangsu is mainly export-oriented. Lots of people,
+
+
+
+
+                                     Fig. 10. Moran’s index scatterplots for EI over time (2007 and 2016)
+
+
+                                                                      10
+R. Hu, et al.                                                                                   Transportation Research Part D 85 (2020) 102435
+
+
+Table 3
+The statistics of domestic/international routes for airports in South Jiangsu, 2007–2016.
+  Airport          2007         2008        2009          2010         2011         2012    2013         2014           2015           2016
+
+  Nanjing          42/7         41/9        45/13         48/10        48/13        49/18   49/19        53/23          55/24          54/27
+  Wuxi             17/2         19/2        15/3          12/3         16/5         19/7    25/8         24/11          26/11          31/14
+  Changzhou        11/0         11/0        6/0           12/0         19/0         18/0    19/0         21/2           19/9           19/9
+
+Source: www.OAG.com.
+
+materials, and goods are imported and exported transnationally. Aviation played an important role in the international movement of
+passengers and goods in South Jiangsu. The characteristics of airline network and economic categories will strengthen the connection
+within South Jiangsu and lead to an aggregation eﬀect.
+    In contrast, for the airports in North Jiangsu (mainly belonged to the HH clustering group), the homogeneity of airline networks
+was very high, the economy, especially export-oriented economy, was underdeveloped. This lead to a weak connection between
+airports and low demand for air travel. Note that Xuzhou belonged to the HH clustering group before 2012, and then switched to the
+LH group, this change shows that Xuzhou had a marked improvement in the reduction of EI. Meanwhile, as a lack of good con-
+nectivity to other airports, Xuzhou did not exhibit strong spillover eﬀects. Thus the surrounding airports all belonged to the clustering
+group of high EI. Moreover, it is should be noted that airports in Shanghai are not far from airports in Nantong and Wuxi, which
+results in forming overlapping catchment areas, increasing competition, and inﬂuencing the activities and performance at these
+airports.
+    As analyzed above, a spatial aggregation eﬀect between airports in Jiangsu province is observed. This is commonly referred to as a
+Matthew eﬀect (Rigney, 2010), implying, “what is already strong gets stronger, what is weak, weaker”. Therefore, collaborations
+among these airports and this spatial spillover eﬀect should be taken into consideration in decision-making for low-carbon aviation
+development.
+
+
+5. Policy implications
+
+    Based on the above analyses, we suggest the following policy implications to help authorities (not only in Jiangsu province, but
+elsewhere) to encourage low-carbon and more sustainable airport development.
+
+(1) From the perspective of airport authorities, demand management and airport slot optimization should receive more attention.
+    Airport authorities are expected to enhance demand investigation with airlines together to expand air travel needs and to catch
+    the characteristics of air travel needs (e.g., distribution of peak time of travel, distribution of destinations, etc.). Measures
+    combined with airport slot optimization should be taken to ﬁt the temporal characteristics of air travel demand and to achieve a
+    balance between ﬂight schedule and such demand (Barnhart et al., 2012) to increase passenger/cargo throughput and load factor.
+    As a consequence, high(er) passenger/cargo throughput and load factor may achieve substantial economies of scale (Gillen et al.,
+    2016), and will reduce CO2 emission intensity.
+
+    Moreover, as economies of scale play a positive role in reducing airport environmental impact, expanding air transport demand
+will help airports obtain this advantage. Airport authorities are suggested to analyze the local economy features, and discover the
+roadmap for the movement of people, materials, goods and their evolution trends. Then, airports open new ﬂight routes or adjust
+route network according to the local economy characteristics, in order to match air transport and economic development well, and
+boost the airport throughput ﬁnally.
+    All the above will help airports in the permissible LH (or unwanted HH) group to move to the desirable LL (or permissible HL)
+group in the CECM and those airports in the unwanted HL (or permissible HH) group to move to the permissible LL (or desirable LH)
+group in the SDCM because of their decreasing environmental impact.
+
+(2) From the perspective of the provincial government, cooperation and coordination mechanisms should be more diﬀerentiated and
+    targeted. The provincial government of Jiangsu established the China East Airport Group (EAG) to manage the airports in the
+    region in September 2018. As a spatial aggregation eﬀect of airports is observed in Jiangsu province, the spatial spillover eﬀect
+    will play an essential role in cooperation and coordination development between airports in the region (Zhang et al., 2019).
+
+    Furthermore, the clustering types of spatial aggregation had a great impact between airports in South Jiangsu and those in North
+Jiangsu. The EAG suggested to implement diﬀerent management strategies in diﬀerent regions in the province, according to the
+regional characteristic of spatial spillovers eﬀect; and to strike a good/better balance between uniﬁed management of the EAG and
+individual features of each airport. Facing an increasing competition between airports, the EAG needs to consider the balance of
+airports competing and complementing with each other, in order to improve airport operation eﬃciency. Meanwhile, the EAG should
+take neighboring airports in Shanghai into account in the process of administration policymaking.
+    Moreover, the government is expected to make full use of the direct, indirect and induced economic impacts of airports which
+follow from the circulation of passengers and goods. In this way, it would promote local economic development and help airports in
+
+                                                                       11
+R. Hu, et al.                                                                                     Transportation Research Part D 85 (2020) 102435
+
+
+the unwanted LL (or permissible LH) group to switch to the desirable HH (or permissible HL) group in the EDCM and those airports in
+the permissible LL (or the unwanted HL) group to move to the desirable LH (or the permissible HH) group in the SDCM, ﬁnally
+enhance the sustainable development level of these airports.
+
+(3) From the perspective of the national government, at the airport planning and design stage, local economic development and
+    spatial eﬀects of nearby airports should be paid more attention. On the one hand, a strong local economy can provide a large
+    number of air transport needs and be helpful to achieve the scale eﬀect in airport operation; and on the other hand, considering
+    the spatial spillover eﬀect between airports, the national government should take advantage of this eﬀect to optimize the resource
+    distribution (e.g., route network, airport slot, etc.) and prevent excessive market overlap between these airports. For example,
+    CAAC who represents the national government, approved the only freight ﬂight to South Korea and Japan in Jiangsu Province to
+    Yancheng Nanyang Airport, but not to the biggest airport (Nanjing) or the nearest one (Lianyungang), because of the economic
+    cooperation between Yancheng City and these two East-Asia countries.
+
+    In addition, the air transport sector will be integrated into the Chinese national carbon trading scheme which had been im-
+plemented from the end of 2017. The emission trading scheme is an eﬀective government, market-based approach to limit emissions,
+such as the European Union Emissions Trading System (EU ETS), the U.S. Regional Greenhouse Gas Initiative (RGGI), etc. And the air
+transport sector is recognized as an easy-to-accomplish choice for the carbon trading entity because of its existing good databases,
+relative uniformity, and easy measurement and detection. As an example, the air transport sector has been included in EU ETS from
+2012 and has a signiﬁcant result for CO2 emission reduction (Anger, 2010; Bel and Joseph, 2015; Vespermann and Wald, 2011).
+Thus, for low-carbon aviation development, a carbon trading scheme should be considered.
+    Finally, it should be noted that, Jiangsu is located in the plains area with balanced population distribution. The ground transport
+is developed with high-speed rails and highways. Moreover, all airports are state-owned, which makes collaborations between air-
+ports easier. Therefore, other regions (e.g., Hong Kong-Guangzhou-Macao region) are suggested to consider the above conditions
+before they take action.
+
+6. Conclusions
+
+    In airport carbon emissions research, the time dimension has usually been regarded as a key factor and the spatial dimension has
+been somewhat neglected. Nevertheless, almost all data with geographic location attributes show some spatial relationships. This
+paper calculated the aircraft CO2 emission during LTO cycles at airports in Jiangsu province (China) from 2007 to 2016 using the data
+from the Statistics Yearbook of China Civil Aviation, the OAG database, the airline on-time database from CAAC, and the ICAO
+Aircraft Engine Emissions Databank. To grasp the performance patterns of airports and spatial characteristics of aircraft CO2 emis-
+sions in a region, the spatial distribution, classiﬁcation, and autocorrelation of CO2 emissions was studied, and policy implications for
+private and public authorities were provided. The main conclusions are as follows:
+
+(1) The spatial distribution features showed that there exist speciﬁc spatial patterns of aircraft CO2 emissions between airports in
+    Jiangsu. The distinct spatial distribution diﬀerences were observed from indices of both emission quantity and emission intensity
+    per passenger, which can be summarized as emission quantity was “high in South Jiangsu and low in North Jiangsu” and emission
+    intensity was the opposite. These spatial distribution patterns conﬁrm that local economic development has a positive relation to
+    airport CO2 emission quantity, and the economic scale eﬀects of airport capacity and aircraft type used beneﬁt airports in
+    reducing emission intensity. Also, these spatial patterns suggest that the optimization of resources within a region, including
+    adjustment of airport slot, reconﬁguration of route network and redistribution of ﬂights, plays an important role in the pursuit of
+    low-carbon airports.
+(2) The spatial classiﬁcation analysis gave some other interesting results. From the results of the Sustainable Development
+    Classiﬁcation Matrix, airport grouping resulted in obvious spatial diﬀerences. The airports in the desirable group are mainly
+    located in South Jiangsu, while airports that need to be improved are located in the north. This further reveals the close in-
+    teraction between airport CO2 emission and local economic development. Hence, airport and government authorities are ex-
+    pected to optimize the network and redistribute the ﬂights to have a better matching between civil aviation and economic
+    development, and to achieve the goal of airport sustainable development. In addition, from the classiﬁcation results of the Carbon
+    dioxide Emission Classiﬁcation Matrix, most of the airports were categorized into the “high emission intensity” groups, which
+    mean low emission eﬃciency. This indicates that these airports have a high reduction potential of CO2 emissions by increasing
+    the passenger/cargo load factor.
+(3) The spatial autocorrelation analysis displayed the spatial aggregation eﬀect of airports in Jiangsu province. The results of Moran’s
+    I index and scatterplots of CO2 emission intensity per passenger showed that the spatial aggregation was signiﬁcant and stable,
+    and that spatial diﬀerences were found in most of the years from 2007 to 2016. Also, a so-called Matthew eﬀect was observed.
+    More concretely, to keep and strengthen the current good performance of airports in the LL clustering (whose passenger/cargo
+    throughput and movements of trunk route aircrafts are usually high), it is suggested that these airports should improve the
+    aircraft ground operations (e.g., gate holding strategy, aircraft taxiing route optimization, etc.) in order to cut aircraft emission on
+    the ground, and operate low-carbon aircraft to reduce aircraft CO2 emission intensity; while to reduce emission intensity at
+    airports in the HH clustering (whose throughput and movements of trunk route aircrafts are always low), these airports are
+    expected to focus on a certain sub-market based on their own conditions and advantages (like the freight market to South Korea
+
+                                                                    12
+R. Hu, et al.                                                                                   Transportation Research Part D 85 (2020) 102435
+
+
+     and Japan at Yancheng Nanyang Airport). This measure could help these airports to occupy a dominant position in the sub-
+     market and establish competitive advantages. All of this will result in a higher load factor, higher eﬀect of scale and lower
+     emission intensity.
+
+    Although the current research has drawn some interesting observations on the spatial characteristics of aircraft CO2 emissions, it
+also has some limitations. Due to data limitations, CO2 from terminals and vehicles operated at airports were not assessed in this
+study, and ambient meteorological conditions and performance degradation of engines were not taken into account in CO2 emission
+calculation. Moreover, additional spatial features, such as how HSR inﬂuences spatial patterns, were not explored in detail. These
+limitations need to be explored in the future.
+
+CRediT authorship contribution statement
+
+   Rong Hu: Conceptualization, Formal analysis, Methodology, Writing - original draft, Writing - review & editing. Jialin Zhu: Data
+curation. Yu Zhang: Conceptualization, Formal analysis, Methodology. Junfeng Zhang: Methodology. Frank Witlox:
+Conceptualization, Formal analysis, Methodology, Writing - original draft, Writing - review & editing.
+
+Appendix A
+
+    Aircraft/engine combinations for calculation
+
+
+  Aircraft Type                           Engine Type                          Aircraft Type                                   Engine Type
+
+  A319                                    CFM56-5B7-P                          B74F/74Y/74E/76F                                PW4056
+  A320                                    V2527-A5                             B752                                            RB211-535E4
+  A321                                    CFM56-5B3/3                          B757/75F                                        PW2037
+  A333                                    Trent 772                            CRJ                                             CF34-8C5
+  B733                                    CFM56-3-B1                           D38                                             PW306B
+  B735/73F/73Y                            CFM56-3C-1                           EMB                                             AE3007A1
+  B737-700/600/73G                        CFM56-7B22                           ERJ                                             CF34-10E5
+  B738/739/73H                            CFM56-7B26                           M90                                             V2525-D5
+
+
+
+Appendix B
+
+    Information on HSR in Jiangsu province
+
+
+                City                          Number of HSR                          Route and date in service
+
+                Nanjing                       6                                      Nanjing-Hefei: 2008. 4
+                                                                                     Shanghai-Nanjing: 2010. 7
+                                                                                     Beijing-Shanghai: 2011. 6
+                                                                                     Nanjing-Hangzhou: 2013. 7
+                                                                                     Nanjing-Anqing: 2015. 12
+                                                                                     Shanghai-Hefei: 2025 (planned)
+                Xuzhou                        4                                      Beijing-Shanghai: 2011. 6
+                                                                                     Zhengzhou-Xuzhou: 2016. 9
+                                                                                     Xuzhou-Yancheng: 2019. 12
+                                                                                     Lianyungang-Xuzhou: 2020. 12 (planned)
+                Changzhou                     3                                      Shanghai-Nanjing: 2010. 7
+                                                                                     Beijing-Shanghai: 2011. 6
+                                                                                     Nanjing-Hangzhou: 2013. 7
+                Wuxi                          3                                      Shanghai-Nanjing: 2010. 7
+                                                                                     Beijing-Shanghai: 2011. 6
+                                                                                     Nanjing-Hangzhou: 2013. 7
+                Nantong                       3                                      Shanghai-Nantong: 2020. 6 (planned)
+                                                                                     Yancheng-Nantong: 2020 (planned)
+                                                                                     Shanghai-Hefei: 2025 (planned)
+                Yancheng                      3                                      Qingdao-Lianyungang: 2018. 12
+                                                                                     Xuzhou-Yancheng: 2019. 12
+                                                                                     Yancheng-Nantong: 2020 (planned)
+                Lianyungang                   3                                      Qingdao-Lianyungang: 2018. 12
+                                                                                     Lianyungang-Zhenjiang (I): 2019. 12
+                                                                                     Lianyungang-Xuzhou: 2020. 12 (planned)
+                Yangzhou                      2                                      Lianyungang-Zhenjiang (II): 2020. 8 (planned)
+                                                                                     Shanghai-Hefei: 2025 (planned)
+                Huai’an                       2                                      Xuzhou-Yancheng: 2019. 12
+                                                                                     Lianyungang-Zhenjiang (I): 2019. 12
+
+
+
+                                                                 13
+R. Hu, et al.                                                                                                            Transportation Research Part D 85 (2020) 102435
+
+
+Source: Department of Transportation of Jiangsu Province, 2017. The 13th Five-year Plan for Railway Development for Jiangsu
+Province.
+
+
+
+References
+
+Anger, A., 2010. Including aviation in the European emissions trading scheme: impacts on the industry, CO2 emissions and macroeconomic activity in the EU. J. Air
+     Transp. Manag. 16, 100–105. https://doi.org/10.1016/j.jairtraman.2009.10.009.
+Anselin, L., 1995. Local indicators of spatial association—LISA. Geogr. Anal. 27, 93–115. https://doi.org/10.1111/j.1538-4632.1995.tb00338.x.
+Anselin, L., Murray, A.T., Rey, S.J., 2013. Chapter 8: spatial analysis. In: Little, T.D. (Ed.), The Oxford Handbook of Quantitative Methods. Oxford University Press,
+     New York.
+Ashok, A., Balakrishnan, H., Barrett, S.R.H., 2017. Reducing the air quality and CO2climate impacts of taxi and takeoﬀ operations at airports. Transp. Res. Part D
+     Transp. Environ. 54, 287–303. https://doi.org/10.1016/j.trd.2017.05.013.
+Barnhart, C., Fearing, D., Odoni, A., Vaze, V., 2012. Demand and capacity management in air transportation. EURO J. Transp. Logist. 1, 135–155. https://doi.org/10.
+     1007/s13676-012-0006-9.
+Bel, G., Joseph, S., 2015. Emission abatement: untangling the impacts of the EU ETS and the economic crisis. Energy Econ. 49, 531–539. https://doi.org/10.1016/j.
+     eneco.2015.03.014.
+Brueckner, J.K., 2003. Airline traﬃc and urban economic development. Urban Stud. 40, 1455–1469. https://doi.org/10.1080/0042098032000094388.
+Cliﬀ, A.D., Ord, K., 1981. Spatial Processes: Models and Applications. Pion, London.
+Dessens, O., Kohler, M.O., Rogers, H.L., Jones, R.L., Pyle, J.A., 2014. Aviation and climate change. Transp. Policy 34, 14–20. https://doi.org/10.17863/CAM.8526.
+Evertse, C., Visser, H.G., 2017. Real-time airport surface movement planning: minimizing aircraft emissions. Transp. Res. Part C Emerg. Technol. 79, 224–241. https://
+     doi.org/10.1016/j.trc.2017.03.018.
+Getis, A., Ord, J.K., 1992. The analysis of spatial association by use of distance statistics. Geogr. Anal. 24, 189–206. https://doi.org/10.1111/j.1538-4632.1992.
+     tb00261.x.
+Gillen, D., Jacquillat, A., Odoni, A.R., 2016. Airport demand management: the operations research and economics perspectives and potential synergies. Transp. Res.
+     Part A Policy Pract. 94, 495–513. https://doi.org/10.1016/j.tra.2016.10.011.
+Givoni, M., Rietveld, P., 2010. The environmental implications of airlines choice of aircraft size. J. Air Transp. Manag. 16, 159–167.
+IATA, (International Air Transport Association), 2016. IATA Forecasts Passenger Demand to Double Over 20 Years [WWW Document]. IATA Press Release No. 59.
+     https://doi.org/10.1016/S0955-2219(03)00248-6.
+ICAO, 2016. Environmental report 2016: On Board a Sustainable Future. Montreal,Quebec. https://doi.org/10.1016/j.jval.2012.11.010.
+ICAO, 2010. Environmental report 2010: Aviation and Climate Change. Montreal,Quebec.
+ICAO, 2002. Economic Contribution of Civil Aviation. International Civil Aviation Organization, Montreal,Quebec.
+InterVISTAS, 2015. Economic Impact of European Airports - A Critical Catalyst to Economic Growth, ACI Europe.
+IPCC, (Intergovernmental Panel on Climate Change), 2006. 2006 IPCC Guidelines for National Greenhouse Gas Inventories [WWW Document]. URL https://www.
+     ipcc-nggip.iges.or.jp/public/2006gl/ (accessed 12.8.18).
+IPCC, (Intergovernmental Panelon Climate Change), 1999. Aviation and the global atmosphere. Special report, edited by J. E. Penner, D. H. Lister, D. J. Griggs, D. J.
+     Dokken, and M. McFarland. Cambridge University Press, Cambridge, UK.
+Johansson, H., Ek, M., 2003. Emissions from transport in Sweden. TFK-RAPPORT.
+Kim, B.Y., Fleming, G.G., Lee, J.J., Waitz, I.A., Clarke, J.P., Balasubramanian, S., Malwitz, A., Klima, K., Locke, M., Holsclaw, C.A., Maurice, L.Q., Gupta, M.L., 2007.
+     System for assessing Aviation’s Global Emissions (SAGE), Part 1: Model description and inventory results. Transp. Res. Part D Transp. Environ. 12, 325–346.
+     https://doi.org/10.1016/j.trd.2007.03.007.
+Koudis, G.S., Hu, S.J., Majumdar, A., Jones, R., Stettler, M.E.J., 2017. Airport emissions reductions from reduced thrust takeoﬀ operations. Transp. Res. Part D Transp.
+     Environ. 52, 15–28. https://doi.org/10.1016/j.trd.2017.02.004.
+Kurniawan, J.S., Khardi, S., 2011. Comparison of methodologies estimating emissions of aircraft pollutants, environmental impact assessment around airports.
+     Environ. Impact Assess. Rev. 31, 240–252. https://doi.org/10.1016/j.eiar.2010.09.001.
+Lee, D.S., Fahey, D.W., Forster, P.M., Newton, P.J., Wit, R.C.N., Lim, L.L., Owen, B., Sausen, R., 2009. Aviation and global climate change in the 21st century. Atmos.
+     Environ. 43, 3520–3537. https://doi.org/10.1016/j.atmosenv.2009.04.024.
+Lee, J.J., Waitz, I.A., Kim, B.Y., Fleming, G.G., Maurice, L., Holsclaw, C.A., 2007. System for assessing Aviation’s Global Emissions (SAGE), Part 2: Uncertainty
+     assessment. Transp. Res. Part D Transp. Environ. 12, 381–395. https://doi.org/10.1016/j.trd.2007.03.006.
+Masiol, M., Harrison, R.M., 2014. Aircraft engine exhaust emissions and other airport-related contributions to ambient air pollution: a review. Atmos. Environ. 95,
+     409–455. https://doi.org/10.1016/j.atmosenv.2014.05.070.
+Monsalud, A., Ho, D., Rakas, J., 2014. Greenhouse gas emissions mitigation strategies within the airport sustainability evaluation process. Sustain. Cities Soc. 14,
+     414–424. https://doi.org/10.1016/j.scs.2014.08.003.
+Neuling, U., Kaltschmitt, M., 2018. Techno-economic and environmental analysis of aviation biofuels. Fuel Process. Technol. 171, 54–69. https://doi.org/10.1016/j.
+     fuproc.2017.09.022.
+Oliker, N., Ohar, Z., Ostfeld, A., 2016. Spatial event classiﬁcation using simulated water quality data. Environ. Model. Softw. 77, 71–80. https://doi.org/10.1016/j.
+     envsoft.2015.11.013.
+Passarella, G., Bruno, D., Lay-Ekuakille, A., Maggi, S., Masciale, R., Zaccaria, D., 2020. Spatial and temporal classiﬁcation of coastal regions using bioclimatic indices in
+     a Mediterranean environment. Sci. Total Environ. 700, 134415. https://doi.org/10.1016/j.scitotenv.2019.134415.
+Pham, V. Van, Tang, J., Alam, S., Lokan, C., Abbass, H.A., 2010. Aviation emission inventory development and analysis. Environ. Model. Softw. 25, 1738–1753.
+     https://doi.org/10.1016/j.envsoft.2010.04.004.
+Postorino, M.N., Mantecchini, L., 2014. A transport carbon footprint methodology to assess airport carbon emissions. J. Air Transp. Manag. 37, 76–86. https://doi.org/
+     10.1016/j.jairtraman.2014.03.001.
+Qin, H., Huang, Q., Zhang, Z., Lu, Y., Li, M., Xu, L., Chen, Z., 2019. Carbon dioxide emission driving factors analysis and policy implications of Chinese cities:
+     combining geographically weighted regression with two-step cluster. Sci. Total Environ. 684, 413–424. https://doi.org/10.1016/j.scitotenv.2019.05.352.
+Rigney, D., 2010. The Matthew Eﬀect: How Advantage Begets Further Advantage. Columbia University Press.
+Saravanamuttoo, H.I.H., Rogers, G.F.C., Cohen, H., 2001. Gas Turbine Theory, 5th ed. Prentice Hall.
+Schäfer, A.W., Waitz, I.A., 2014. Air transportation and the environment. Transp. Policy 34, 1–4. https://doi.org/10.1016/j.tranpol.2014.02.012.
+Schäfer, K., Jahn, C., Sturm, P., Lechner, B., Bacher, M., 2003. Aircraft emission measurements by remote sensing methodologies at airports. Atmos. Environ. 37,
+     5261–5271. https://doi.org/10.1016/j.atmosenv.2003.09.002.
+Sherry, L., 2015. Improving the accuracy of airport emissions inventories using disparate datasets. IIE Trans. 47, 577–585. https://doi.org/10.1080/0740817X.2014.
+     938845.
+Shirmohammadi, F., Sowlat, M.H., Hasheminassab, S., Saﬀari, A., Ban-Weiss, G., Sioutas, C., 2017. Emission rates of particle number, mass and black carbon by the Los
+     Angeles International Airport (LAX) and its impact on air quality in Los Angeles. Atmos. Environ. 151, 82–93. https://doi.org/10.1016/j.atmosenv.2016.12.005.
+Simaiakis, I., 2009. Modeling and Control of Airport Departure Processes for Emissions Reduction. Massachusetts Institute of Technology.
+Simone, N.W., Stettler, M.E.J., Barrett, S.R.H., 2013. Rapid estimation of global civil aviation emissions with uncertainty quantiﬁcation. Transp. Res. Part D Transp.
+     Environ. 25, 33–41. https://doi.org/10.1016/j.trd.2013.07.001.
+
+
+                                                                                     14
+R. Hu, et al.                                                                                                          Transportation Research Part D 85 (2020) 102435
+
+
+Song, S., Shon, Z., 2014. National emissions of greenhouse gases and air pollutants from commercial aircraft in the troposphere over South Korea. Terr. Atmos. Ocean.
+     Sci. 25, 61–76. https://doi.org/10.3319/TAO.2013.09.04.01(A).
+Song, S., Shon, Z., 2012. Emissions of greenhouse gases and air pollutants from commercial aircraft at international airports in Korea. Atmos. Environ. 61, 148–158.
+     https://doi.org/10.1016/j.atmosenv.2012.07.035.
+Stettler, M.E.J., Eastham, S., Barrett, S.R.H., 2011. Air quality and public health impacts of UK airports. Part I: Emissions. Atmos. Environ. 45, 5415–5424. https://doi.
+     org/10.1016/j.atmosenv.2011.07.012.
+Stuhlmacher, M., Patnaik, S., Streletskiy, D., Taylor, K., 2019. Cap-and-trade and emissions clustering: a spatial-temporal analysis of the European Union Emissions
+     Trading Scheme. J. Environ. Manage. 249, 109352. https://doi.org/10.1016/j.jenvman.2019.109352.
+Teoh, L.E., Khoo, H.L., 2016. Green air transport system: an overview of issues, strategies and challenges. KSCE J. Civ. Eng. 20, 1040–1052. https://doi.org/10.1007/
+     s12205-016-1670-3.
+Underwood, B.Y., Walker, C.T., Peirce, M.J., 2004. Heathrow Emission Inventory 2002: Part1. Netcen, Warrington.
+Vedantham, A., Oppenheimer, M., 1998. Long-term scenarios for aviation: demand and emissions of CO2and NOx. Energy Policy 26, 625–641. https://doi.org/10.
+     1016/S0301-4215(98)00021-4.
+Vespermann, J., Wald, A., 2011. Much ado about nothing? An analysis of economic impacts and ecologic eﬀects of the EU-emission trading scheme in the aviation
+     industry. Transp. Res. Part A Policy Pract. 45, 1066–1076. https://doi.org/10.1016/j.tra.2010.03.005.
+Wasiuk, D.K., Lowenberg, M.H., Shallcross, D.E., 2015. An aircraft performance model implementation for the estimation of global and regional commercial aviation
+     fuel burn and emissions. Transp. Res. Part D Transp. Environ. 35, 142–159. https://doi.org/10.1016/j.trd.2014.11.022.
+Wilkerson, J.T., Jacobson, M.Z., Malwitz, A., Balasubramanian, S., Wayson, R., Fleming, G., Naiman, A.D., Lele, S.K., 2010. Analysis of emission data from global
+     commercial aviation: 2004 and 2006. Atmos. Chem. Phys. 10, 6391–6408. https://doi.org/10.5194/acp-10-6391-2010.
+Winther, M., Kousgaard, U., Oxbøl, A., 2006. Calculation of odour emissions from aircraft engines at Copenhagen Airport. Sci. Total Environ. 366, 218–232. https://
+     doi.org/10.1016/j.scitotenv.2005.08.015.
+Xing, H., Meng, Y., 2020. Measuring urban landscapes for urban function classiﬁcation using spatial metrics. Ecol. Ind. 108, 105722. https://doi.org/10.1016/j.
+     ecolind.2019.105722.
+Xu, B., 2007. Simulation Analysis of the Inﬂuence of Spatial Weights Matrix on Moran’s I. Nanjing Normal University, China (in Chinese).
+Xu, C., Zhu, J., Hu, R., 2018. Index decomposition of airport carbon emission factors in Jiangsu province based on Log mean divasia index. Aeronaut. Comput. Tech.
+     48, 86–90.
+Yan, D., Lei, Y., Li, L., Song, W., 2017. Carbon emission eﬃciency and spatial clustering analyses in China’s thermal power industry: evidence from the provincial level.
+     J. Clean. Prod. 156, 518–527. https://doi.org/10.1016/j.jclepro.2017.04.063.
+Yim, S.H.L., Stettler, M.E.J., Barrett, S.R.H., 2013. Air quality and public health impacts of UK airports. Part II: Impacts and policy assessment. Atmos. Environ. 67,
+     184–192. https://doi.org/10.1016/j.atmosenv.2012.10.017.
+Zhang, S., Witlox, F., 2020. Analyzing the impact of diﬀerent transport governance strategies on climate change. Sustainability 12, 200.
+Zhang, S., Fuellhart, K., Wang, Y., Wu, W.W., Zhu, J., Witlox, F., 2019. Congestion spillover eﬀects of Chinese hub airports on international connecting traﬃc.
+     Transportmetrica A: Transport Sci. 15 (2), 1339–1359.
+Zheng, S., Alvarado, V., Xu, P., Leu, S.Y., Hsu, S.C., 2018. Exploring spatial patterns of carbon dioxide emission abatement via energy service companies in China.
+     Resour. Conserv. Recycl. 137, 145–155. https://doi.org/10.1016/j.resconrec.2018.06.004.
+Zhu, J., Hu, R., Zhang, J., Zheng, L., 2019. Airport carbon emissions measurement and temporal evolution research: a case study of civil airports in Jiangsu province.
+     Transport. Sci. Eng. 43, 102–107. https://doi.org/10.3963/j.issn.2095-3844.2019.01.021.
+Zou, Y., Greenberg, J.A., 2019. A spatialized classiﬁcation approach for land cover mapping using hyperspatial imagery. Remote Sens. Environ. 232, 111248. https://
+     doi.org/10.1016/j.rse.2019.111248.
+
+
+
+
+                                                                                   15
+
