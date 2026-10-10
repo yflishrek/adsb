@@ -3,14 +3,26 @@
 # 为什么用"长任务"：单个 job 内部以 30 秒间隔循环 5 小时，期间每 10 分钟提交一次。
 # 对比"每 10 分钟触发一次"：构建次数 2016 → 约 56 次，航迹分辨率反而更高（30 秒）。
 #
-# 额度依据（GitHub 官方文档）：
+# 额度与限制依据（GitHub 官方文档 actions/reference/limits）：
 #   - 公有仓库 + 标准 GitHub-hosted runner = 免费无限分钟
-#   - 私有仓库 GitHub Free 仅 2000 分钟/月；本方案 14 天需约 20160 分钟 → 不够
+#   - 私有仓库 GitHub Free 仅 2000 分钟/月；本方案每天需约 1440 分钟 → 不够
 #   - 单个 job 最长 6 小时 → 这里设 5 小时（--max-minutes 300），留 1 小时余量
+#   - 单个 workflow run 最长 35 天；并发 job（Free）上限 20 → 本方案均远低于上限
 #
-# cron 为 5 位（分 时 日 月 周），按 **UTC** 解释：
-#   '0 */6 * * *'  = 每 6 小时一次（UTC）
-#   注意：负载高时定时触发可能延迟；仓库 60 天无活动会停用定时任务。
+# cron 为 5 位（分 时 日 月 周），按 **UTC** 解释，最短间隔 5 分钟。
+#   '17 */6 * * *' = 每 6 小时的**第 17 分**触发（而非整点）
+#   官方文档原文："High load times include the start of every hour. If the load is
+#   sufficiently high enough, some queued jobs may be dropped. To decrease the chance
+#   of delay, schedule your workflow to run at a different time of the hour."
+#   → 故刻意避开整点，降低任务被延迟/丢弃的概率。
+#
+# 定时任务的 60 天失活规则：
+#   公有仓库 60 天无 commit 会自动停用定时触发。本流水线每 10 分钟自动提交一次，
+#   天然不断刷新活动计时器，因此不受此规则影响。
+#
+# ⚠️ 存储上限（决定能连续跑多久，见 CLOUD_SETUP.md「能连续跑多久」一节）：
+#   实测仓库膨胀约 17 MB/天（git 增量压缩后）。GitHub 建议仓库 <1 GB，强烈建议 <5 GB。
+#   据此推算：约 60 天触及 1 GB 建议值，需在此之前归档或迁移历史数据。
 #
 # 只需在 Settings → Secrets and variables → Actions 配置 Repository secrets：
 #   OPENSKY_CLIENT_ID
@@ -21,7 +33,7 @@ name: bth-adsb-collect
 
 on:
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '17 */6 * * *'
   workflow_dispatch:          # 允许手动点一次立即验证
 
 permissions:
