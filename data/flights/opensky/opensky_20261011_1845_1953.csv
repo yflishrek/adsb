@@ -1,0 +1,2 @@
+fetch_ts,icao24,callsign,origin_country,time_position,last_contact,longitude,latitude,baro_altitude,on_ground,velocity,true_track,vertical_rate,geo_altitude,squawk
+2026-10-11T18:50:27.897024+00:00,781d9c,CES785,China,1791744609,1791744609,116.595,39.018,10393.68,False,252.87,354.16,0,10759.44,
