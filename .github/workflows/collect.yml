@@ -22,7 +22,7 @@
 # 额度与限制依据（GitHub 官方文档 actions/reference/limits）：
 #   - 公有仓库 + 标准 GitHub-hosted runner = 免费无限分钟 → 48 次/天无成本压力
 #   - 私有仓库 GitHub Free 仅 2000 分钟/月；本方案每天约 1300 分钟 → 不够
-#   - 最短 cron 间隔 5 分钟 → '*/30' 合法
+#   - 最短 cron 间隔 5 分钟 → '7,37' 合法
 #   - 单个 job 最长 6 小时 → 这里 26 分钟，余量极大
 #   - 单个 workflow run 最长 35 天；并发 job（Free）上限 20 → 均远低于上限
 #
@@ -47,7 +47,13 @@ name: bth-adsb-collect
 on:
   schedule:
     # 每 30 分钟一次（UTC）。job 跑 26 分钟，留 4 分钟余量给 checkout/依赖安装。
-    - cron: '*/30 * * * *'
+    #
+    # 为什么是 '7,37' 而不是 '*/30'：
+    #   GitHub 官方文档（actions/reference/events#schedule）写明 schedule 事件
+    #   在高负载时段会被**延迟甚至丢弃**，而「整点」正是高负载时段 —— '*/30'
+    #   恰好落在 :00 和 :30。实测改用前的 '*/30' 在 12:30Z / 13:00Z 两轮均未触发
+    #   （运行记录停在 #5）。7 分与 37 分避开整点与半点，间隔仍是 30 分钟。
+    - cron: '7,37 * * * *'
   workflow_dispatch:          # 允许手动点一次立即验证
 
 permissions:
