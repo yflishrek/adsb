@@ -1,0 +1,42 @@
+# 数据新鲜度告警 —— 这套流水线真正需要的"停止采集"邮件
+#
+# 背景：2026-10-10 的 run #3 在 5h50m 的任务跑到 1h22m 时被 runner 杀死，
+# GitHub 发了「run failed」邮件。那封邮件说明的是"某次运行失败了"，而不是
+# "数据已经 N 分钟没更新了"；而且**任务被完全丢弃时它一封都不发**（什么都没
+# 跑，自然没有失败）。两种情况下我们都无法判断采集是否还在继续。
+#
+# 这个 workflow 每小时问一次唯一重要的问题：最新数据有多旧？
+# 采集器运行时每 10 分钟提交一次数据，所以「最近一次改动 data/flights/ 的提交
+# 距今多久」就是采集是否存活的直接度量。超过阈值就退出非零 → GitHub 发邮件，
+# 而且是**可操作的**告警。
+#
+# 阈值 40 分钟 = 新的 30 分钟 cron 周期 + 10 分钟提交间隔 + 少量余量。
+
+name: bth-adsb-health
+
+on:
+  schedule:
+    - cron: '7,37 * * * *'     # 每 30 分钟的第 7、37 分（避开整点负载高峰）
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bth-adsb-health
+  cancel-in-progress: true
+
+jobs:
+  freshness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout (history for data commits)
+        uses: actions/checkout@v4
+        with:
+          # 需要够深的历史才能看到 data/flights/ 的提交；代码提交混在数据提交
+          # 之间，50 条足够覆盖最近数小时。
+          fetch-depth: 50
+
+      - name: Check data freshness
+        run: python3 scripts/check_freshness.py --max-age-min 40

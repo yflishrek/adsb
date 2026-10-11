@@ -18,6 +18,7 @@ import csv
 import json
 import os
 import sys
+import time
 from datetime import datetime, timezone
 
 import requests
@@ -37,6 +38,18 @@ TOKEN_URL = (
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.join(BASE_DIR, "..")
 DATA_DIR = os.path.join(ROOT, "data", "flights")
+
+# An empty aircraft list is a *soft* failure: adsb.lol answers HTTP 200 with
+# "ac": [] when its feeders have no coverage for the query point, which looks
+# exactly like "there was no traffic".  Measured 2026-10-11: 18 consecutive
+# 10-minute windows of empty answers (08:37-11:34 Beijing) wrote 18 header-only
+# CSVs -- a silent 3-hour hole in the campaign.  Retry inside the cycle.
+ADSBLOL_EMPTY_RETRIES = 3
+ADSBLOL_RETRY_SLEEP = 3.0          # seconds between retries within one cycle
+
+# Per-run counters, read by collect_longrun for its end-of-run summary.
+STATS = {"adsblol_ok": 0, "adsblol_empty": 0, "adsblol_fail": 0,
+         "opensky_ok": 0, "opensky_fail": 0, "opensky_skip": 0}
 
 # Schema MUST stay identical to the local collectors so cloud and local
 # rows can be appended to the same daily CSV without column drift.
@@ -91,15 +104,47 @@ def append_rows(path: str, fields, rows):
 
 
 # ---------------------------------------------------------------- adsb.lol
-def collect_adsblol():
+def _adsblol_once(timeout=30):
+    """One adsb.lol request.  Returns ``(aircraft_list | None, error | None)``."""
     url = ADSB_URL.format(**BTH_CENTER, dist=SEARCH_RADIUS)
     try:
-        resp = requests.get(url, timeout=30)
+        resp = requests.get(url, timeout=timeout)
         resp.raise_for_status()
-        ac_list = resp.json().get("ac", [])
+        # NB: `or []` and not `.get("ac", [])` -- the key is present but null
+        # in some responses, which would otherwise yield None and crash the
+        # caller's loop instead of counting as "no aircraft".
+        return list(resp.json().get("ac") or []), None
     except Exception as e:
-        print(f"  adsb.lol FAILED: {type(e).__name__}: {str(e)[:120]}")
+        return None, f"{type(e).__name__}: {str(e)[:120]}"
+
+
+def collect_adsblol():
+    """One snapshot from adsb.lol, retrying a *valid but empty* answer."""
+    ac_list, err = None, None
+    for attempt in range(1, ADSBLOL_EMPTY_RETRIES + 1):
+        ac_list, err = _adsblol_once()
+        if err is not None:
+            print(f"  adsb.lol request FAILED ({attempt}/{ADSBLOL_EMPTY_RETRIES}): "
+                  f"{err}")
+        elif ac_list:
+            break
+        else:
+            print(f"  adsb.lol returned 0 aircraft "
+                  f"({attempt}/{ADSBLOL_EMPTY_RETRIES}) - upstream coverage loss, "
+                  f"retrying in {ADSBLOL_RETRY_SLEEP:.0f}s")
+        if attempt < ADSBLOL_EMPTY_RETRIES:
+            time.sleep(ADSBLOL_RETRY_SLEEP)
+
+    if err is not None:
+        STATS["adsblol_fail"] += 1
         return 0
+    if not ac_list:
+        STATS["adsblol_empty"] += 1
+        print(f"  adsb.lol WARNING: still 0 aircraft after "
+              f"{ADSBLOL_EMPTY_RETRIES} attempts - the upstream feed for this "
+              f"region is down (OpenSky is unaffected)")
+        return 0
+    STATS["adsblol_ok"] += 1
 
     ts = now_iso()
     rows = []
@@ -144,6 +189,7 @@ def get_opensky_token():
 def collect_opensky():
     token = get_opensky_token()
     if not token:
+        STATS["opensky_skip"] += 1
         print("  OpenSky: skipped (no OPENSKY_CLIENT_ID/SECRET)")
         return 0
 
@@ -157,8 +203,10 @@ def collect_opensky():
         r.raise_for_status()
         states = r.json().get("states") or []
     except Exception as e:
+        STATS["opensky_fail"] += 1
         print(f"  OpenSky FAILED: {type(e).__name__}: {str(e)[:120]}")
         return 0
+    STATS["opensky_ok"] += 1
 
     ts = now_iso()
     rows = []
@@ -184,9 +232,12 @@ def main():
     a = collect_adsblol()
     b = collect_opensky()
     print(f"=== done: adsb.lol={a}, opensky={b} ===")
+    print(f"=== source stats: {STATS} ===")
     if a == 0 and b == 0:
         print("WARNING: no data collected this run")
-        return 0
+    elif a == 0:
+        print("WARNING: adsb.lol only -- this window has NO aircraft types "
+              "(the noise model needs the 't' field)")
     return 0
 
 

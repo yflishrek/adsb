@@ -1,34 +1,41 @@
 # GitHub Actions —— BTH ADS-B 采集（公有仓库 = 免费无限分钟）
 #
-# 为什么用"长任务"：单个 job 内部以 30 秒间隔循环 5 小时 50 分，期间每 10 分钟提交一次。
-# 对比"每 10 分钟触发一次"：构建次数 2016 → 约 56 次，航迹分辨率反而更高（30 秒）。
+# 为什么是"长任务内的短窗口"：
+#   单个 job 内部以 30 秒间隔轮询，每 10 分钟提交一次。**分辨率由 job 内的轮询
+#   间隔（30 s）决定，与 job 时长无关**，所以把 job 缩短不会降低航迹分辨率，
+#   只会让"每次失败/被延迟"的代价变小。
 #
-# 为什么是 350 分钟而不是 300：cron 每 6 小时一次，任务若只跑 300 分钟，
-# 每个周期就固定空出 1 小时 —— 一天缺 4 小时，且缺口落在**固定时刻**
-# （北京时 15:17、21:17、03:17、09:17）。其中 21:17-22:17 正卡在夜间时段起点，
-# 会直接污染 Lnight 统计。改为 350 分钟后每周期仅缺 10 分钟（一天 40 分钟，2.8%），
-# 且仍留 10 分钟余量给 setup，不会撞 6 小时硬上限。
+# 为什么从 6 小时改为 30 分钟（2026-10-11 实测后调整）：
+#   旧配置 cron '17 */6' + '--max-minutes 350'，设计缺口每天仅 40 分钟。实测
+#   10-10 04:38Z ~ 10-11 08:08Z 的 27.5 小时内只有约 55% 时间在采集，缺口共
+#   12.5 小时，其中一次 7 小时 48 分。三个原因：
+#     1. #3 任务被 runner 在 1h22m 处杀死（步骤显示 in_progress、job=failure，
+#        说明是进程被外部终止，不是脚本报错——脚本吞掉所有异常并 return 0）。
+#        一次失败就丢掉 5h50m 预算里的 4.5 小时。
+#     2. GitHub 定时触发会延迟甚至丢弃：'18:17Z' 那一班实际 21:50Z 才起跑
+#        （+3h33m），直接造成 7h48m 空洞。官方文档明确："some queued jobs may
+#        be dropped"。
+#     3. 6 小时周期只有 4 次触发机会，任何一次抖动都占 25% 的日覆盖。
+#   改为每 30 分钟、每次跑 26 分钟后：设计缺口 ≤4 分钟，且**任何一次失败或
+#   丢弃最多只损失 30 分钟**。触发机会 48 次/天，抖动被平均掉。
 #
 # 额度与限制依据（GitHub 官方文档 actions/reference/limits）：
-#   - 公有仓库 + 标准 GitHub-hosted runner = 免费无限分钟
-#   - 私有仓库 GitHub Free 仅 2000 分钟/月；本方案每天需约 1440 分钟 → 不够
-#   - 单个 job 最长 6 小时 → 这里设 5 小时（--max-minutes 300），留 1 小时余量
-#   - 单个 workflow run 最长 35 天；并发 job（Free）上限 20 → 本方案均远低于上限
+#   - 公有仓库 + 标准 GitHub-hosted runner = 免费无限分钟 → 48 次/天无成本压力
+#   - 私有仓库 GitHub Free 仅 2000 分钟/月；本方案每天约 1300 分钟 → 不够
+#   - 最短 cron 间隔 5 分钟 → '*/30' 合法
+#   - 单个 job 最长 6 小时 → 这里 26 分钟，余量极大
+#   - 单个 workflow run 最长 35 天；并发 job（Free）上限 20 → 均远低于上限
 #
-# cron 为 5 位（分 时 日 月 周），按 **UTC** 解释，最短间隔 5 分钟。
-#   '17 */6 * * *' = 每 6 小时的**第 17 分**触发（而非整点）
-#   官方文档原文："High load times include the start of every hour. If the load is
-#   sufficiently high enough, some queued jobs may be dropped. To decrease the chance
-#   of delay, schedule your workflow to run at a different time of the hour."
-#   → 故刻意避开整点，降低任务被延迟/丢弃的概率。
+# cron 为 5 位（分 时 日 月 周），按 **UTC** 解释。
 #
 # 定时任务的 60 天失活规则：
 #   公有仓库 60 天无 commit 会自动停用定时触发。本流水线每 10 分钟自动提交一次，
 #   天然不断刷新活动计时器，因此不受此规则影响。
 #
-# ⚠️ 存储上限（决定能连续跑多久，见 CLOUD_SETUP.md「能连续跑多久」一节）：
-#   实测仓库膨胀约 17 MB/天（git 增量压缩后）。GitHub 建议仓库 <1 GB，强烈建议 <5 GB。
-#   据此推算：约 60 天触及 1 GB 建议值，需在此之前归档或迁移历史数据。
+# ⚠️ 存储上限（见 CLOUD_SETUP.md「能连续跑多久」一节）：
+#   实测仓库膨胀约 17 MB/天（git 增量压缩后）。GitHub 建议仓库 <1 GB。
+#   覆盖率提升到 ~87% 后估算约 25 MB/天 → 14 天约 350 MB，安全；但若长期
+#   运行，仍需在触及 1 GB 前归档历史数据。
 #
 # 只需在 Settings → Secrets and variables → Actions 配置 Repository secrets：
 #   OPENSKY_CLIENT_ID
@@ -39,15 +46,24 @@ name: bth-adsb-collect
 
 on:
   schedule:
-    - cron: '17 */6 * * *'
+    # 每 30 分钟一次（UTC）。job 跑 26 分钟，留 4 分钟余量给 checkout/依赖安装。
+    - cron: '*/30 * * * *'
   workflow_dispatch:          # 允许手动点一次立即验证
 
 permissions:
   contents: write             # 必须，否则 GITHUB_TOKEN 无法推送数据
 
+concurrency:
+  # 同一时刻只允许一个采集器。用 queue 而不是 cancel：只有等当前 job 正常
+  # 结束后下一个才启动，避免两个进程同时写同一个 DATA_BATCH 文件。
+  group: bth-adsb-collect
+  cancel-in-progress: false
+
 jobs:
   collect:
     runs-on: ubuntu-latest
+    # 兜底：正常情况下 26 分钟结束，超时直接杀掉，免得占着 concurrency 槽位。
+    timeout-minutes: 40
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -60,7 +76,7 @@ jobs:
       - name: Install deps
         run: pip install --quiet requests
 
-      - name: Run long collector (5h50m @ 30s)
+      - name: Run collector (26m @ 30s, commit every 10m)
         env:
           OPENSKY_CLIENT_ID: ${{ secrets.OPENSKY_CLIENT_ID }}
           OPENSKY_CLIENT_SECRET: ${{ secrets.OPENSKY_CLIENT_SECRET }}
@@ -70,4 +86,4 @@ jobs:
           # (rev-parse returns literal "HEAD", which silently breaks push), and
           # RUN_ID to name each commit window's files uniquely so concurrent
           # runs can never collide on the same CSV.
-        run: python scripts/collect_longrun.py --interval 30 --max-minutes 350 --commit-every 10
+        run: python scripts/collect_longrun.py --interval 30 --max-minutes 26 --commit-every 10

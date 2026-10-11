@@ -14,7 +14,16 @@ whole campaign AND yields much finer trajectory resolution.
 
 Usage:
     python collect_longrun.py
-    python collect_longrun.py --interval 30 --max-minutes 300 --commit-every 10
+    python collect_longrun.py --interval 30 --max-minutes 26 --commit-every 10
+
+Note on --max-minutes
+---------------------
+The campaign runs one 26-minute job every 30 minutes (see .github/workflows/
+collect.yml).  Trajectory resolution comes from --interval (the in-job poll
+period), NOT from the job length, so a short job loses nothing -- while any
+run that is killed or delayed can only cost 30 minutes instead of 6 hours.
+Measured 2026-10-11 with the old 350-minute/6-hour configuration: only ~55% of
+a 27.5-hour stretch actually had data, including one 7h48m outage.
 
 Environment:
     OPENSKY_CLIENT_ID       (optional; adsb.lol needs no credentials)
@@ -29,7 +38,7 @@ import sys
 import time
 from datetime import datetime, timezone
 
-from cloud_collect import collect_adsblol, collect_opensky
+from cloud_collect import collect_adsblol, collect_opensky, STATS
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 
@@ -136,6 +145,7 @@ def main():
     print("=" * 62)
 
     cycles, ok_cycles, total_rows = 0, 0, 0
+    adsblol_empty_streak = 0
 
     while time.time() < deadline:
         cycles += 1
@@ -146,6 +156,19 @@ def main():
             if a or b:
                 ok_cycles += 1
             print(f"  #{cycles}: adsb.lol={a} opensky={b}")
+            # Track a *source-specific* outage: OpenSky keeps working while
+            # adsb.lol reports no coverage, so a total-rows test would never
+            # notice.  5 consecutive empty cycles = ~2.5 min at the default
+            # interval; 120 = an hour.
+            if a:
+                adsblol_empty_streak = 0
+            else:
+                adsblol_empty_streak += 1
+                if adsblol_empty_streak in (5, 20, 60, 120, 240):
+                    mins = adsblol_empty_streak * args.interval / 60.0
+                    print(f"  !! adsb.lol empty for {adsblol_empty_streak} "
+                          f"consecutive cycles (~{mins:.0f} min) - these "
+                          f"windows will have no aircraft types")
         except KeyboardInterrupt:
             print("interrupted")
             break
@@ -167,6 +190,10 @@ def main():
 
     print("=" * 62)
     print(f"done: cycles={cycles} successful={ok_cycles} rows={total_rows}")
+    print(f"source stats: {STATS}")
+    if adsblol_empty_streak >= 120:
+        print(f"WARNING: adsb.lol produced nothing for the last "
+              f"{adsblol_empty_streak} cycles - check feed coverage")
     print("=" * 62)
     return 0
 
