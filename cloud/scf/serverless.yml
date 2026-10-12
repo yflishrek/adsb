@@ -5,7 +5,7 @@
 #
 #   npm i -g @serverless/tencent-scf
 #   bash cloud/scf/build.sh
-#   export OPENSKY_CLIENT_ID=... OPENSKY_CLIENT_SECRET=... GH_TOKEN=...
+#   export OPENSKY_CLIENT_ID=... OPENSKY_CLIENT_SECRET=... COS_BUCKET=... COS_REGION=...
 #   sls deploy --inputs ./cloud/scf/serverless.yml     # or: sls --inputs ...
 #
 # Component input schemas change between releases -- cross-check the field
@@ -20,8 +20,8 @@ inputs:
   src: ./scf.zip                      # produced by build.sh
   handler: index.main_handler         # <file>.<function>
   runtime: Python3.9                  # any 3.6+ works; code is stdlib-only
-  region: ap-shanghai                 # pick a region close to you
-  description: BTH ADS-B second collection channel (GitHub Actions is the first)
+  region: ap-shanghai                 # must match COS_REGION: cross-region is slower
+  description: BTH ADS-B collection channel of record (writes to COS)
 
   # 128 MB x ~13 min = ~98 GB-s per run. At a 15-minute cadence that is
   # ~281,000 GB-s/month, inside the 400,000 GB-s free tier. Do NOT raise memory
@@ -37,12 +37,13 @@ inputs:
       COLLECT_INTERVAL: "30"
       COLLECT_MAX_MINUTES: "13"
       COLLECT_COMMIT_EVERY: "4"
-      GH_REPO: yflishrek/adsb
-      GH_BRANCH: master
-      # Secrets come from the environment, never from this file.
+      # COS credentials are NOT listed here on purpose: attach an execution role
+      # and SCF injects short-lived TENCENTCLOUD_SECRETID/SECRETKEY/SESSIONTOKEN
+      # automatically, so no long-lived key is ever stored.
+      COS_BUCKET: ${env:COS_BUCKET}       # include the -APPID suffix
+      COS_REGION: ${env:COS_REGION}
       OPENSKY_CLIENT_ID: ${env:OPENSKY_CLIENT_ID}
       OPENSKY_CLIENT_SECRET: ${env:OPENSKY_CLIENT_SECRET}
-      GH_TOKEN: ${env:GH_TOKEN}
 
   # 7-field cron: sec min hour day month weekday year. Timer timezone is UTC+8.
   triggers:

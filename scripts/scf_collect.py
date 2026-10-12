@@ -1,30 +1,49 @@
 #!/usr/bin/env python3
-"""Tencent SCF (S云函数) collector -- the SECOND, independent collection channel.
+"""Tencent SCF (云函数) collector -- the collection channel of record.
 
 Why this exists
 ---------------
 GitHub Actions `schedule` is not dependable on this repo: measured 2026-10-12,
 a `7,37 * * * *` cron produced only 3 runs in 13.5 hours (~89% of the trigger
-events were delayed or dropped), leaving ~6% duty cycle. The compute was fine;
-only the scheduler was broken. So we run the SAME collection on a second
-scheduler and take the union of the two channels.
+events were delayed or dropped), leaving ~6% duty cycle, and the channel stalled
+again for 3+ hours later the same day. The compute was fine; only the scheduler
+was broken. Tencent SCF's timer trigger does not have that failure mode, so SCF
+is now the single collection channel and GitHub Actions is retired.
 
-Why the GitHub *Data API* and not `git push`
---------------------------------------------
-An SCF runtime is a read-only container: there is no `git` binary and no
-writable filesystem outside /tmp. Committing therefore goes over plain HTTPS
-with four API calls (blob -> tree -> commit -> update ref), the same mechanism
-already proven by .workbuddy/push_via_api.py. Concurrency with the GitHub
-Actions channel is handled by re-reading the ref and retrying: both channels
-only ever ADD new files, so a lost race never conflicts, it only needs a retry.
+Storage
+-------
+SCF containers are ephemeral (`/tmp` is recycled, and only /tmp is writable at
+all), so the data has to leave the container. Two backends are implemented:
+
+* **COS object storage** (``COLLECT_STORAGE=cos``, the intended production
+  path) -- objects are written to ``data/flights/<source>/<file>.csv``, i.e.
+  exactly the path layout the repository used, so `merge_sources.py`'s globs
+  and `sync_cos.py` need no special-casing.
+* **GitHub Data API** (``COLLECT_STORAGE=github``) -- the previous design, kept
+  working so a run cannot lose data mid-migration.
+
+When ``COLLECT_STORAGE`` is unset the backend is picked automatically: COS if a
+bucket is configured, else GitHub if a token is, else no push at all (with a
+loud warning, because that data dies with the container).
 
 Environment (set in the SCF console):
     OPENSKY_CLIENT_ID / OPENSKY_CLIENT_SECRET   OpenSky OAuth2 (required)
+    COS_BUCKET      bucket incl. APPID suffix, e.g. bth-adsb-1300000000
+    COS_REGION      e.g. ap-beijing
+    COLLECT_STORAGE "cos" | "github" | "none"; default = auto-detect
+    COLLECT_DATA_DIR default "/tmp/data/flights" (SCF only allows writes here)
+
+    COS credentials come from the function's execution role -- SCF injects
+    TENCENTCLOUD_SECRETID / TENCENTCLOUD_SECRETKEY / TENCENTCLOUD_SESSIONTOKEN
+    automatically, so no long-lived key is ever stored. (Those names use the
+    reserved TENCENTCLOUD_ prefix precisely because the platform owns them.)
+
+    GitHub backend only:
     GH_TOKEN        fine-grained PAT with Contents: Read and write on GH_REPO
     GH_REPO         e.g. yflishrek/adsb
     GH_BRANCH       default "master"
     GH_API_BASE     default "https://api.github.com" (override for a proxy)
-    COLLECT_DATA_DIR default "/tmp/data/flights" (SCF only allows writes here)
+
 Optional tuning:
     COLLECT_INTERVAL        seconds between polls, default 30
     COLLECT_MAX_MINUTES     collection window length, default 13
@@ -50,6 +69,11 @@ from datetime import datetime, timezone
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import cloud_collect as cc          # noqa: E402  (path set above)
+
+try:
+    from cos_client import CosClient, CosError      # noqa: E402
+except ImportError:                                 # pragma: no cover
+    CosClient, CosError = None, RuntimeError
 
 CHANNEL = "scf"
 USER_AGENT = "bth-adsb-scf-collector"
@@ -78,6 +102,24 @@ def setting(*names, default=None):
     return default
 
 
+def resolve_storage(cos_ready, gh_ready, explicit=None):
+    """Decide which backend a run pushes to.
+
+    Kept as a pure function so the precedence rules are testable: an explicit
+    COLLECT_STORAGE always wins (and "none" is honoured deliberately, e.g. to
+    smoke-test collection without touching the bucket), otherwise COS is
+    preferred over GitHub because it is the intended destination and the two
+    never need to run together.
+    """
+    if explicit:
+        return explicit.strip().lower()
+    if cos_ready:
+        return "cos"
+    if gh_ready:
+        return "github"
+    return "none"
+
+
 def configure():
     """Resolve settings and force DATA_DIR somewhere writable.
 
@@ -91,19 +133,38 @@ def configure():
     os.makedirs(os.path.join(cc.DATA_DIR, "adsblol"), exist_ok=True)
     os.makedirs(os.path.join(cc.DATA_DIR, "opensky"), exist_ok=True)
 
+    cos = None
+    cos_error = None
+    if CosClient is not None:
+        try:
+            cos = CosClient.from_env(require=True)
+        except CosError as e:
+            cos_error = str(e)
+
     cfg = {
         "interval": int(setting("COLLECT_INTERVAL", "SCF_INTERVAL", default="30")),
         "max_minutes": float(setting("COLLECT_MAX_MINUTES", "SCF_MAX_MINUTES", default="13")),
         "commit_every": float(setting("COLLECT_COMMIT_EVERY", "SCF_COMMIT_EVERY", default="4")),
         "data_dir": cc.DATA_DIR,
+        "cos": cos,
         "token": (os.environ.get("GH_TOKEN") or "").strip(),
         "repo": (os.environ.get("GH_REPO") or "").strip(),
         "branch": (os.environ.get("GH_BRANCH") or "master").strip(),
         "api": (os.environ.get("GH_API_BASE") or "https://api.github.com").rstrip("/"),
     }
-    if not (cfg["token"] and cfg["repo"]):
-        log("!! GH_TOKEN / GH_REPO not set -- collecting to /tmp but NOT pushing; "
-            "that data is lost when the container exits")
+    gh_ready = bool(cfg["token"] and cfg["repo"])
+    cfg["storage"] = resolve_storage(cos is not None, gh_ready,
+                                    setting("COLLECT_STORAGE"))
+
+    if cfg["storage"] == "cos":
+        log(f"storage: COS bucket={cos.bucket} region={cos.region} "
+            f"(credentials from {cos.cred_source})")
+    elif cfg["storage"] == "github":
+        log(f"storage: GitHub {cfg['repo']}@{cfg['branch']}")
+    else:
+        why = f" ({cos_error})" if cos_error else ""
+        log("!! NO storage backend configured -- collecting to /tmp only; this "
+            f"data is LOST when the container exits{why}")
     return cfg
 
 
@@ -201,27 +262,48 @@ def pending_files(data_dir, already):
     return out
 
 
+def push_cos(cfg, files):
+    """Upload {repo_path: bytes} as COS objects. Returns a short description.
+
+    PUT is idempotent, so a partly-failed batch is simply re-sent next window
+    (the caller keeps every local file whenever the push raises).
+    """
+    cos = cfg["cos"]
+    for rel, content in files.items():
+        cos.put_object(rel, content)
+    return f"{len(files)} object(s) -> {cos.bucket}"
+
+
 def flush(cfg, pushed):
-    """Push everything new. Returns the count actually committed.
+    """Push everything new. Returns the count actually stored.
 
     On success the local copies are deleted. SCF reuses warm containers, so
     without this the /tmp files from the previous invocation would still be
     there next time, get picked up as "new" (the `pushed` set is per-call) and
-    be re-committed forever -- an endless stream of no-op commits, plus /tmp
-    growth against its 512 MB ceiling. On failure the files are KEPT, so a
+    be re-uploaded forever -- an endless stream of duplicate objects, plus
+    /tmp growth against its 512 MB ceiling. On failure the files are KEPT, so a
     transient API error costs a retry rather than the data.
     """
-    if not (cfg["token"] and cfg["repo"]):
+    backend = cfg.get("storage", "none")
+    if backend == "none":
         return 0
+
     files = pending_files(cfg["data_dir"], pushed)
     if not files:
         return 0
-    stamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
     try:
-        sha = commit_files(cfg, files, f"chore(data): ADS-B snapshot {stamp} [scf]")
-    except RuntimeError as e:
-        log(f"  !! push FAILED, keeping files in /tmp for the next window: {e}")
+        if backend == "cos":
+            detail = push_cos(cfg, files)
+        else:
+            stamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+            detail = commit_files(
+                cfg, files, f"chore(data): ADS-B snapshot {stamp} [scf]")[:8]
+    except Exception as e:
+        log(f"  !! push FAILED via {backend}, keeping files in /tmp for the "
+            f"next window: {e}")
         return 0
+
     pushed |= set(files)
     for rel in files:
         # rel is "data/flights/<sub>/<name>"; DATA_DIR already ends at "flights".
@@ -229,7 +311,7 @@ def flush(cfg, pushed):
             os.remove(os.path.join(cfg["data_dir"], rel.split("/", 2)[2]))
         except OSError as e:
             log(f"  (could not delete pushed {rel}: {e})")
-    log(f"  pushed {len(files)} file(s) -> {sha[:8]}")
+    log(f"  pushed {len(files)} file(s) via {backend} -> {detail}")
     return len(files)
 
 
@@ -237,7 +319,8 @@ def flush(cfg, pushed):
 def main_handler(event, context=None):
     cfg = configure()
     log(f"=== SCF collector: dir={cfg['data_dir']} interval={cfg['interval']}s "
-        f"window={cfg['max_minutes']}min push-every={cfg['commit_every']}min ===")
+        f"window={cfg['max_minutes']}min push-every={cfg['commit_every']}min "
+        f"storage={cfg['storage']} ===")
 
     os.environ["DATA_BATCH"] = batch_tag()      # channel-tagged, collision-free
     deadline = time.time() + cfg["max_minutes"] * 60
@@ -272,8 +355,10 @@ def main_handler(event, context=None):
 
     flush(cfg, pushed)                          # never lose the last window
 
-    log(f"=== SCF done: cycles={cycles} files_pushed={len(pushed)} stats={cc.STATS} ===")
-    return {"cycles": cycles, "pushed": len(pushed), "stats": cc.STATS}
+    log(f"=== SCF done: cycles={cycles} files_pushed={len(pushed)} "
+        f"storage={cfg['storage']} stats={cc.STATS} ===")
+    return {"cycles": cycles, "pushed": len(pushed),
+            "storage": cfg["storage"], "stats": cc.STATS}
 
 
 if __name__ == "__main__":

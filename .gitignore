@@ -49,3 +49,9 @@ output_txt/
 # SCF 部署产物（由 cloud/scf/build.sh 生成，可随时重建）
 cloud/scf/scf.zip
 cloud/scf/.build/
+# 原始采集数据改存腾讯云 COS，不再进本仓库。
+# 历史数据仍留在 git 历史里；2026-10-12 之后新采的数据一律只落 COS，本地副本由
+# scripts/sync_cos.py 拉取。忽略它们是为了避免误把几百个 CSV 提交进仓库。
+data/flights/adsblol/
+data/flights/opensky/
+data/flights/_legacy/
