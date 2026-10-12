@@ -1,0 +1,49 @@
+# Tencent SCF (Serverless Cloud Framework) deployment descriptor -- OPTIONAL.
+#
+# The console route in DEPLOY.md is the primary, lowest-friction path; use this
+# file only if you prefer deploying from the CLI:
+#
+#   npm i -g @serverless/tencent-scf
+#   bash cloud/scf/build.sh
+#   export OPENSKY_CLIENT_ID=... OPENSKY_CLIENT_SECRET=... GH_TOKEN=...
+#   sls deploy --inputs ./cloud/scf/serverless.yml     # or: sls --inputs ...
+#
+# Component input schemas change between releases -- cross-check the field
+# names against Tencent's current component docs before relying on this.
+app: bth-adsb
+stage: prod
+component: scf
+name: bth-adsb-scf-collector
+
+inputs:
+  name: bth-adsb-scf-collector
+  src: ./scf.zip                      # produced by build.sh
+  handler: index.main_handler         # <file>.<function>
+  runtime: Python3.9                  # any 3.6+ works; code is stdlib-only
+  region: ap-shanghai                 # pick a region close to you
+  description: BTH ADS-B second collection channel (GitHub Actions is the first)
+
+  # 128 MB x ~13 min = ~98 GB-s per run. At a 15-minute cadence that is
+  # ~281,000 GB-s/month, inside the 400,000 GB-s free tier. Do NOT raise memory
+  # without redoing that arithmetic -- it scales the quota linearly.
+  memorySize: 128
+  timeout: 900                        # 15 min hard ceiling of SCF itself.
+
+  environment:
+    variables:
+      COLLECT_DATA_DIR: /tmp/data/flights   # SCF only permits writes under /tmp
+      SCF_INTERVAL: "30"
+      SCF_MAX_MINUTES: "13"
+      SCF_COMMIT_EVERY: "4"
+      GH_REPO: yflishrek/adsb
+      GH_BRANCH: master
+      # Secrets come from the environment, never from this file.
+      OPENSKY_CLIENT_ID: ${env:OPENSKY_CLIENT_ID}
+      OPENSKY_CLIENT_SECRET: ${env:OPENSKY_CLIENT_SECRET}
+      GH_TOKEN: ${env:GH_TOKEN}
+
+  # 7-field cron: sec min hour day month weekday year. Timer timezone is UTC+8.
+  triggers:
+    - type: timer
+      cron: "0 */15 * * * * *"
+      enable: true

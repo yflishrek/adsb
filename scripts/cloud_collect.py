@@ -21,7 +21,47 @@ import sys
 import time
 from datetime import datetime, timezone
 
-import requests
+# `requests` is used on GitHub Actions, but it is NOT guaranteed on Tencent SCF
+# (whose console zip upload also penalises vendored dependencies).  Falling back
+# to the standard library lets the SAME module run on both platforms with no
+# behavioural change where `requests` is present.
+try:
+    import requests
+    HAVE_REQUESTS = True
+except ImportError:                                     # pragma: no cover
+    import urllib.parse
+    import urllib.request
+    HAVE_REQUESTS = False
+
+HTTP_TIMEOUT = 30
+
+
+def http_get_json(url, params=None, headers=None, timeout=HTTP_TIMEOUT):
+    """GET -> parsed JSON, over `requests` if available else `urllib`."""
+    if HAVE_REQUESTS:
+        r = requests.get(url, params=params, headers=headers, timeout=timeout)
+        r.raise_for_status()
+        return r.json()
+    if params:
+        url = f"{url}?{urllib.parse.urlencode(params)}"
+    req = urllib.request.Request(url, headers=headers or {})
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        return json.loads(resp.read().decode("utf-8"))
+
+
+def http_post_form_json(url, data, timeout=HTTP_TIMEOUT):
+    """POST an application/x-www-form-urlencoded body -> parsed JSON."""
+    if HAVE_REQUESTS:
+        r = requests.post(url, data=data, timeout=timeout)
+        r.raise_for_status()
+        return r.json()
+    body = urllib.parse.urlencode(data).encode("utf-8")
+    req = urllib.request.Request(
+        url, data=body,
+        headers={"Content-Type": "application/x-www-form-urlencoded"},
+    )
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        return json.loads(resp.read().decode("utf-8"))
 
 # ---------------------------------------------------------------- config
 BTH_CENTER = {"lat": 39.6, "lon": 116.8}
@@ -37,7 +77,9 @@ TOKEN_URL = (
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.join(BASE_DIR, "..")
-DATA_DIR = os.path.join(ROOT, "data", "flights")
+# Overridable: serverless runtimes (Tencent SCF) mount the code read-only and
+# only permit writes under /tmp, so the cloud function points this at /tmp.
+DATA_DIR = os.environ.get("COLLECT_DATA_DIR") or os.path.join(ROOT, "data", "flights")
 
 # An empty aircraft list is a *soft* failure: adsb.lol answers HTTP 200 with
 # "ac": [] when its feeders have no coverage for the query point, which looks
@@ -76,6 +118,21 @@ def now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
+def rel(path) -> str:
+    """Path for logging.
+
+    `os.path.relpath(path, ROOT)` raises ValueError when the two live on
+    different mounts -- which is exactly the SCF case (code read-only, data in
+    /tmp).  That exception used to escape the collector and abort the *other*
+    source's poll too, so the failure looked like "no data" rather than "bad
+    log line".  Never let logging break collection.
+    """
+    try:
+        return os.path.relpath(path, ROOT)
+    except ValueError:
+        return path
+
+
 def day_tag() -> str:
     return datetime.now(timezone.utc).strftime("%Y%m%d")
 
@@ -108,12 +165,11 @@ def _adsblol_once(timeout=30):
     """One adsb.lol request.  Returns ``(aircraft_list | None, error | None)``."""
     url = ADSB_URL.format(**BTH_CENTER, dist=SEARCH_RADIUS)
     try:
-        resp = requests.get(url, timeout=timeout)
-        resp.raise_for_status()
+        payload = http_get_json(url, timeout=timeout)
         # NB: `or []` and not `.get("ac", [])` -- the key is present but null
         # in some responses, which would otherwise yield None and crash the
         # caller's loop instead of counting as "no aircraft".
-        return list(resp.json().get("ac") or []), None
+        return list(payload.get("ac") or []), None
     except Exception as e:
         return None, f"{type(e).__name__}: {str(e)[:120]}"
 
@@ -162,7 +218,7 @@ def collect_adsblol():
 
     path = os.path.join(DATA_DIR, "adsblol", f"adsblol_{file_tag()}.csv")
     append_rows(path, ADSB_FIELDS, rows)
-    print(f"  adsb.lol: {len(rows)} aircraft -> {os.path.relpath(path, ROOT)}")
+    print(f"  adsb.lol: {len(rows)} aircraft -> {rel(path)}")
     return len(rows)
 
 
@@ -173,14 +229,12 @@ def get_opensky_token():
     if not (cid and sec):
         return None
     try:
-        r = requests.post(
+        payload = http_post_form_json(
             TOKEN_URL,
             data={"grant_type": "client_credentials",
                   "client_id": cid, "client_secret": sec},
-            timeout=30,
         )
-        r.raise_for_status()
-        return r.json()["access_token"]
+        return payload["access_token"]
     except Exception as e:
         print(f"  OpenSky token FAILED: {type(e).__name__}: {str(e)[:120]}")
         return None
@@ -194,14 +248,11 @@ def collect_opensky():
         return 0
 
     try:
-        r = requests.get(
-            OPENSKY_STATES,
-            params=BBOX,
-            headers={"Authorization": f"Bearer {token}"},
-            timeout=60,
+        payload = http_get_json(
+            OPENSKY_STATES, params=BBOX,
+            headers={"Authorization": f"Bearer {token}"}, timeout=60,
         )
-        r.raise_for_status()
-        states = r.json().get("states") or []
+        states = payload.get("states") or []
     except Exception as e:
         STATS["opensky_fail"] += 1
         print(f"  OpenSky FAILED: {type(e).__name__}: {str(e)[:120]}")
@@ -223,7 +274,7 @@ def collect_opensky():
 
     path = os.path.join(DATA_DIR, "opensky", f"opensky_{file_tag()}.csv")
     append_rows(path, OPENSKY_FIELDS, rows)
-    print(f"  OpenSky: {len(rows)} aircraft -> {os.path.relpath(path, ROOT)}")
+    print(f"  OpenSky: {len(rows)} aircraft -> {rel(path)}")
     return len(rows)
 
 

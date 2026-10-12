@@ -45,3 +45,7 @@ output_txt/
 
 # 研究设计文稿（未发表，不入公开仓库）
 选题1_*.md
+
+# SCF 部署产物（由 cloud/scf/build.sh 生成，可随时重建）
+cloud/scf/scf.zip
+cloud/scf/.build/

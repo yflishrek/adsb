@@ -107,6 +107,81 @@ def load_adsb_lookup(date: str):
     return by_icao, by_cs, len(df)
 
 
+def dedup_opensky(df):
+    """Collapse repeated state vectors so one observation is counted once.
+
+    Two sources of repetition, both measured on the real corpus:
+
+    1. **Within a single channel.** ``/states/all`` reports each aircraft's
+       ``time_position`` = when its *position* was last updated, and that does
+       not advance on every poll.  Consecutive 30 s polls therefore re-report
+       the same position.  Measured 2026-10-12 over 91 files: 41,693 raw rows
+       -> 29,935 unique, i.e. ~28% were redundant.
+    2. **Across the two channels.** Since 2026-10-12 the campaign runs two
+       independent collectors (GitHub Actions + Tencent SCF) against the same
+       feeds, so the same observation also lands in two files.
+
+    Left alone, Stage 1's SEL accumulation would count a single overflight
+    twice and bias Lden upward -- the only way the second channel can corrupt
+    the result.
+
+    ``time_position`` is OpenSky's own absolute Unix timestamp for the last
+    position update, so it identifies an observation exactly:
+      * two polls that see the SAME time_position -> one observation, collapse;
+      * two polls 30 s apart that see DIFFERENT time_positions -> two genuine
+        samples, kept (that is resolution, not duplication).
+
+    Never dedup on our own ``fetch_ts``: it differs between channels by design
+    and would collapse nothing while looking like it worked.
+
+    Which row of a group survives matters.  Measured across the duplicate
+    groups: ``baro_altitude`` is identical in 100% of them (so the altitude the
+    noise model needs is never at risk), but ``velocity`` differs in 29%,
+    ``vertical_rate`` in 22% and ``geo_altitude`` in 20% -- these are "position
+    unchanged, motion state refreshed" updates.  So we keep the row with the
+    greatest ``last_contact`` (when the network last heard the aircraft) rather
+    than an arbitrary first/last one.  Row order is preserved otherwise, since
+    downstream stages read these trajectories in file order.
+    """
+    if df is None or df.empty:
+        return df
+
+    df = df.reset_index(drop=True)
+    n0 = len(df)
+    icao = df["icao24"].astype(str)
+    tp = pd.to_numeric(df.get("time_position"), errors="coerce").round(0)
+    key = icao + "|" + tp.astype("Int64").astype(str)
+
+    missing = tp.isna()
+    if missing.any():
+        # No position timestamp: identical coordinates + altitude are the same
+        # observation as far as this pipeline can tell, so key on those.
+        fb = icao
+        for col in ("longitude", "latitude", "baro_altitude"):
+            if col in df.columns:
+                fb = fb + "|" + df[col].round(5).astype(str)
+        key = key.where(~missing, fb)
+
+    if "last_contact" in df.columns:
+        fresh = pd.to_numeric(df["last_contact"], errors="coerce").fillna(-1.0)
+    else:
+        fresh = pd.Series(-1.0, index=df.index)
+
+    order = pd.DataFrame({"k": key.to_numpy(), "f": fresh.to_numpy(),
+                          "i": df.index.to_numpy()})
+    # stable sort -> among equal freshness the highest index (latest fetch) wins
+    keep = (order.sort_values(["f", "i"], kind="stable")
+                 .drop_duplicates(subset="k", keep="last")["i"]
+                 .sort_values())
+    out = df.iloc[keep.to_numpy()].reset_index(drop=True)
+
+    n1 = len(out)
+    if n1 != n0:
+        print(f"  opensky dedup: {n0} -> {n1} rows "
+              f"({n0 - n1} repeated state vectors collapsed)")
+    return out
+
+
 def load_opensky(date: str):
     pattern = f"opensky_{date}*.csv" if date else "opensky_*.csv"
     paths = [p for p in sorted(glob.glob(os.path.join(OSKY_DIR, pattern)))
@@ -114,7 +189,7 @@ def load_opensky(date: str):
     if not paths:
         return None
     frames = [pd.read_csv(p, low_memory=False) for p in paths]
-    return pd.concat(frames, ignore_index=True)
+    return dedup_opensky(pd.concat(frames, ignore_index=True))
 
 
 def save_registry(lookup):
