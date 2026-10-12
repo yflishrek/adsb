@@ -26,9 +26,15 @@ Environment (set in the SCF console):
     GH_API_BASE     default "https://api.github.com" (override for a proxy)
     COLLECT_DATA_DIR default "/tmp/data/flights" (SCF only allows writes here)
 Optional tuning:
-    SCF_INTERVAL        seconds between polls, default 30
-    SCF_MAX_MINUTES     collection window length, default 13
-    SCF_COMMIT_EVERY    push every N minutes, default 4
+    COLLECT_INTERVAL        seconds between polls, default 30
+    COLLECT_MAX_MINUTES     collection window length, default 13
+    COLLECT_COMMIT_EVERY    push every N minutes, default 4
+
+    These deliberately do NOT use an `SCF_` prefix: Tencent reserves the
+    `SCF_`, `QCLOUD_` and `TENCENTCLOUD_` key prefixes and the console refuses
+    to save any variable that uses them.  The historical `SCF_INTERVAL` /
+    `SCF_MAX_MINUTES` / `SCF_COMMIT_EVERY` spellings are still honoured as a
+    fallback so a non-SCF host (or an old shell) keeps working.
 
 Handler: index.main_handler
 """
@@ -56,6 +62,22 @@ def log(msg):
 
 
 # ------------------------------------------------------------------ config
+def setting(*names, default=None):
+    """Return the first of `names` that is set to a non-empty value.
+
+    Tencent SCF reserves three environment-variable key prefixes -- `SCF_`,
+    `QCLOUD_` and `TENCENTCLOUD_` -- and the console refuses to save any
+    variable that uses them ("SCF_ 开头的 key 无法配置").  The tuning knobs are
+    therefore spelled `COLLECT_*`; the older `SCF_*` names are accepted as a
+    fallback so nothing that already works breaks.
+    """
+    for name in names:
+        value = os.environ.get(name)
+        if value not in (None, ""):
+            return value
+    return default
+
+
 def configure():
     """Resolve settings and force DATA_DIR somewhere writable.
 
@@ -70,9 +92,9 @@ def configure():
     os.makedirs(os.path.join(cc.DATA_DIR, "opensky"), exist_ok=True)
 
     cfg = {
-        "interval": int(os.environ.get("SCF_INTERVAL", "30")),
-        "max_minutes": float(os.environ.get("SCF_MAX_MINUTES", "13")),
-        "commit_every": float(os.environ.get("SCF_COMMIT_EVERY", "4")),
+        "interval": int(setting("COLLECT_INTERVAL", "SCF_INTERVAL", default="30")),
+        "max_minutes": float(setting("COLLECT_MAX_MINUTES", "SCF_MAX_MINUTES", default="13")),
+        "commit_every": float(setting("COLLECT_COMMIT_EVERY", "SCF_COMMIT_EVERY", default="4")),
         "data_dir": cc.DATA_DIR,
         "token": (os.environ.get("GH_TOKEN") or "").strip(),
         "repo": (os.environ.get("GH_REPO") or "").strip(),
@@ -256,6 +278,10 @@ def main_handler(event, context=None):
 
 if __name__ == "__main__":
     # Local smoke test: short window, no push unless GH_TOKEN/GH_REPO are set.
-    os.environ.setdefault("SCF_MAX_MINUTES", "1")
-    os.environ.setdefault("SCF_INTERVAL", "10")
+    # Default only when NEITHER spelling was supplied, so an explicit
+    # SCF_MAX_MINUTES=... on the command line still wins.
+    if not any(os.environ.get(k) for k in ("COLLECT_MAX_MINUTES", "SCF_MAX_MINUTES")):
+        os.environ["COLLECT_MAX_MINUTES"] = "1"
+    if not any(os.environ.get(k) for k in ("COLLECT_INTERVAL", "SCF_INTERVAL")):
+        os.environ["COLLECT_INTERVAL"] = "10"
     main_handler({}, None)

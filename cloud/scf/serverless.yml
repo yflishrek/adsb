@@ -32,9 +32,11 @@ inputs:
   environment:
     variables:
       COLLECT_DATA_DIR: /tmp/data/flights   # SCF only permits writes under /tmp
-      SCF_INTERVAL: "30"
-      SCF_MAX_MINUTES: "13"
-      SCF_COMMIT_EVERY: "4"
+      # NOT `SCF_*`: Tencent reserves the SCF_/QCLOUD_/TENCENTCLOUD_ prefixes and
+      # rejects any key that uses them.
+      COLLECT_INTERVAL: "30"
+      COLLECT_MAX_MINUTES: "13"
+      COLLECT_COMMIT_EVERY: "4"
       GH_REPO: yflishrek/adsb
       GH_BRANCH: master
       # Secrets come from the environment, never from this file.
