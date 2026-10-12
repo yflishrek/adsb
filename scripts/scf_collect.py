@@ -180,7 +180,15 @@ def pending_files(data_dir, already):
 
 
 def flush(cfg, pushed):
-    """Push everything new. Returns the count actually committed."""
+    """Push everything new. Returns the count actually committed.
+
+    On success the local copies are deleted. SCF reuses warm containers, so
+    without this the /tmp files from the previous invocation would still be
+    there next time, get picked up as "new" (the `pushed` set is per-call) and
+    be re-committed forever -- an endless stream of no-op commits, plus /tmp
+    growth against its 512 MB ceiling. On failure the files are KEPT, so a
+    transient API error costs a retry rather than the data.
+    """
     if not (cfg["token"] and cfg["repo"]):
         return 0
     files = pending_files(cfg["data_dir"], pushed)
@@ -193,6 +201,12 @@ def flush(cfg, pushed):
         log(f"  !! push FAILED, keeping files in /tmp for the next window: {e}")
         return 0
     pushed |= set(files)
+    for rel in files:
+        # rel is "data/flights/<sub>/<name>"; DATA_DIR already ends at "flights".
+        try:
+            os.remove(os.path.join(cfg["data_dir"], rel.split("/", 2)[2]))
+        except OSError as e:
+            log(f"  (could not delete pushed {rel}: {e})")
     log(f"  pushed {len(files)} file(s) -> {sha[:8]}")
     return len(files)
 
